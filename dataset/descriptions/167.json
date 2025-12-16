@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane highway at night.",
+  "goal": "Continue driving straight on the highway.",
+  "perception": "The highway has three lanes visible, separated by dashed white lines. There is a concrete barrier on the left side. Ahead, there are multiple vehicles: a black car directly in front in the middle lane, a white car further ahead in the left lane, and a large semi-truck in the right lane. Overhead green highway signs indicate upcoming exits and directions, but the text is not fully legible. The road surface appears clear and dry. The vehicles have their lights on, consistent with nighttime driving. Traffic appears moderate and moving steadily. There are no visible pedestrians or obstacles on the road.",
+  "prediction": "The vehicles ahead will maintain their lanes and speeds for the next few seconds, with the semi-truck likely to continue in the right lane and the black car maintaining position in the middle lane. Traffic flow will remain steady.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance from the black car ahead. Monitor the semi-truck on the right for any lane changes and be prepared to adjust speed or lane if necessary to maintain safety.",
+  "image": "167.jpg",
+  "id": 167
+}

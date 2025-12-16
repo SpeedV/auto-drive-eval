@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a narrow uphill residential street with parked cars on both sides under clear daylight.",
+  "goal": "Drive straight ahead along the residential street.",
+  "perception": "The road is a two-way residential street with no visible lane markings. Cars are parked along both sides, reducing the available driving space. The street is uphill with trees lining the sidewalks and residential buildings on the left. There are no visible traffic signs or signals. The road surface appears clear and dry. No pedestrians or cyclists are visible on the road or sidewalks.",
+  "prediction": "The ego vehicle will need to proceed cautiously uphill, potentially slowing to navigate the narrow space between parked cars. Oncoming traffic may appear given the two-way nature of the street, requiring careful attention.",
+  "planning": "Proceed slowly and keep to the right side of the road to maintain safe clearance from parked cars. Be prepared to stop or yield if oncoming vehicles approach due to limited passing space. Maintain vigilance for pedestrians or other hazards.",
+  "image": "173.jpg",
+  "id": 173
+}

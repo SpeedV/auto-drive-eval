@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a narrow urban residential street with parked cars lining both sides and trees providing shade.",
+  "goal": "Drive straight ahead along the street.",
+  "perception": "The street is a two-way residential road with parked vehicles on both sides, leaving a single narrow lane for moving traffic. There are no visible traffic signals or signs in the immediate view. The road surface appears clear and dry, and visibility is good due to daylight. The parked cars reduce the available driving space, requiring careful navigation to avoid collisions. No pedestrians or cyclists are visible on the road or sidewalks.",
+  "prediction": "The vehicle will continue moving forward cautiously due to the narrow lane and parked cars. There is a possibility of encountering oncoming traffic or pedestrians further ahead.",
+  "planning": "Proceed slowly and maintain a central position in the lane to avoid parked cars on both sides. Be prepared to stop or yield if oncoming vehicles appear or if pedestrians step onto the road.",
+  "image": "186.jpg",
+  "id": 186
+}

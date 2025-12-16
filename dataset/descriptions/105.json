@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane urban highway with moderate traffic and clear weather.",
+  "goal": "Continue driving straight on the highway.",
+  "perception": "The road is a multi-lane highway with three lanes visible, separated by dashed white lane markings. Traffic is moderate with several vehicles ahead, including a white car in the middle lane and a black SUV in the right lane. The highway is bordered by concrete barriers on both sides. There are no visible traffic signs or signals in the immediate view. The sky is clear with good visibility. The road surface appears dry and in good condition. The traffic is moving steadily without congestion.",
+  "prediction": "Vehicles ahead will continue moving forward at a steady pace. No immediate lane changes or stops are expected based on current traffic flow.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance from the vehicle ahead. Monitor traffic for any sudden changes or lane merges and be prepared to adjust speed accordingly.",
+  "image": "105.jpg",
+  "id": 105
+}

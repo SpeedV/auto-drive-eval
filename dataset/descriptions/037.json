@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a city street with multiple lanes and a traffic light ahead showing yellow.",
+  "goal": "Proceed straight through the intersection safely.",
+  "perception": "The vehicle is approaching an intersection on a multi-lane urban street. The road has two lanes in the current direction, separated by double yellow lines. The traffic light ahead is yellow, indicating the signal is about to change to red. Parked cars line the right side of the street. There are no visible pedestrians crossing the road at this moment. The weather is clear with good visibility.",
+  "prediction": "The traffic light will soon turn red, requiring vehicles to stop. Vehicles currently approaching the intersection will likely begin to slow down.",
+  "planning": "Prepare to stop safely before the intersection due to the yellow traffic light. Do not attempt to speed through the intersection to avoid running a red light.",
+  "image": "037.jpg",
+  "id": 37
+}

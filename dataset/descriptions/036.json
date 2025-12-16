@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow, residential street lined with parked cars on both sides.",
+  "goal": "Continue driving straight ahead on this street.",
+  "perception": "The street is a two-way residential road with parked cars densely lining both sides, leaving a single narrow lane for moving vehicles. The car directly ahead is moving slowly or stopped, partially obstructing the lane. There is a pedestrian crossing sign visible further ahead on the right side, indicating a crosswalk zone. Trees and residential buildings line the street, and the road surface is clear with no visible traffic signals. The parked cars reduce the available driving space, requiring careful navigation.",
+  "prediction": "The vehicle ahead will likely continue moving slowly or stop to allow pedestrians or other vehicles to pass. A pedestrian may appear near the crosswalk ahead, requiring vehicles to yield.",
+  "planning": "Proceed cautiously at a slow speed, maintaining a safe following distance behind the car ahead. Be prepared to stop if pedestrians are present at the crosswalk or if the vehicle ahead stops. Stay centered in the narrow lane to avoid parked cars.",
+  "image": "036.jpg",
+  "id": 36
+}

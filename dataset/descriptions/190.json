@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view from a vehicle driving on a multi-lane urban highway during daylight with clear weather.",
+  "goal": "Continue driving straight on the highway.",
+  "perception": "The vehicle is on the rightmost lane of a multi-lane highway with at least three lanes visible. There is a solid white line on the right indicating the shoulder or an exit lane. Traffic is moderate with several vehicles ahead and to the left, including a white van and a silver car. Overhead green highway signs indicate upcoming exits or route directions. The road surface appears clear and dry. There are no pedestrians or cyclists visible. The sky is clear with good visibility. The lane markings and signs suggest the vehicle should continue straight unless planning to exit.",
+  "prediction": "Traffic ahead will continue moving steadily forward. Vehicles in adjacent lanes may maintain speed or change lanes as needed for exits or route continuation.",
+  "planning": "Maintain current lane and speed, monitor traffic ahead and to the sides for any lane changes or exits. Prepare to follow highway signs for the intended route and adjust speed or lane accordingly.",
+  "image": "190.jpg",
+  "id": 190
+}

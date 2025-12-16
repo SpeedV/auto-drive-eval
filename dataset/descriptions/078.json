@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow residential street at night.",
+  "goal": "Proceed straight ahead safely.",
+  "perception": "The street is dimly lit with a single streetlight visible in the distance. Parked cars line both sides of the road, reducing the available driving space. The road surface shows faded white painted letters that appear to say 'SCHOOL,' indicating a school zone or nearby school crossing. There is a yellow pedestrian crossing sign ahead on the right side of the street. No pedestrians or moving vehicles are currently visible on the road. The environment is quiet and dark, requiring cautious driving.",
+  "prediction": "Given the school zone indication and pedestrian crossing sign, there may be children or pedestrians crossing the street soon, especially if it is near school hours. Parked cars may also start to move or pedestrians may emerge from between them.",
+  "planning": "Proceed slowly and cautiously, maintaining a low speed appropriate for a school zone at night. Stay centered in the lane to avoid parked cars and be prepared to stop quickly if pedestrians appear or if any vehicle starts moving from the parked positions.",
+  "image": "078.jpg",
+  "id": 78
+}

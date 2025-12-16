@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane highway at night.",
+  "goal": "Continue driving forward safely on the highway.",
+  "perception": "The highway has at least three lanes in the direction of travel. Traffic is moderate to heavy, with vehicles in all lanes moving slowly or stopped. The lane to the right has a white sedan and a black SUV, while the middle and left lanes have several cars ahead with brake lights on, indicating slowing or stopping. Streetlights illuminate the road, but visibility is limited due to nighttime conditions. There are no visible traffic signs or signals in the immediate view. The road markings show solid and dashed lane lines, and the leftmost lane is separated by a solid yellow line indicating no crossing from the left side.",
+  "prediction": "Traffic ahead will likely remain slow or stopped for the next few seconds due to congestion. Vehicles may continue to brake intermittently as traffic flow adjusts.",
+  "planning": "Maintain a safe following distance and reduce speed to match the flow of traffic. Stay in the current lane and prepare to stop if necessary to avoid collisions.",
+  "image": "178.jpg",
+  "id": 178
+}

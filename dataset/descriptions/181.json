@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a narrow urban street with parked cars lining both sides, viewed from the driver's perspective.",
+  "goal": "Drive straight ahead along the street.",
+  "perception": "The street is narrow with vehicles parked closely on both sides, limiting the available driving space. There are no visible traffic signs or signals in the immediate view. The road surface appears uneven with some patches. The lighting is bright with the sun low in the sky, causing shadows on the right side. There are no pedestrians or moving vehicles visible in the lane ahead. The street appears to be a one-way or two-way local road without lane markings.",
+  "prediction": "The vehicle can continue moving forward cautiously, but must be prepared to slow down or stop if another vehicle approaches from the opposite direction or if a parked car pulls out.",
+  "planning": "Proceed slowly and carefully, maintaining a central position in the lane to avoid parked cars on both sides. Be alert for any oncoming traffic or pedestrians emerging from between parked cars. Adjust speed to ensure safe passage through the narrow street.",
+  "image": "181.jpg",
+  "id": 181
+}

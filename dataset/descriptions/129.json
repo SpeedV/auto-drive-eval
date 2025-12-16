@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a residential street intersection with a clearly marked zebra pedestrian crosswalk ahead.",
+  "goal": "Proceed straight through the intersection while ensuring pedestrian safety.",
+  "perception": "The vehicle is approaching a zebra crosswalk at night on a residential street. The crosswalk is well marked with white stripes. There are parked cars along the right side of the street and houses with some lights on. No pedestrians are visible on or near the crosswalk at this moment. The road is wet, possibly from rain, as indicated by water droplets on the windshield. There are no visible traffic lights or stop signs in the image.",
+  "prediction": "A pedestrian may appear at the crosswalk given the residential area and time of day, but currently, no one is crossing. Vehicles parked on the right may start moving or pedestrians may emerge from between parked cars.",
+  "planning": "Slow down and prepare to stop if a pedestrian appears at the crosswalk. Proceed cautiously through the intersection, giving right of way to any pedestrians, and maintain a safe speed due to wet road conditions.",
+  "image": "129.jpg",
+  "id": 129
+}

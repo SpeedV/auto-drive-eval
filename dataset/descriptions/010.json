@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a city street at night with moderate traffic and streetlights illuminating the scene.",
+  "goal": "Continue driving straight ahead on the current road.",
+  "perception": "The road is a multi-lane urban street with two lanes visible in the direction of travel. There are parked cars along the right side of the street. Oncoming traffic is present in the left lanes, with headlights visible. The traffic light ahead is green, allowing vehicles to proceed straight. Streetlights and building lights provide visibility. No pedestrians are visible crossing the street. The road surface appears clear and dry.",
+  "prediction": "Vehicles ahead will continue moving forward through the green light. Oncoming traffic will maintain their lanes. Parked cars will remain stationary.",
+  "planning": "Maintain current speed and lane, proceed straight through the intersection while monitoring traffic signals and surroundings for any changes or hazards.",
+  "image": "010.jpg",
+  "id": 10
+}

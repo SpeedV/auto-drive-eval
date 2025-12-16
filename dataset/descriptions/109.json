@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime urban street scene from a vehicle stopped behind a large truck at an intersection with a green traffic light.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a large truck with visible brake lights, waiting at an intersection where the traffic light is green. There is a black car on the right side with its right turn signal on, indicating it may turn right or merge. Parked cars line both sides of the street. The road ahead appears clear beyond the truck. Streetlights and illuminated signs indicate an urban environment with moderate visibility despite the night setting.",
+  "prediction": "The truck ahead will start moving forward as the light is green. The black car on the right may attempt to merge or turn right, potentially crossing the vehicle's path.",
+  "planning": "Maintain a safe following distance behind the truck and proceed straight through the intersection when the truck moves. Be cautious of the black car's turn signal and yield if it merges into the lane.",
+  "image": "109.jpg",
+  "id": 109
+}

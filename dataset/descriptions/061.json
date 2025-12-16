@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view on a two-lane urban street with a bike lane on the right side, approaching a traffic light intersection.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The ego vehicle is behind a red SUV in the right lane of a two-lane road. There is a marked bike lane on the right side of the street. Parked cars and pedestrians are visible on the right sidewalk. The traffic light ahead is green, allowing vehicles to continue straight. The road is clear of immediate obstacles, and the weather is sunny with good visibility. Traffic appears moderate with vehicles stopped or moving near the intersection.",
+  "prediction": "The red SUV ahead will continue moving forward through the green light. Pedestrians on the sidewalk may remain stationary or begin crossing if the pedestrian signal changes. Traffic lights may change to yellow soon given the urban setting.",
+  "planning": "Maintain current lane and speed to proceed straight through the intersection while monitoring the traffic light and the vehicle ahead. Prepare to slow down if the light changes or if pedestrians enter the crosswalk.",
+  "image": "061.jpg",
+  "id": 61
+}

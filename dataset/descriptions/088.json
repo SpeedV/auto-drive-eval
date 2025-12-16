@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view from a car driving on a sunny, multi-lane road lined with palm trees on both sides.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has two lanes in the direction of travel, separated by dashed white lane markings. There is a solid yellow line on the right edge indicating the boundary of the roadway. Two vehicles are ahead in the same lane, maintaining a safe distance. The road is clear with no immediate obstacles or pedestrians visible. Traffic lights are visible in the distance but their state is unclear. The weather is clear and visibility is good.",
+  "prediction": "The vehicles ahead will continue moving forward at a steady pace. The traffic light ahead may change soon, potentially requiring a stop or slowdown.",
+  "planning": "Maintain current lane and speed while monitoring the traffic light ahead. Prepare to slow down or stop if the light changes to yellow or red.",
+  "image": "088.jpg",
+  "id": 88
+}

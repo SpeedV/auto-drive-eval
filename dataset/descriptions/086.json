@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a traffic light on a wet urban road with multiple lanes.",
+  "goal": "Proceed straight through the intersection when safe and legal.",
+  "perception": "The vehicle is stopped behind a gray Acura sedan at a red light, as indicated by the brake lights of the car ahead. The traffic light visible above is green for the cross street, allowing the black car and bus on the right to proceed. The road surface is wet, suggesting recent rain, which may affect stopping distances. There are multiple lanes, and the lane markings indicate a straight-through lane for the ego vehicle. No pedestrians are visible crossing the street. The surrounding area includes trees and some buildings, with clear visibility ahead.",
+  "prediction": "The traffic light for the ego vehicle's lane will likely turn green soon, allowing the vehicles to start moving forward through the intersection. The car ahead will begin to accelerate once the light changes.",
+  "planning": "Remain stopped and maintain a safe following distance behind the Acura. Prepare to accelerate smoothly once the traffic light turns green, ensuring the intersection is clear and safe to proceed.",
+  "image": "086.jpg",
+  "id": 86
+}

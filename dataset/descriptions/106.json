@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime view of a narrow urban street intersection with a stop sign visible on the right side.",
+  "goal": "Proceed safely through the intersection after stopping.",
+  "perception": "The vehicle is stopped or approaching a stop sign at an intersection on a dimly lit street. The stop sign is an all-way stop, indicating that all vehicles must stop and yield to others who arrived first or are already in the intersection. There are no visible pedestrians or other vehicles immediately at the intersection. The street is lined with trees and buildings, and the road surface appears clear.",
+  "prediction": "Other vehicles or pedestrians may approach the intersection from the cross street, requiring the vehicle to wait its turn before proceeding.",
+  "planning": "Come to a complete stop at the stop line or before the crosswalk, check for cross traffic and pedestrians, and proceed only when it is safe and the right-of-way is clear, following all-way stop rules.",
+  "image": "106.jpg",
+  "id": 106
+}

@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car approaching a fork in a multi-lane road with clear lane markings and directional arrows.",
+  "goal": "Make a left turn at the upcoming fork.",
+  "perception": "The road ahead splits into three lanes: the left lane is marked for a left turn, the middle lane is marked for a left turn or going straight, and the right lane is marked for going straight only. There is a yellow road sign indicating a left curve ahead. The road surface is dry, and visibility is clear. There is a vehicle visible on the right side of the fork traveling straight. No pedestrians or traffic signals are visible in the immediate vicinity.",
+  "prediction": "Vehicles in the left and middle lanes will begin to turn left, while vehicles in the right lane will continue straight. The vehicle on the right will maintain its path along the straight lane.",
+  "planning": "Position the ego vehicle in the left lane to execute the left turn safely, following the lane markings and yielding to any oncoming traffic if necessary.",
+  "image": "085.jpg",
+  "id": 85
+}

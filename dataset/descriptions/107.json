@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a traffic light on a city street at night.",
+  "goal": "Proceed straight through the intersection when safe.",
+  "perception": "The vehicle is stopped behind a silver car at a red traffic light. The traffic signals ahead are red for the current lane, with a green arrow indicating a permitted left turn from a different lane. The road is divided by a median with palm trees, and there are pedestrians on the right sidewalk. Other vehicles are visible on the cross street, some moving left to right. Streetlights illuminate the scene, and visibility is adequate despite the nighttime conditions.",
+  "prediction": "The traffic light will likely turn green soon, allowing vehicles to proceed straight. The car ahead will start moving forward once the light changes.",
+  "planning": "Remain stopped and maintain a safe distance from the car ahead until the traffic light turns green. Prepare to proceed straight through the intersection when the signal permits, ensuring pedestrian safety.",
+  "image": "107.jpg",
+  "id": 107
+}

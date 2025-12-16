@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a wet, two-lane urban street lined with parked cars on both sides during early evening or dusk.",
+  "goal": "Continue driving straight ahead through the intersection.",
+  "perception": "The road is wet, indicating recent or ongoing rain, which may reduce traction. The street has two lanes, one in each direction, with parked vehicles along both sides. Traffic lights ahead are green, allowing vehicles to proceed. There are pedestrians on the sidewalks but none crossing the street at this moment. Visibility is somewhat reduced due to low light and wet conditions. No immediate obstacles or hazards are visible in the driving lane.",
+  "prediction": "Vehicles ahead will continue moving forward through the green light. Pedestrians will likely remain on sidewalks given no crossing signals or activity. Wet road conditions may cause slightly slower traffic flow.",
+  "planning": "Maintain a safe following distance and proceed straight through the intersection with caution due to wet road conditions. Be prepared to slow down if traffic ahead reduces speed or if pedestrians step onto the road.",
+  "image": "042.jpg",
+  "id": 42
+}

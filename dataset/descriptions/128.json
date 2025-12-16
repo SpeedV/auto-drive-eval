@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow residential street at night.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The street is dimly lit with streetlights and lined with parked cars on both sides, leaving a single narrow lane for driving. There are no visible traffic signals or signs immediately ahead. The road surface appears clear, and there is no visible pedestrian activity or oncoming traffic in the immediate vicinity. Houses and buildings are present on both sides of the street. The vehicle's headlights illuminate the road directly ahead.",
+  "prediction": "The vehicle can continue moving forward cautiously, as no immediate obstacles or hazards are visible. Parked cars may cause occasional narrowing of the driving space, requiring careful navigation.",
+  "planning": "Proceed straight ahead at a reduced speed appropriate for a narrow residential street at night, maintaining vigilance for any sudden pedestrian crossings or vehicles emerging from between parked cars.",
+  "image": "128.jpg",
+  "id": 128
+}

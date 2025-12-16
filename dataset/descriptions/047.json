@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at an urban intersection in a city with tall buildings and pedestrian traffic.",
+  "goal": "Proceed straight through the intersection when safe and legal.",
+  "perception": "The traffic light ahead is red, requiring a full stop. The car in front is stopped and waiting. Multiple pedestrians are crossing the street in front of the vehicle, using the marked crosswalks. The intersection is busy with pedestrian activity on both sides. There are no visible signs indicating a turn or lane restrictions. Weather is clear with good visibility. The pedestrian signal shows a red hand, indicating pedestrians should not start crossing now.",
+  "prediction": "The traffic light will likely turn green soon, allowing vehicles to proceed. Pedestrians currently crossing will finish crossing shortly. New pedestrians will wait for the walk signal before crossing.",
+  "planning": "Remain stopped behind the car in front until the traffic light turns green and the crosswalk is clear of pedestrians. Proceed straight through the intersection only when it is safe and legal to do so.",
+  "image": "047.jpg",
+  "id": 47
+}

@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a narrow urban street with parked cars on the right side and a pedestrian sidewalk on the left, lined with trees and a fenced area.",
+  "goal": "Drive straight ahead along the street.",
+  "perception": "The street is a two-way road with no visible lane markings. There are parked cars along the right curb, reducing the available driving space. A pedestrian crossing sign is visible ahead on the right side, indicating a crosswalk near the upcoming intersection. The road surface appears worn but drivable. There are no traffic lights visible, and no pedestrians are currently crossing. The weather is clear and sunny, providing good visibility.",
+  "prediction": "The vehicle ahead will continue straight and may slow down approaching the pedestrian crossing. Pedestrians may appear near the crosswalk, requiring caution.",
+  "planning": "Maintain a moderate speed, stay centered in the lane to avoid parked cars, and prepare to slow down or stop if pedestrians approach the crosswalk.",
+  "image": "193.jpg",
+  "id": 193
+}

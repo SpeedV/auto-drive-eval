@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime forward view of a multi-lane road approaching an airport terminal with a prominent control tower visible in the distance. The road is well-lit with overhead streetlights and illuminated signs.",
+  "goal": "Navigate safely towards the airport terminal entrance ahead.",
+  "perception": "The road has multiple lanes marked with dashed white lines, indicating lane divisions. There are no visible traffic signals or stop signs in the immediate view. The illuminated green overhead signs likely provide directions for terminal access or parking. A few vehicles are visible ahead, including one with red taillights indicating it is moving away. The road appears clear of pedestrians and obstacles. The environment suggests an airport approach road with controlled access.",
+  "prediction": "Vehicles ahead will continue moving slowly towards the terminal or parking areas. Traffic may increase near the terminal entrance, potentially causing slowing or merging maneuvers.",
+  "planning": "Maintain current lane and speed while staying alert for merging vehicles or lane changes. Prepare to follow directional signs for terminal access and be ready to slow down as traffic density increases near the terminal.",
+  "image": "046.jpg",
+  "id": 46
+}

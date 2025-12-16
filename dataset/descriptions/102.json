@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a busy urban street with multiple lanes and tall buildings on both sides under clear daylight.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped or moving slowly in a lane of moderate traffic with several cars ahead and to the sides, including a black Honda directly in front and a yellow taxi to the right. The traffic light visible ahead is green, allowing vehicles to continue straight. The road has multiple lanes with clear lane markings. Pedestrians are visible on the sidewalks but not crossing the street. There are no visible signs indicating turns or restrictions for the current lane. Weather is clear with good visibility.",
+  "prediction": "Traffic will start moving forward as the green light remains active, with vehicles ahead accelerating through the intersection.",
+  "planning": "Maintain lane and proceed straight through the intersection, keeping a safe following distance and monitoring surrounding vehicles and pedestrians.",
+  "image": "102.jpg",
+  "id": 102
+}

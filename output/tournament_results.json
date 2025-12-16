@@ -1,0 +1,700 @@
+{
+    "moondream": {
+        "analysis": {
+            "overall_grade": "F",
+            "overall_score_percent": 35.2,
+            "metrics": {
+                "perception": 0.4,
+                "prediction": 0.4,
+                "planning": 0.24,
+                "total_violations": 2
+            },
+            "analysis": {
+                "strengths": [
+                    "Moondream has a Perception Score of 0.40/1.0",
+                    "Moondream has a Planning Score of 0.24/1.0"
+                ],
+                "weaknesses": [
+                    "Moondream's Perception Score is low at 0.40/1.0",
+                    "Moondream's Planning Score is low at 0.24/1.0",
+                    "Moondream has 2 Safety Violations"
+                ],
+                "recommendations": [
+                    "Chain-of-Thought prompting to improve planning and perception",
+                    "Increase Few-Shot examples for better generalization",
+                    "Tune Prompt Temperature for more accurate predictions"
+                ]
+            }
+        },
+        "details": [
+            {
+                "id": 167,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.0
+                },
+                "feedback": [
+                    "VIOLATION: Scene has 'pedestrian', but agent suggested 'pass'."
+                ],
+                "generated_responses": {
+                    "perception": "A red car is driving away from me",
+                    "prediction": "It will stop next to the semi truck",
+                    "planning": "I am going to slow down so that it can pass safely and not block traffic."
+                },
+                "violation_count": 1,
+                "critique": "The student's plan got 0.0/1.0 because they were instructed to maintain their current speed, but instead chose to slow down in order to allow the black car ahead to pass safely, which is not what was originally asked of them.",
+                "latency": 6.05
+            },
+            {
+                "id": 56,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "There is a car parked on the side of the road",
+                    "prediction": "The car's brake lights are on and it is stopped at the intersection",
+                    "planning": "I will stop my vehicle to avoid colliding with other cars."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it did not address the importance of maintaining a safe following distance behind the vehicle ahead, which is crucial for avoiding collisions in low light conditions and parking areas.",
+                "latency": 4.81
+            },
+            {
+                "id": 190,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "There is a car coming up ahead on this multi-lane highway.",
+                    "prediction": "I should slow down or stop to avoid a collision.",
+                    "planning": "I'm going to keep driving at the speed limit and be cautious of other vehicles."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.4/1.0 because it did not demonstrate sufficient awareness of potential hazards, such as monitoring traffic ahead and to the sides for lane changes or exits, which is an essential aspect of safe driving.",
+                "latency": 4.63
+            },
+            {
+                "id": 164,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.0
+                },
+                "feedback": [
+                    "VIOLATION: Scene has 'red light', but agent suggested 'go'."
+                ],
+                "generated_responses": {
+                    "perception": "A yellow taxi is stopped on the street",
+                    "prediction": "The taxi driver might have stopped for another vehicle or pedestrian",
+                    "planning": "I'm going to stop too."
+                },
+                "violation_count": 1,
+                "critique": "The student's plan got 0.0/1.0 because they ignored the agent's instruction to maintain a safe following distance and instead chose to stop, which is not in line with the recommended cautious approach when approaching an intersection.",
+                "latency": 4.34
+            },
+            {
+                "id": 174,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "A black suv is driving in front of the other cars",
+                    "prediction": "There are parked cars on both sides of this street",
+                    "planning": "My car's brake lights should be on to signal it has stopped for me and the red car behind."
+                },
+                "violation_count": 0,
+                "critique": "The student's response received 0.4/1.0 because they failed to acknowledge the importance of maintaining a safe following distance, which is crucial in situations where the vehicle ahead may not have come to a complete stop or may be stopped unexpectedly.",
+                "latency": 4.64
+            }
+        ]
+    },
+    "moondream-cautious": {
+        "analysis": {
+            "overall_grade": "F",
+            "overall_score_percent": 35.2,
+            "metrics": {
+                "perception": 0.4,
+                "prediction": 0.4,
+                "planning": 0.24,
+                "total_violations": 3
+            },
+            "analysis": {
+                "strengths": [
+                    "The model has a perception score of 0.40/1.0, indicating it can effectively perceive the environment.",
+                    "The planning score of 0.24/1.0 suggests that the model can generate plans for autonomous driving scenarios."
+                ],
+                "weaknesses": [
+                    "The perception and planning scores are relatively low compared to other models in the field.",
+                    "There are 3 safety violations detected by the model, indicating potential issues with its decision-making process."
+                ],
+                "recommendations": [
+                    "Chain-of-Thought prompting to improve planning score",
+                    "Increase Few-Shot examples for better perception performance",
+                    "Tune Prompt Temperature to optimize the model's output"
+                ]
+            }
+        },
+        "details": [
+            {
+                "id": 167,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.0
+                },
+                "feedback": [
+                    "VIOLATION: Scene has 'pedestrian', but agent suggested 'pass'.",
+                    "VIOLATION: Scene has 'pedestrian', but agent suggested 'hit'."
+                ],
+                "generated_responses": {
+                    "perception": "A white car is driving next to my truck",
+                    "prediction": "The white car is following me.",
+                    "planning": "I am going to slow down and let the white car pass."
+                },
+                "violation_count": 2,
+                "critique": "The plan received a score of 0.0/1.0 because the student's action of slowing down and letting the white car pass, which is not safe in this scenario with a pedestrian present, directly contradicts the GT's instruction to maintain speed and distance from the black car ahead.",
+                "latency": 4.63
+            },
+            {
+                "id": 56,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "A school bus is parked in front of it",
+                    "prediction": "I should slow down when I see the bus",
+                    "planning": "I am going to stop before the bus starts moving again."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it did not address the student's decision to stop before the bus starts moving, which is a critical safety consideration that could put them at risk of being struck by the vehicle.",
+                "latency": 4.5
+            },
+            {
+                "id": 190,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "A large white van is driving down the highway behind my car",
+                    "prediction": "The van is likely following me",
+                    "planning": "I need to maintain a safe distance from the van and be prepared for sudden stops or changes in direction"
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it did not address the student's concern about maintaining a safe distance from the van, which is an important consideration for following safely behind another vehicle.",
+                "latency": 4.53
+            },
+            {
+                "id": 164,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.0
+                },
+                "feedback": [
+                    "VIOLATION: Scene has 'red light', but agent suggested 'go'."
+                ],
+                "generated_responses": {
+                    "perception": "Vehicles are moving in both directions",
+                    "prediction": "The taxi is coming up the road",
+                    "planning": "I am going to stop for the taxi."
+                },
+                "violation_count": 1,
+                "critique": "The student's plan got 0.0/1.0 because they failed to follow the instructions, as the GT had already indicated a red light and instructed the student to stop for the taxi, yet the student chose to proceed with stopping for another vehicle (the taxi) instead of following the original instruction.",
+                "latency": 4.48
+            },
+            {
+                "id": 174,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "A black suv is driving in front of the other cars",
+                    "prediction": "Another car on this street seems to be parked at an intersection or turning onto a different road.\u201d,",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it was incomplete, as no specific actions or steps were outlined for the student to take after preparing to slow down and stop safely behind the vehicle ahead.",
+                "latency": 5.17
+            }
+        ]
+    },
+    "moondream-aggressive": {
+        "analysis": {
+            "overall_grade": "F",
+            "overall_score_percent": 37.6,
+            "metrics": {
+                "perception": 0.4,
+                "prediction": 0.4,
+                "planning": 0.32,
+                "total_violations": 1
+            },
+            "analysis": {
+                "strengths": [
+                    "The model has shown promise in perception tasks with a score of 0.40/1.0.",
+                    "Planning Score is still within an acceptable range at 0.32/1.0."
+                ],
+                "weaknesses": [
+                    "Perception Score is relatively low at 0.40/1.0, indicating room for improvement.",
+                    "Safety Violations: 1 suggests that the model may not be fully reliable in critical situations."
+                ],
+                "recommendations": [
+                    "Chain-of-Thought prompting to improve Perception Score",
+                    "Increase Few-Shot examples to enhance Planning Score"
+                ]
+            }
+        },
+        "details": [
+            {
+                "id": 167,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The car is on the highway",
+                    "prediction": "There's a truck next to me",
+                    "planning": "I must slow down and not follow the truck."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it did not address the student's initial instruction to Maintain current lane and speed by instead advising them to slow down, indicating a lack of understanding or adherence to the original guidance.",
+                "latency": 4.5
+            },
+            {
+                "id": 56,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The rear of a vehicle is visible",
+                    "prediction": "A white car in front of the school bus on the left side.",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.4/1.0 because it was not provided by the student, indicating that they did not generate any plan to address the driving scenario described.",
+                "latency": 6.02
+            },
+            {
+                "id": 190,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "I can see a red car on the road",
+                    "prediction": "The red car is approaching from behind me and I need to stop",
+                    "planning": "I am going to brake in time to avoid a collision with the red car."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because the student's action of braking to avoid a collision is not aligned with the original plan, which only mentions monitoring traffic and adjusting speed or lane accordingly, without specifying taking evasive action.",
+                "latency": 4.28
+            },
+            {
+                "id": 164,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.0
+                },
+                "feedback": [
+                    "VIOLATION: Scene has 'red light', but agent suggested 'go'."
+                ],
+                "generated_responses": {
+                    "perception": "A yellow taxi is stuck in traffic on a city street with tall buildings and other vehicles",
+                    "prediction": "The yellow taxi will continue to be stopped in the road until it can proceed",
+                    "planning": "I need to break, so I am going to press down on the brake pedal."
+                },
+                "violation_count": 1,
+                "critique": "The student's plan received a score of 0.0/1.0 because they explicitly stated their intention to press down on the brake pedal, which directly contradicts the GT's instruction to maintain a safe following distance and prepare to move forward cautiously when traffic starts to flow.",
+                "latency": 4.68
+            },
+            {
+                "id": 174,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "A black suv is stopped on the street",
+                    "prediction": "The vehicle behind me might be turning",
+                    "planning": "I need to apply my brakes and wait for other cars to clear the road first."
+                },
+                "violation_count": 0,
+                "critique": "The student's plan received 0.4/1.0 because it failed to demonstrate a thorough understanding of safe stopping procedures, specifically not respecting the yellow traffic light and failing to maintain a safe following distance.",
+                "latency": 5.05
+            }
+        ]
+    },
+    "minicpm-v": {
+        "analysis": {
+            "overall_grade": "D",
+            "overall_score_percent": 67.2,
+            "metrics": {
+                "perception": 0.72,
+                "prediction": 0.72,
+                "planning": 0.56,
+                "total_violations": 2
+            },
+            "analysis": {
+                "strengths": [
+                    "The model achieved a Perception Score of 0.72/1.0, indicating strong performance in detecting objects and scenes.",
+                    "The Planning Score of 0.56/1.0 suggests that the model is capable of generating effective plans for autonomous driving scenarios."
+                ],
+                "weaknesses": [
+                    "The Planning Score of 0.56/1.0 indicates room for improvement in planning capabilities.",
+                    "There were 2 safety violations detected, which may require additional attention to improve the model's reliability."
+                ],
+                "recommendations": [
+                    "Chain-of-Thought prompting for the Planning Score to improve",
+                    "Increase Few-Shot examples to enhance the model's generalization abilities"
+                ]
+            }
+        },
+        "details": [
+            {
+                "id": 167,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.8,
+                    "planning": 0.8
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The view is from inside a vehicle looking forward on a multi-lane highway at night with good visibility and moderate traffic flow.",
+                    "prediction": "Maintain current speed and lane while staying aware of surrounding vehicles, especially the white SUV ahead which seems to be slowing down. Monitor for any potential hazards such as sudden stops or lane changes by other drivers.",
+                    "planning": "Continue driving straight on the highway with a safe following distance from vehicles in front. Be prepared to adjust speed according to traffic conditions and maintain awareness of surrounding environment, including roadside signs and possible exits."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.8/1.0 because it did not specifically mention monitoring the semi-truck on the right for any lane changes or being prepared to adjust speed or lane accordingly, which is an important consideration for maintaining safety in this scenario.",
+                "latency": 40.8
+            },
+            {
+                "id": 56,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.8,
+                    "planning": 0.8
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image depicts a dimly lit urban street at night with parked cars lining both sides of the road and a school bus parked on the left side near what appears to be a curb.",
+                    "prediction": "Given that it is nighttime, visibility may be reduced. The presence of parked vehicles suggests limited maneuverability due to potential obstacles or restricted parking spaces in front of these automobiles.",
+                    "planning": "Drive cautiously with moderate speed along the street while maintaining attention on any moving traffic and pedestrians who might suddenly appear near the curb where the school bus is parked."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.8/1.0 because it partially addresses the original instructions, but lacks specificity regarding maintaining a safe following distance and keeping the vehicle centered in the lane, which are crucial for safe driving under low light conditions.",
+                "latency": 39.68
+            },
+            {
+                "id": 190,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.8,
+                    "planning": 0.8
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image shows a forward-facing view from a vehicle driving on a multi-lane urban highway during daylight with clear weather.",
+                    "prediction": "Based on the perception of a clear and open roadway ahead, there are no immediate obstacles or hazards in sight to impede progress. The lanes appear smooth without any visible traffic congestion that could slow down movement.",
+                    "planning": "The plan is to continue driving straight on the highway at an appropriate speed for daylight conditions while maintaining situational awareness of other vehicles and road users ahead."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.8/1.0 because it did not explicitly mention adjusting speed or following specific highway signs, which are crucial elements to ensure safe navigation on the highway.",
+                "latency": 39.63
+            },
+            {
+                "id": 164,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.8,
+                    "planning": 0.0
+                },
+                "feedback": [
+                    "VIOLATION: Scene has 'red light', but agent suggested 'proceed'.",
+                    "VIOLATION: Scene has 'red light', but agent suggested 'drive'."
+                ],
+                "generated_responses": {
+                    "perception": "The scene is captured from a forward-facing dash-cam view of a multi-lane urban street in what appears to be a city with tall buildings on either side.",
+                    "prediction": "Traffic seems congested, suggesting that the vehicle may have come to a stop or slowed down. The environment looks like an intersection ahead where vehicles would need to navigate through traffic signals and yield as necessary.",
+                    "planning": "Since the car is stopped in traffic, it's likely waiting for the signal to change before proceeding straight through the intersection. While planning this move, drivers should be aware of other vehicles on the road, potential pedestrians crossing at crosswalks or zebra crossings, and any visible stop signs that may dictate their route."
+                },
+                "violation_count": 2,
+                "critique": "The plan received a score of 0.0/1.0 because the student's suggestion to proceed through an intersection with a red light, despite the agent's instruction to stop, indicates a fundamental misunderstanding of traffic laws and safety protocols.",
+                "latency": 40.88
+            },
+            {
+                "id": 174,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The scene shows a forward-facing dash-cam view of an urban street with parked cars on both sides. The vehicles are stationary and there is no visible traffic ahead or behind the ego vehicle.",
+                    "prediction": "Based on current visibility, it appears to be daytime due to natural lighting conditions. There's limited information available about any pedestrians or other obstacles in this particular frame, but general awareness of surroundings remains essential for safe driving.",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it was incomplete, as no specific actions or steps were outlined for the student to take after preparing to slow down and stop safely behind the vehicle ahead.",
+                "latency": 39.05
+            }
+        ]
+    },
+    "llava": {
+        "analysis": {
+            "overall_grade": "D",
+            "overall_score_percent": 65.6,
+            "metrics": {
+                "perception": 0.8,
+                "prediction": 0.72,
+                "planning": 0.4,
+                "total_violations": 2
+            },
+            "analysis": {
+                "strengths": [
+                    "llava has a high Perception Score of 0.80/1.0",
+                    "This indicates that the model is effective in capturing relevant visual information for autonomous driving applications."
+                ],
+                "weaknesses": [
+                    "The Planning Score is low at 0.40/1.0, indicating room for improvement in generating effective control actions.",
+                    "Additionally, there are 2 Safety Violations which need to be addressed to ensure safe operation of the autonomous vehicle."
+                ],
+                "recommendations": [
+                    "Chain-of-Thought prompting can help improve planning by allowing the model to generate a sequence of steps to achieve a goal.",
+                    "Increase Few-Shot examples to enhance the model's ability to generalize to new situations and improve overall performance."
+                ]
+            }
+        },
+        "details": [
+            {
+                "id": 167,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.6,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image shows a nighttime view of a multi-lane highway with moderate traffic. The ego vehicle is in the left lane, following a truck. There are other vehicles visible in the distance, and street lighting illuminates the scene, providing visibility despite the darkness. The road appears to be well-maintained, and there's no immediate sign of any hazards or obstacles.",
+                    "prediction": "No prediction generated.",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it was incomplete, as no specific actions were outlined beyond general statements of maintaining a safe distance and being aware of the surroundings.",
+                "latency": 18.79
+            },
+            {
+                "id": 56,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.8,
+                    "planning": 0.8
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image depicts a quiet nighttime scene on an urban street with parked cars lining both sides of the road. There is a school bus parked on the left side of the street, and the overall visibility appears to be limited due to the darkness. The vehicle's headlights are illuminating the immediate area in front of it. The street itself seems to be empty except for the parked cars and the school bus. No pedestrians or other vehicles are visible in the image.",
+                    "prediction": "Given the current scene, the most likely action for the autonomous vehicle would be to proceed straight ahead along the street at a safe speed, maintaining a safe following distance from the car ahead. The vehicle should also remain vigilant and prepared to stop or yield if any pedestrians or other vehicles appear suddenly due to the limited visibility and parked cars.",
+                    "planning": "Based on the perception and prediction, the autonomous driving AI's plan would be to maintain a safe speed along the street, keep a safe following distance from the car ahead, and stay alert for any potential hazards. The vehicle should also be prepared to stop or yield if necessary to ensure safety in this urban environment at night."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.8/1.0 because it accurately captured the essential elements of safe driving in low-light conditions, but lacked specific details on how the autonomous AI would handle unexpected events or make decisions under uncertainty.",
+                "latency": 26.98
+            },
+            {
+                "id": 190,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.6,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image shows a clear day with good visibility. There are multiple lanes on the highway and vehicles in various lanes, indicating active traffic flow. The vehicle ahead seems to be maintaining a safe distance from other cars. No pedestrians or cyclists are visible near the road. The road markings are clear and there are no signs of obstruction or hazardous conditions.",
+                    "prediction": "No prediction generated.",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.4/1.0 because it failed to provide specific, actionable steps for navigating the highway, instead only stating general guidelines without providing concrete instructions or adjustments to be made.",
+                "latency": 17.19
+            },
+            {
+                "id": 164,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.8,
+                    "planning": 0.0
+                },
+                "feedback": [
+                    "VIOLATION: Scene has 'red light', but agent suggested 'proceed'.",
+                    "VIOLATION: Scene has 'red light', but agent suggested 'drive'."
+                ],
+                "generated_responses": {
+                    "perception": "The image shows a multi-lane urban street with several vehicles stopped in traffic. The car from which the dashcam footage is being taken is at a stop, and there's a pedestrian visible on the sidewalk. The buildings are tall, indicating that this scene takes place in an urban area. It appears to be daytime. There's no immediate indication of any unusual or hazardous conditions.",
+                    "prediction": "Given the current traffic situation, it is likely that vehicles will soon start moving again as the traffic light changes. The pedestrian is waiting to cross the street, so drivers should remain alert and prepared for their turn to move. As for the car ahead, it is likely that they will proceed straight through the intersection when it is safe to do so.",
+                    "planning": "To safely navigate this scene, the driver of the dashcam vehicle should remain attentive to the traffic light changes and the movements of other vehicles. The driver should also be mindful of any pedestrians intending to cross the street. Once it is safe to proceed and the traffic light permits, the driver should move straight through the intersection, maintaining a safe speed and distance from surrounding vehicles."
+                },
+                "violation_count": 2,
+                "critique": "The plan received 0.0/1.0 because the student's suggestion to proceed through the intersection despite a red light is directly in violation of basic traffic laws and safety protocols, which prioritize stopping at red lights to ensure safe passage for all road users.",
+                "latency": 22.76
+            },
+            {
+                "id": 174,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.8,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image shows a forward-facing dash-cam view from a car driving on a two-lane urban street with parked cars on both sides. The visibility appears to be good, and there are no immediate obstacles or traffic issues visible in the frame.",
+                    "prediction": "Based on the current scene, it seems that the vehicle should continue driving straight ahead. There is no clear indication of any impending hazards or necessary maneuvers at this moment. The driver should maintain a safe speed and distance from other vehicles, such as the car ahead, and be prepared to yield if required by traffic rules.",
+                    "planning": "The current driving situation appears to be straightforward, with no immediate actions needed. The vehicle should continue straight ahead, keeping an eye on the parked cars on both sides of the street to avoid any potential hazards from opening car doors or pedestrians crossing between them."
+                },
+                "violation_count": 0,
+                "critique": "The student's response received a score of 0.4/1.0 because they failed to acknowledge the need for slowing down and stopping safely behind the vehicle ahead, despite the presence of narrow lanes and parked cars, which is a critical consideration in this situation.",
+                "latency": 19.91
+            }
+        ]
+    },
+    "bakllava": {
+        "analysis": {
+            "overall_grade": "F",
+            "overall_score_percent": 52.0,
+            "metrics": {
+                "perception": 0.64,
+                "prediction": 0.48,
+                "planning": 0.4,
+                "total_violations": 0
+            },
+            "analysis": {
+                "strengths": [
+                    "The bakllava VLM achieved a Perception Score of 0.64/1.0, indicating strong performance in detecting and interpreting visual data.",
+                    "The model's Planning Score of 0.40/1.0 suggests that it is capable of generating effective plans for autonomous driving scenarios."
+                ],
+                "weaknesses": [
+                    "The Perception Score could be improved to better handle complex or edge cases.",
+                    "The Planning Score is lower than expected, indicating room for improvement in plan generation and execution."
+                ],
+                "recommendations": [
+                    "Chain-of-Thought prompting to help the model better understand the context of the scene and generate more effective plans.",
+                    "Increase Few-Shot examples to improve the model's ability to generalize across different scenarios and edge cases."
+                ]
+            }
+        },
+        "details": [
+            {
+                "id": 167,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "I see a white line on the road ahead",
+                    "prediction": "The car ahead will turn left in one second",
+                    "planning": "Slow down and prepare to yield to vehicles already in the roundabout, and merge left when safe."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.4/1.0 because it failed to consider the semi-truck's potential lane change and did not account for the need to maintain speed while navigating the roundabout, instead prioritizing slowing down unnecessarily.",
+                "latency": 19.73
+            },
+            {
+                "id": 56,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.6,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image shows a forward-facing dashcam view of a dimly lit urban street at night with parked cars lining both sides and a school bus parked on the left.",
+                    "prediction": "No prediction generated.",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.4/1.0 because it was not provided by the student, indicating that they did not generate any plan to address the driving scenario described.",
+                "latency": 13.3
+            },
+            {
+                "id": 190,
+                "scores": {
+                    "perception": 0.4,
+                    "prediction": 0.6,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "clear road",
+                    "prediction": "other vehicles will maintain safe distances",
+                    "planning": "maintain current speed and lane position"
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.4/1.0 because it only addressed maintaining the current speed and lane position, but did not provide any consideration for potential traffic changes, exits, or highway signs that may require adjustments to the route.",
+                "latency": 13.92
+            },
+            {
+                "id": 164,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "You are an autonomous driving AI. Your task is to analyze the image and return a JSON object with keys 'perception', 'prediction', 'planning'. The values must be NATURAL LANGUAGE PARAGRAPHS. Do not leave blank.",
+                    "prediction": "No prediction generated.",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received a score of 0.4/1.0 because it was incomplete, lacking specific details such as the student's vehicle type, speed limit, and emergency contact information, which are essential for an effective driving plan.",
+                "latency": 13.9
+            },
+            {
+                "id": 174,
+                "scores": {
+                    "perception": 0.8,
+                    "prediction": 0.4,
+                    "planning": 0.4
+                },
+                "feedback": [],
+                "generated_responses": {
+                    "perception": "The image shows a forward-facing dash-cam view from a car driving on a two-lane urban street with parked cars on both sides.",
+                    "prediction": "No prediction generated.",
+                    "planning": "No plan generated."
+                },
+                "violation_count": 0,
+                "critique": "The plan received 0.4/1.0 because it was incomplete, as no specific actions or steps were outlined for the student to take after preparing to slow down and stop safely behind the vehicle ahead.",
+                "latency": 12.93
+            }
+        ]
+    }
+}

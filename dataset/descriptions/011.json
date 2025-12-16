@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a forward-facing view of a two-lane urban street with parked vehicles on both sides and moderate traffic ahead.",
+  "goal": "Proceed straight through the urban street.",
+  "perception": "The vehicle is in the left lane of a two-lane road with double yellow lines separating opposing traffic. The left lane has 'BUS' painted on the road, indicating a bus lane or bus stop area. There is a vehicle directly ahead and several parked cars on both sides of the street. The traffic light ahead is green, allowing vehicles to continue moving forward. Pedestrian crossing signs are visible on the right side, indicating a crosswalk nearby. The sun is low, causing glare on the windshield, which may reduce visibility slightly.",
+  "prediction": "The vehicle ahead will continue moving forward through the green light. Pedestrians may appear near the crosswalk, so caution is needed. Traffic may slow if a bus or other vehicle stops in the bus lane.",
+  "planning": "Maintain current lane and speed, proceed straight through the intersection while monitoring the vehicle ahead and watching for pedestrians near the crosswalk. Prepare to slow if the vehicle ahead or a bus stops in the bus lane.",
+  "image": "011.jpg",
+  "id": 11
+}

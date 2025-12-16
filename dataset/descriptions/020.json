@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a city street intersection with a green traffic light visible ahead.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a crosswalk at an intersection in an urban area. The traffic light ahead is green, indicating permission to proceed. There are parked cars along both sides of the street. The crosswalk is clear of pedestrians at this moment. The road appears to be a two-way street with one lane in each direction. Trees line the street, and buildings with storefronts are visible on both sides. The weather is clear and visibility is good.",
+  "prediction": "The vehicle will start moving forward through the intersection as the light is green and no pedestrians are crossing.",
+  "planning": "Proceed straight through the intersection while maintaining awareness of any pedestrians or vehicles that may enter the crosswalk or intersection unexpectedly.",
+  "image": "020.jpg",
+  "id": 20
+}

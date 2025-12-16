@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a traffic light on a multi-lane urban street during daytime.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, indicating permission to proceed. The road has multiple lanes, including a marked bike lane on the right side. Several vehicles are stopped or moving ahead in the lanes, including a black car directly in front, a white car to the right, and a black SUV to the left. An emergency vehicle with flashing lights is visible on the right side of the intersection, possibly preparing to enter or cross the intersection. Pedestrians are not visible in the crosswalks. The weather is clear with good visibility.",
+  "prediction": "The vehicles ahead will continue moving forward as the light remains green. The emergency vehicle may attempt to cross or merge into traffic, potentially requiring other vehicles to yield.",
+  "planning": "Proceed straight through the intersection cautiously, maintaining awareness of the emergency vehicle and prepared to yield if it enters the lane or intersection. Stay within the lane markings and respect the bike lane.",
+  "image": "015.jpg",
+  "id": 15
+}

@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view on a multi-lane highway approaching an underpass with a stone bridge overhead.",
+  "goal": "Continue driving straight on the highway.",
+  "perception": "The vehicle is traveling on a three-lane highway with clear lane markings. There is a stone arch bridge overhead with a railing and a vehicle traveling on the bridge. Traffic ahead is moderate with several cars in all lanes moving in the same direction. The leftmost lane is separated by a solid yellow line indicating no passing or lane crossing from the left side. The road surface shows some cracks but is generally clear. There are guardrails on both sides of the highway. Weather appears overcast with no precipitation affecting visibility. No traffic signals or stop signs are visible in the immediate vicinity.",
+  "prediction": "Traffic will continue moving steadily under the bridge with no immediate obstructions or changes in traffic flow expected. Vehicles ahead will maintain their lanes and speed.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance from the vehicle ahead. Prepare to adjust speed or lane if traffic conditions change but no immediate action is required.",
+  "image": "099.jpg",
+  "id": 99
+}

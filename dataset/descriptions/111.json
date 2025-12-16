@@ -1,0 +1,9 @@
+{
+  "context": "The view is from inside a vehicle looking forward through a windshield with a dotted sunshade pattern at the top. The scene shows a line of cars parked or stopped along the right side of a street in an urban area.",
+  "goal": "Proceed forward along the street while maintaining safe distance from parked or stopped vehicles.",
+  "perception": "The image shows a row of vehicles lined up along the right side of the street, likely parked or stopped. The street appears narrow with no visible lane markings. There are no visible pedestrians or traffic signals in the immediate view. The dotted pattern on the windshield partially obscures the upper part of the view. The lighting suggests it is daytime with clear weather conditions.",
+  "prediction": "The vehicles ahead are stationary or moving very slowly. Traffic is likely to remain slow or stopped in the immediate area due to the line of cars.",
+  "planning": "Proceed cautiously at a slow speed, maintaining a safe following distance from the vehicle ahead. Be prepared to stop if the line of cars does not move or if pedestrians or other obstacles appear.",
+  "image": "111.jpg",
+  "id": 111
+}

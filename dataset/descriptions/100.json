@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime view of a two-lane road with oncoming traffic and streetlights illuminating the scene. The road appears to be straight with some buildings and trees visible in the distance.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road has two lanes, one for each direction, separated by a dashed center line. There are oncoming vehicles with headlights visible, indicating active traffic. Streetlights provide moderate illumination. The road surface appears clear and dry. There are no visible traffic signals or signs in the immediate view. The right side of the road has a sidewalk and a railing, suggesting a pedestrian area, but no pedestrians are visible. Visibility is limited due to darkness.",
+  "prediction": "Oncoming vehicles will continue moving forward in their lane. No immediate hazards or obstacles are visible ahead. Traffic flow is steady but cautious due to low light conditions.",
+  "planning": "Maintain current lane and speed, keeping a safe distance from oncoming traffic. Use low-beam headlights to avoid blinding other drivers. Stay alert for any unexpected obstacles or pedestrians that may appear.",
+  "image": "100.jpg",
+  "id": 100
+}

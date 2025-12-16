@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane urban street with parked cars on both sides.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The street is a two-way road with one lane in each direction. There are parked cars on both sides of the street, reducing the effective width of the driving lanes. The vehicle ahead is braking as indicated by its illuminated brake lights. There is a pedestrian on the left sidewalk near the parked black SUV. The traffic light visible in the distance is yellow, indicating an imminent change to red. The weather is overcast but visibility is clear. No pedestrians are currently crossing the street.",
+  "prediction": "The vehicle ahead will likely come to a stop soon due to the yellow traffic light. Traffic behind may also slow down or stop at the intersection.",
+  "planning": "Prepare to slow down and stop safely behind the vehicle ahead, respecting the yellow traffic light and maintaining a safe following distance. Do not attempt to overtake due to narrow lanes and parked cars.",
+  "image": "174.jpg",
+  "id": 174
+}

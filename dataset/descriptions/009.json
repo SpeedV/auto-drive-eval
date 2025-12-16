@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a dimly lit urban street at night.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road is a two-lane street with one lane in each direction, separated by a dashed center line. The lane markings on the right indicate a parking lane or shoulder. There are parked cars along the right side of the street. The traffic light ahead is green, allowing vehicles to proceed straight. Streetlights and some illuminated signs are visible, but overall lighting is low. There are no visible pedestrians or cyclists in the roadway or sidewalks at this moment.",
+  "prediction": "The traffic light will remain green for a short time, allowing continuous forward movement. Parked cars will remain stationary. No immediate hazards are visible.",
+  "planning": "Maintain current speed and lane, proceed straight through the intersection while monitoring the traffic light and surroundings for any changes or emerging hazards.",
+  "image": "009.jpg",
+  "id": 9
+}

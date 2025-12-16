@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a narrow, dimly lit residential street with parked cars lining the right side of the road.",
+  "goal": "Drive forward safely along the street.",
+  "perception": "The road is narrow with parked cars on the right side, limiting the available driving space. Streetlights provide limited illumination. There are no visible traffic signs or signals. The road surface appears clear but visibility is reduced due to darkness. There are no pedestrians or moving vehicles visible ahead or on the sidewalks.",
+  "prediction": "The ego vehicle will continue moving forward cautiously, needing to navigate carefully to avoid the parked cars on the right. There is a possibility of encountering pedestrians or other vehicles entering the road from side streets or driveways.",
+  "planning": "Proceed slowly and maintain a central position in the lane to avoid the parked cars on the right. Use low beam headlights to avoid glare and improve visibility. Be prepared to stop or slow down if any obstacles or pedestrians appear.",
+  "image": "151.jpg",
+  "id": 151
+}

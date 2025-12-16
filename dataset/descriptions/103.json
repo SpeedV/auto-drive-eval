@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-way urban street at night with moderate traffic.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road has two lanes in each direction separated by double yellow lines, indicating no passing. The ego vehicle is in the right lane behind a silver SUV. On the right side, several parked cars line the curb. On the left, there are more parked cars and some illuminated storefronts. Streetlights and vehicle headlights provide visibility. Traffic signals are visible ahead, currently showing red for the ego vehicle's direction. Oncoming traffic is present in the opposite lanes. No pedestrians are visible crossing the street.",
+  "prediction": "The silver SUV ahead will likely stop at the red light. Oncoming traffic will remain stopped or slow down as the light is red for the ego vehicle's direction.",
+  "planning": "Prepare to stop behind the silver SUV at the red light, maintaining a safe following distance and obeying traffic signals.",
+  "image": "103.jpg",
+  "id": 103
+}

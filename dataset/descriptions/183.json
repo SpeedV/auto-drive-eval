@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime view from a car stopped at a wide intersection or highway ramp with multiple lanes and overhead signs visible ahead.",
+  "goal": "Proceed straight ahead through the intersection or onto the highway ramp.",
+  "perception": "The vehicle is stopped or moving slowly on a wide paved road with lane markings indicating a merge or ramp area. There are traffic cones and barriers on the left side, suggesting lane restrictions or construction. Overhead green highway signs are visible but not fully legible. Several vehicles are ahead, moving in the same direction. Streetlights illuminate the area, and visibility is moderate given the nighttime conditions. No traffic signals are visible in the image. The road appears clear of pedestrians and obstacles.",
+  "prediction": "Vehicles ahead will continue moving forward along the ramp or highway entrance. The lane restrictions on the left will likely remain, guiding traffic to merge right.",
+  "planning": "Proceed forward cautiously, maintaining lane position and speed appropriate for nighttime and potential merging traffic. Be prepared to adjust speed or lane if vehicles merge from the left or if construction cones require lane changes.",
+  "image": "183.jpg",
+  "id": 183
+}

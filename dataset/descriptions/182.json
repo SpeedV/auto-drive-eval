@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane highway at night.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road has two lanes going in the same direction, separated by dashed white lines. The ego vehicle is in the right lane, following a silver SUV at a safe distance. To the left, a pickup truck is traveling in the adjacent lane. There is a guardrail on the right side of the road and streetlights illuminating the highway. The road appears clear ahead with no visible traffic signals or pedestrians. The weather is clear and visibility is good despite the nighttime conditions.",
+  "prediction": "The vehicles ahead will maintain their current speeds and lanes. No immediate hazards or lane changes are expected in the next few seconds.",
+  "planning": "Maintain current speed and lane, keep a safe following distance behind the silver SUV, and stay alert for any changes in traffic or road conditions.",
+  "image": "182.jpg",
+  "id": 182
+}

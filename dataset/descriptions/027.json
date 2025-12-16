@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a multi-lane urban road approaching an overpass with a traffic signal visible in the distance.",
+  "goal": "Continue driving straight through the intersection ahead.",
+  "perception": "The road has three lanes in the current direction, with clear lane markings. There is a traffic light ahead under the overpass, currently green, allowing vehicles to proceed. A large truck labeled 'SWIFT' is traveling on the overpass above. On the right side, there is a business with a sign for 'Budget Mini Storage' and a few pedestrians on the sidewalk. On the left, a car is parked or moving slowly near the curb. The weather is clear with good visibility, and no immediate obstacles or hazards are present on the road.",
+  "prediction": "Traffic will continue moving forward through the green light. The truck on the overpass will maintain its course, and pedestrians will remain on the sidewalk without crossing the street at this moment.",
+  "planning": "Maintain current speed and lane position to safely proceed through the green light. Stay alert for any changes in the traffic signal or pedestrian movement near the sidewalk.",
+  "image": "027.jpg",
+  "id": 27
+}

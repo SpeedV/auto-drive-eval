@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view from a car stopped behind a tour bus at an urban intersection with pedestrian crosswalks and traffic signs.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a large maroon and cream-colored tour bus (Big Bus Tours) at an intersection. The bus is partially blocking the crosswalk. To the left, there is a 'Do Not Enter' sign indicating a one-way street with traffic allowed only to the left. Pedestrians are visible on the sidewalks and crossing the street to the left. The road markings include white zebra crosswalk lines. The traffic light status is not visible in the image. Surrounding buildings are tall and reflective, typical of a downtown city environment.",
+  "prediction": "The bus will likely proceed forward or turn left shortly, clearing the intersection. Pedestrians will continue crossing on the left side. Vehicles on the right may attempt to merge or turn.",
+  "planning": "Remain stopped behind the bus and wait for it to move forward to clear the intersection. Observe pedestrian crossings and traffic signals before proceeding straight. Do not enter the one-way street to the left as indicated by the 'Do Not Enter' sign.",
+  "image": "145.jpg",
+  "id": 145
+}

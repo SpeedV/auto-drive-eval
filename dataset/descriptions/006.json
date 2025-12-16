@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a city street at night with streetlights and buildings on both sides.",
+  "goal": "Continue driving straight through the upcoming intersection.",
+  "perception": "The road ahead is a two-lane street with a solid white line on the right edge and a dashed white line separating the lanes. There are two vehicles ahead, one in each lane, moving forward. The traffic lights at the intersection ahead show green for the left lane and red for the right lane. Streetlights illuminate the road, and buildings line both sides of the street. There are no visible pedestrians or cyclists in the immediate vicinity. The weather is clear, and visibility is good despite the nighttime conditions.",
+  "prediction": "The vehicle in the left lane will proceed through the green light, while the vehicle in the right lane will stop at the red light. The traffic signal is likely to change soon, potentially allowing the right lane to move shortly.",
+  "planning": "Maintain current speed and lane position in the left lane to proceed safely through the green light. Prepare to adjust speed if the traffic light changes or if the vehicle ahead slows down.",
+  "image": "006.jpg",
+  "id": 6
+}

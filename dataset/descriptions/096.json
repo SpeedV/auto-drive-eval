@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow street with parked cars on both sides during daylight.",
+  "goal": "Continue driving straight ahead along the road.",
+  "perception": "The road is narrow with a single lane marked by a white line on the right side. There are parked cars lining both sides of the street, limiting the drivable space. The sun is low and shining directly into the camera, which may reduce visibility. There are no visible traffic signs or signals in the image. The road surface appears dry with some patches of snow on the right side near the building. The street is clear of pedestrians and other moving vehicles at this moment.",
+  "prediction": "The vehicle will need to proceed cautiously due to the narrow lane and parked cars on both sides. Oncoming traffic or pedestrians may appear suddenly given the limited space.",
+  "planning": "Proceed slowly and stay centered in the lane to avoid parked cars. Maintain heightened awareness for any oncoming vehicles or pedestrians that may enter the lane, especially given the sun glare. Prepare to stop or yield if necessary.",
+  "image": "096.jpg",
+  "id": 96
+}

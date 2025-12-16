@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at an intersection in an urban area with wet roads and snow piled on the sidewalks.",
+  "goal": "Proceed straight through the intersection when safe and legal.",
+  "perception": "The traffic light ahead is red, requiring a full stop. There are multiple vehicles ahead and to the right, including trucks and vans parked or stopped. Road construction is visible on the left with orange barriers and a 'NO THRU TRAFFIC' sign, indicating restricted access in that lane. The street is wet, likely slippery due to recent snow, which is piled on the sidewalks. A sign on the right indicates 'NO TURNS FOR TRUCKS,' restricting truck turns at this intersection. Pedestrian crosswalks are clearly marked. Buildings line both sides of the street, and visibility is moderate due to overcast weather.",
+  "prediction": "The traffic light will likely remain red for a few more seconds, keeping vehicles stopped. Trucks will comply with the no-turn restriction and continue straight or wait. Pedestrians may cross once the light changes.",
+  "planning": "Remain stopped behind the white line until the traffic light turns green. Prepare to proceed straight through the intersection cautiously, considering the wet road conditions and nearby construction. Do not turn or attempt to bypass the red light.",
+  "image": "059.jpg",
+  "id": 59
+}

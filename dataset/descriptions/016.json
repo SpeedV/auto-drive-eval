@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a two-lane road with parking on both sides and clear lane markings under a sunny sky.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has two lanes separated by double yellow lines indicating no passing. Both sides of the street have parked cars. The lane markings ahead show straight arrows, confirming the lane is for through traffic only. There are no visible traffic signals or pedestrians in the immediate vicinity. The weather is clear with good visibility. The road appears clear of moving vehicles in the ego lane.",
+  "prediction": "The ego vehicle can continue straight without immediate obstruction. Parked cars remain stationary on both sides, and no other vehicles are currently merging into the lane.",
+  "planning": "Maintain current lane and speed while monitoring for any vehicles pulling out from parking or pedestrians entering the roadway. Proceed straight ahead following traffic rules and lane markings.",
+  "image": "016.jpg",
+  "id": 16
+}

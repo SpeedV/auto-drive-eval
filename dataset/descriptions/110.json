@@ -1,0 +1,9 @@
+{
+  "context": "The view is from inside a vehicle looking forward through a windshield with a dotted sunshade pattern at the top. The scene shows a line of vehicles stopped or moving slowly on a multi-lane road in daylight.",
+  "goal": "Proceed forward through the traffic.",
+  "perception": "The vehicle is in a queue of cars on a multi-lane road. The vehicles ahead are closely spaced, indicating slow or stopped traffic. There are no visible traffic signals or signs in the image, and the road appears to be in an urban or suburban setting. The weather is clear with good visibility. The dotted pattern on the windshield partially obscures the view but does not hide the presence of multiple vehicles ahead.",
+  "prediction": "Traffic ahead is likely to remain slow or stopped for the next few seconds, as the line of vehicles suggests congestion or a traffic signal ahead.",
+  "planning": "Maintain a safe following distance and prepare to stop or move slowly as traffic ahead dictates. Avoid sudden acceleration or lane changes until traffic flow improves.",
+  "image": "110.jpg",
+  "id": 110
+}

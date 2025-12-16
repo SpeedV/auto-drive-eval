@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane urban street at night.",
+  "goal": "Continue driving straight through the intersection.",
+  "perception": "The road has three lanes in the direction of travel, with the rightmost lane marked as a parking lane. Traffic lights ahead are green, allowing vehicles to proceed straight. Several cars are visible ahead and to the right, with one car pulling out from the parking lane into the travel lane. Streetlights illuminate the area, and buildings line the left side of the street. No pedestrians are visible crossing the road at this time.",
+  "prediction": "The car merging from the parking lane will enter the travel lane ahead, potentially slowing traffic in that lane. Vehicles ahead will continue moving through the green light.",
+  "planning": "Maintain current speed and lane, be prepared to adjust speed or change lanes slightly to accommodate the merging vehicle safely while proceeding through the green light.",
+  "image": "117.jpg",
+  "id": 117
+}

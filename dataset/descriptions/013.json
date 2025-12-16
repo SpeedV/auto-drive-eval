@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a wet, multi-lane urban road on a cloudy day with light traffic.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has at least two lanes in the direction of travel. The lane markings are visible but somewhat faded. There are several vehicles ahead, including a black SUV and a dark-colored sedan in the left lane, and a white sedan in the right lane close to the ego vehicle. The road surface is wet, indicating recent or ongoing rain, which may reduce traction. There is a green traffic sign on the left indicating 'Trucks Route' straight ahead. Traffic lights are visible in the distance and appear to be green. Trees and some buildings line the sides of the road. No pedestrians or cyclists are visible. The weather is overcast, and visibility is moderate.",
+  "prediction": "The vehicles ahead will continue moving forward at a moderate pace, likely maintaining their lanes. The traffic light will remain green for a short period, allowing traffic to proceed through the intersection.",
+  "planning": "Maintain a safe following distance and continue driving straight ahead, adjusting speed for wet road conditions. Prepare to slow down if the traffic light changes or if vehicles ahead reduce speed.",
+  "image": "013.jpg",
+  "id": 13
+}

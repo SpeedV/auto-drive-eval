@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view at a multi-lane urban intersection on a clear day.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a traffic light showing green for straight movement. The lane markings indicate two lanes for going straight. There are several vehicles ahead also preparing to go straight. The intersection is wide with clear lane markings and directional arrows. Surrounding environment includes palm trees and multi-story buildings. Traffic signs indicate mandatory forward movement. No pedestrians are crossing the road at this moment.",
+  "prediction": "Vehicles ahead will continue moving straight through the intersection as the light remains green. Traffic flow will remain steady with no immediate hazards visible.",
+  "planning": "Proceed straight through the intersection maintaining lane discipline and observing the traffic light. Keep a safe distance from the vehicle ahead and be prepared to slow down if traffic conditions change.",
+  "image": "091.jpg",
+  "id": 91
+}

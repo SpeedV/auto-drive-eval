@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view from a car driving on a multi-lane urban road with a bus in the adjacent right lane and a grassy median to the left.",
+  "goal": "Continue driving straight ahead in the current lane.",
+  "perception": "The vehicle is traveling on a multi-lane road with at least two lanes in the same direction. The lane markings are visible, showing a solid white line separating the current lane from the right lane where a bus is traveling. The bus is partially encroaching on the ego vehicle's lane. To the left, there is a grassy median with palm trees and a separate road with parked cars and a truck. Traffic ahead appears light with no immediate obstacles. The weather is clear and visibility is good. There are no visible traffic signals or signs restricting lane usage or speed.",
+  "prediction": "The bus may continue moving slightly into the ego vehicle's lane or return fully to its lane. Traffic ahead is expected to remain clear in the ego lane for the next few seconds.",
+  "planning": "Maintain current lane and speed while keeping a safe distance from the bus. Be prepared to adjust speed or position slightly to the left if the bus continues to encroach, ensuring safety and compliance with lane discipline.",
+  "image": "017.jpg",
+  "id": 17
+}

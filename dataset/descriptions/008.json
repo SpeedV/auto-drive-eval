@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane urban street at night.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road ahead is a multi-lane street with visible lane markings, including a pedestrian crosswalk immediately in front of the vehicle. Traffic is moderate with several vehicles traveling in the opposite direction, their headlights visible. Streetlights illuminate the road, and there are buildings and businesses on both sides, including a brightly lit sign on the right. No traffic signals or stop signs are visible in the immediate view. The road appears clear of pedestrians at the crosswalk.",
+  "prediction": "Vehicles in the opposite lanes will continue moving forward. No immediate obstacles or pedestrians are expected to enter the vehicle's path in the next few seconds.",
+  "planning": "Proceed straight ahead cautiously, maintaining lane position and speed appropriate for nighttime urban driving, while remaining alert for any pedestrians or traffic signals that may appear.",
+  "image": "008.jpg",
+  "id": 8
+}

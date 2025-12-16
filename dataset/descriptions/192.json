@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view at a small urban intersection with a pedestrian crosswalk and a traffic light.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, indicating permission to proceed. There is a pedestrian crosswalk visible, but no pedestrians are currently crossing. The road curves slightly to the left. There are parked cars on the right side of the road and a white car turning left from the side street. The weather is clear with good visibility. No stop or yield signs are visible, and the road surface appears dry.",
+  "prediction": "The white car turning left will complete its turn onto the main road. No pedestrians are expected to cross immediately. The green light will likely remain for a few more seconds.",
+  "planning": "Continue driving straight through the intersection at a safe speed, maintaining awareness of the turning vehicle and any potential pedestrians near the crosswalk.",
+  "image": "192.jpg",
+  "id": 192
+}

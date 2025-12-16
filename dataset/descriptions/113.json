@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a city street at night with streetlights illuminating the scene.",
+  "goal": "Continue driving straight through the intersection.",
+  "perception": "The vehicle is approaching an intersection with a green traffic light visible ahead. There are cars parked on both sides of the street and a yellow car directly ahead in the same lane. Pedestrians are visible on the sidewalks, but none are crossing the street at this moment. The road appears to be a two-lane one-way street with no immediate obstacles or hazards. Streetlights provide adequate visibility despite the nighttime conditions.",
+  "prediction": "The yellow car ahead will continue moving straight through the green light. Pedestrians will remain on the sidewalks as the light remains green.",
+  "planning": "Maintain current speed and lane, proceed straight through the intersection while monitoring the yellow car ahead and pedestrians on the sidewalks for any sudden movements.",
+  "image": "113.jpg",
+  "id": 113
+}

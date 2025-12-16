@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime urban street scene with traffic lights visible ahead and buildings lining both sides of the street.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light directly ahead is green, indicating the vehicle has the right of way to continue straight. The street is dimly lit, and there are multiple vehicles ahead with their brake lights on, suggesting slowing or stopping traffic. Buildings and trees obscure some visibility, but no pedestrians are visible crossing the street. The road appears to be a multi-lane urban street with moderate traffic.",
+  "prediction": "Traffic ahead may slow or stop soon, as indicated by brake lights on vehicles. The green light may remain for a short duration before changing.",
+  "planning": "Maintain current speed and lane while preparing to slow down if traffic ahead continues to brake. Proceed through the intersection cautiously, adhering to the green light and traffic flow.",
+  "image": "063.jpg",
+  "id": 63
+}

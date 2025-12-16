@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane urban street with parked cars on both sides during daytime.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has two lanes separated by double yellow lines indicating no passing. There are parked cars along both sides of the street, including a large blue box truck on the right side partially obstructing the curb lane. The street is clear ahead with no immediate traffic signals visible. Pedestrians are present on the sidewalk to the right but not crossing the street. The weather is clear and sunny with good visibility.",
+  "prediction": "The parked vehicles will remain stationary. Oncoming traffic may approach in the left lane. The blue truck may limit visibility of the curb lane on the right.",
+  "planning": "Maintain the current lane and speed, staying centered in the lane to avoid parked vehicles. Be prepared to slow down or stop if oncoming traffic approaches or if a parked vehicle or pedestrian unexpectedly enters the roadway.",
+  "image": "069.jpg",
+  "id": 69
+}

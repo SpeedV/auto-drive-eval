@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime urban intersection with multiple lanes and traffic signals.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a red crosswalk line at an intersection in a city at night. The traffic light visible on the left side is green, indicating permission to proceed. Multiple lanes are visible, with vehicles ahead moving forward. The road markings include crosswalk stripes and lane dividers. There are illuminated storefronts and streetlights on both sides of the street. No pedestrians are currently crossing the intersection. Traffic appears moderate with vehicles moving steadily.",
+  "prediction": "Vehicles ahead will continue moving straight through the intersection as the green light remains on. No immediate pedestrian crossing is expected.",
+  "planning": "Proceed straight through the intersection while maintaining awareness of surrounding vehicles and any pedestrians that may appear. Ensure to follow the green traffic signal and yield if any unexpected obstacles arise.",
+  "image": "143.jpg",
+  "id": 143
+}

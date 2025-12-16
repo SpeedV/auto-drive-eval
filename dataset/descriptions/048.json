@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane road at night with streetlights illuminating the scene.",
+  "goal": "Continue driving straight along the road.",
+  "perception": "The road is a two-lane street with a double yellow centerline indicating no passing. The road curves gently to the right ahead. There are streetlights providing some illumination, and a few vehicles are visible in the distance with their rear lights on. The right edge of the road is marked with a solid white line. There are no visible pedestrians or traffic signs in the immediate vicinity. Visibility is limited due to darkness.",
+  "prediction": "The vehicle ahead will continue following the curve to the right. No immediate obstacles or hazards are visible on the road. Traffic is light and steady.",
+  "planning": "Maintain a safe speed appropriate for nighttime driving and the curve ahead. Stay within the lane, keep a safe following distance from the vehicle ahead, and be prepared to adjust speed if any hazards appear.",
+  "image": "048.jpg",
+  "id": 48
+}

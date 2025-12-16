@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a nighttime forward-facing dash-cam view at an intersection with traffic lights visible ahead.",
+  "goal": "Proceed straight through the intersection when safe and legal.",
+  "perception": "The traffic lights directly ahead are red, indicating the vehicle must stop. There is a pedestrian crosswalk clearly marked on the road. Two cars are stopped on the right side of the intersection, likely waiting for their green light. The surroundings are dark with limited visibility beyond the intersection. No pedestrians are visible on the crosswalk or sidewalks at this moment.",
+  "prediction": "The traffic light will remain red for a short period before switching to green, allowing vehicles to proceed. The stopped cars will likely start moving once the light changes.",
+  "planning": "The ego vehicle should remain stopped behind the crosswalk, obeying the red light. It should prepare to proceed straight once the light turns green and the intersection is clear of pedestrians and other vehicles.",
+  "image": "033.jpg",
+  "id": 33
+}

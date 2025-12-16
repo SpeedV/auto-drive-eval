@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped behind a silver Mercedes C300 on a two-lane urban street with traffic lights ahead.",
+  "goal": "Proceed straight through the upcoming intersection.",
+  "perception": "The vehicle is stopped behind a silver Mercedes C300 on a two-lane street with one lane in each direction. The traffic light ahead is green, allowing vehicles to proceed straight. There is a black car parked partially on the sidewalk to the right, and other parked cars line both sides of the street. Pedestrians are visible on the left sidewalk but not crossing. The weather is clear and visibility is good. The street appears to be a typical urban residential/commercial area with no immediate hazards or unusual conditions.",
+  "prediction": "The silver Mercedes in front will start moving forward as the green light continues. Traffic ahead is expected to clear gradually, allowing vehicles to proceed through the intersection.",
+  "planning": "Prepare to move forward once the vehicle ahead starts moving, maintaining a safe following distance. Continue straight through the intersection following the green light and obeying traffic rules.",
+  "image": "068.jpg",
+  "id": 68
+}

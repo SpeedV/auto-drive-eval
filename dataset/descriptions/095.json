@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a narrow, dimly lit residential street at night with parked cars lining both sides of the road.",
+  "goal": "Drive forward along the street.",
+  "perception": "The street is narrow with parked vehicles on both sides, leaving a single lane for driving. The road surface appears clear with no visible pedestrians or obstacles. Streetlights provide limited illumination. There are no visible traffic signs or signals in the immediate vicinity. The parked cars are stationary, and the road ahead appears straight with a green traffic light visible in the distance.",
+  "prediction": "The vehicle can continue moving forward cautiously as the road is clear, but must be prepared to slow down or stop if any vehicles or pedestrians appear from between parked cars or near the intersection ahead.",
+  "planning": "Proceed forward slowly and carefully, maintaining a central lane position to avoid parked cars on both sides. Be vigilant for any sudden movements from parked vehicles or pedestrians, and prepare to stop at the upcoming green traffic light if it changes.",
+  "image": "095.jpg",
+  "id": 95
+}

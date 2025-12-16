@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a narrow, two-lane road with the ego vehicle stopped behind a white Toyota Camry. The road is bordered by a stone wall and a fence on the right side.",
+  "goal": "Proceed forward safely along the road.",
+  "perception": "The ego vehicle is stopped behind a white Toyota Camry with its brake lights on, indicating it is stationary or slowing. The road is narrow with no visible lane markings except a curb line on the right. There is a stone wall and metal fence on the right side, limiting shoulder space. The road ahead is dark with limited visibility, and there are no visible traffic signals or signs in the immediate vicinity. Oncoming traffic is visible in the distance on the left side of the road. The ego vehicle must maintain a safe following distance and be prepared for any changes in traffic flow.",
+  "prediction": "The white Toyota in front is likely to start moving forward soon as the road ahead appears clear. Oncoming traffic will continue to approach from the opposite direction.",
+  "planning": "Maintain a safe following distance behind the white Toyota, keep headlights on for visibility, and proceed forward cautiously once the vehicle ahead moves. Be prepared to slow or stop if any obstacles or hazards appear.",
+  "image": "157.jpg",
+  "id": 157
+}

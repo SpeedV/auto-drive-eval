@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a forward-facing dash-cam view at night on a wet urban street with traffic lights ahead.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The road is wet and reflective due to recent rain. The traffic light ahead is green, allowing vehicles to proceed straight. There is a 'No Left Turn' sign visible on the left side of the road. Several vehicles are present, including a black SUV turning right and other cars waiting or moving on the right side. Streetlights illuminate the scene, but visibility is somewhat reduced due to darkness and raindrops on the windshield.",
+  "prediction": "The black SUV will complete its right turn, and vehicles will continue moving straight through the intersection while the light remains green.",
+  "planning": "Maintain current lane and speed to proceed straight through the intersection, ensuring to keep a safe distance from the turning vehicle and adjusting for wet road conditions.",
+  "image": "064.jpg",
+  "id": 64
+}

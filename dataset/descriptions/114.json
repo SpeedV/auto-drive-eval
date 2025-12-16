@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane urban street at night.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, allowing vehicles to continue straight. There are multiple lanes visible, with the ego vehicle in the rightmost lane. Several cars are ahead and to the left, moving forward. The road curves slightly to the right. Streetlights and building lights illuminate the scene, and there are no pedestrians visible on the road or sidewalks. The right lane appears clear for driving.",
+  "prediction": "Vehicles ahead will continue moving straight through the intersection as the green light remains on. Traffic flow will likely remain steady for the next few seconds.",
+  "planning": "Maintain current lane and speed to proceed straight through the intersection, ensuring to monitor surrounding vehicles and traffic signals for any changes.",
+  "image": "114.jpg",
+  "id": 114
+}

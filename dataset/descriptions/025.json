@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view at an intersection on a clear day with a green traffic light and a left-turn arrow signal.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a red light, now showing green for straight and left-turn lanes. The left-turn arrow is green, indicating left turns are allowed. The main green light allows vehicles to proceed straight. The road is wide with multiple lanes, and there are parked vehicles on both sides. No pedestrians are visible crossing the street. The weather is clear with good visibility.",
+  "prediction": "Vehicles in the left-turn lane will begin turning left, and vehicles in the straight lanes will proceed forward through the intersection.",
+  "planning": "Proceed straight through the intersection, maintaining lane and speed consistent with the green light, while being cautious of vehicles turning left from the adjacent lane.",
+  "image": "025.jpg",
+  "id": 25
+}

@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view on a two-lane urban street with one lane per direction, under clear daylight conditions.",
+  "goal": "Proceed straight through the upcoming intersection.",
+  "perception": "The ego vehicle is behind a black Honda Civic stopped or moving slowly in the right lane. On the left lane, a white Toyota van is approaching in the opposite direction. Ahead, there is an orange 'ROAD WORK AHEAD' sign on the right sidewalk, indicating upcoming construction or lane changes. The traffic light ahead is green, allowing vehicles to proceed. The road has double yellow lines separating the two directions, prohibiting passing. Sidewalks are present on both sides with residential houses and trees.",
+  "prediction": "The black Honda Civic will continue moving forward through the intersection as the light remains green. The oncoming white van will continue in its lane. Road work ahead may cause slowing or lane adjustments shortly after the intersection.",
+  "planning": "Maintain current lane and speed to proceed straight through the intersection while monitoring the vehicle ahead and the road work sign. Prepare to slow down or adjust lane position if construction affects the roadway beyond the intersection.",
+  "image": "018.jpg",
+  "id": 18
+}

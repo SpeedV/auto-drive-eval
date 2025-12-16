@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view from a car driving on a two-lane urban road with a center median and parked cars on the right side.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is approaching an intersection with a yield sign visible on the left side of the road. There is a white SUV partially on the sidewalk and partially on the road to the right, which may be re-entering traffic. Traffic is moderate with several vehicles visible ahead and to the left in the opposite lanes. The road surface is uneven near the curb on the right. No traffic lights are visible, so right-of-way is governed by the yield sign and general traffic rules. The weather is clear with good visibility.",
+  "prediction": "The white SUV on the right may attempt to merge back into the lane, potentially slowing traffic. Vehicles on the main road will continue moving forward, with some possibly slowing near the yield sign.",
+  "planning": "Maintain a safe speed and be prepared to yield or slow down if the white SUV merges into the lane. Proceed cautiously through the intersection, giving right-of-way to vehicles already on the main road as indicated by the yield sign.",
+  "image": "030.jpg",
+  "id": 30
+}

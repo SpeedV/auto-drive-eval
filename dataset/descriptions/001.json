@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a two-lane urban road lined with palm trees and buildings on the left and shaded trees on the right, with light traffic ahead.",
+  "goal": "Continue driving straight on the current road.",
+  "perception": "The road has two lanes in the same direction, separated by dashed white lines. There are two cars ahead, one in each lane, traveling in the same direction as the ego vehicle. The left lane is slightly faster moving. The road is clear with no immediate obstacles or pedestrians crossing. The weather is clear and sunny, and visibility is good. There are sidewalks on both sides with a pedestrian visible on the right sidewalk. Traffic signs and signals are not clearly visible in the image, so no traffic light status can be confirmed.",
+  "prediction": "The vehicles ahead will continue moving forward at a steady pace. No sudden stops or turns are expected in the next few seconds based on current spacing and speed.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance from the vehicle ahead. Stay alert for any changes in traffic flow or signals as the road continues.",
+  "image": "001.jpg",
+  "id": 1
+}

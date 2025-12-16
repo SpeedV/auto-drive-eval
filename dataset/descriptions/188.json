@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a forward view through a rain-covered windshield on a wet urban street with buildings on both sides and parked cars along the right side.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road is wet from rain, reducing visibility and traction. Water droplets on the windshield partially obscure the view. The street is two lanes wide with a solid yellow line on the left indicating no passing. Parked cars line the right side of the street. Traffic lights are visible in the distance but their color is unclear due to rain and distance. There are no visible pedestrians or moving vehicles immediately ahead. The weather is overcast and rainy, requiring cautious driving.",
+  "prediction": "Traffic lights ahead may change soon; vehicles ahead may slow or stop. Wet road conditions increase stopping distance and risk of skidding.",
+  "planning": "Reduce speed to maintain safe control on the wet road, increase following distance, and prepare to stop if the traffic light ahead turns red. Use windshield wipers and headlights for better visibility and safety.",
+  "image": "188.jpg",
+  "id": 188
+}

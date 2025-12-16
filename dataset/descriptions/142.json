@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow residential street with parked cars on both sides.",
+  "goal": "Drive straight ahead along the residential street.",
+  "perception": "The street is a two-way residential road with no visible lane markings. Cars are parked on both sides, reducing the effective driving width. There is a pedestrian walking on the left sidewalk. The weather is clear and sunny with patches of snow on the grass and sidewalks. No traffic signs or signals are visible in the immediate view. The road surface appears dry and clear of ice or snow.",
+  "prediction": "The pedestrian will continue walking on the sidewalk. Parked cars may have occupants entering or exiting, so there is a potential for sudden pedestrian or vehicle movement near the parked cars.",
+  "planning": "Proceed slowly and cautiously, maintaining a central position in the lane to avoid parked cars. Be prepared to stop or slow down if pedestrians step onto the road or if parked vehicles start moving. Maintain awareness of the pedestrian on the left sidewalk.",
+  "image": "142.jpg",
+  "id": 142
+}

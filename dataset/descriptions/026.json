@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a forward-facing view of a residential street with parked cars lining both sides of the road under clear daylight conditions.",
+  "goal": "Drive straight ahead along the residential street.",
+  "perception": "The road is a two-way street with one lane in each direction, bordered by parked cars on both sides. The street is clear of moving vehicles directly ahead, and there are no visible pedestrians or cyclists in the immediate path. The sun is low on the left side, potentially causing glare. There are no visible traffic signs or signals in the image. The road surface appears dry and unobstructed.",
+  "prediction": "The road ahead will likely remain clear for the next few seconds, but parked cars on both sides may cause occasional obstacles if any vehicle doors open or pedestrians step out.",
+  "planning": "Continue driving straight at a safe speed, maintaining a central lane position to avoid parked cars. Be cautious of potential hazards from parked vehicles and adjust speed or stop if necessary.",
+  "image": "026.jpg",
+  "id": 26
+}

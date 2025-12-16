@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime urban intersection with multiple lanes and traffic signals visible ahead.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a white pickup truck in the left lane, which is marked for left turns only. The lane to the right is marked for straight or right turns. Traffic lights ahead are green. A 'Do Not Enter' sign with a red X is visible on the left side, indicating a restricted lane or road. Other vehicles are moving through the intersection in the adjacent lanes. Street lighting and building lights illuminate the scene.",
+  "prediction": "The pickup truck in front is likely to turn left as indicated by the lane markings. Vehicles in the right lane will continue straight or turn right. The green light will remain for a few more seconds, allowing traffic to proceed.",
+  "planning": "Change to the right lane to proceed straight through the intersection, as the current lane is designated for left turns only and has a 'Do Not Enter' sign indicating restricted access. Maintain awareness of surrounding vehicles and obey traffic signals.",
+  "image": "200.jpg",
+  "id": 200
+}

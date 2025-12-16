@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime urban street scene with the ego vehicle stopped behind a yellow van at a crosswalk. The street is moderately narrow with parked cars on the right side and a taxi moving on the left lane.",
+  "goal": "Proceed straight ahead through the intersection.",
+  "perception": "The ego vehicle is stopped behind a yellow van at a pedestrian crosswalk. There is a taxi in the left lane moving forward. Pedestrians are present on the right sidewalk, with one person stepping off the curb near the parked white car. Streetlights and building lights illuminate the area. No traffic signals are visible in the image, so right-of-way is likely governed by pedestrian presence and standard urban traffic rules. The road appears to be a two-way street with one lane in each direction.",
+  "prediction": "The pedestrian near the white car may step onto the crosswalk, requiring vehicles to yield. The yellow van ahead may start moving soon, and the taxi on the left lane will continue forward. Other pedestrians may also cross the street.",
+  "planning": "Remain stopped to yield to any pedestrians entering the crosswalk. Prepare to proceed straight once the crosswalk is clear and the yellow van ahead begins moving, ensuring safe passage through the intersection.",
+  "image": "066.jpg",
+  "id": 66
+}

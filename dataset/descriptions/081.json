@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime urban street intersection with traffic stopped at a red light. The view is forward-facing from a vehicle waiting at the crosswalk.",
+  "goal": "Wait for the light to turn green and proceed straight through the intersection.",
+  "perception": "The traffic light ahead is red, indicating the ego vehicle must stop. A pedestrian is crossing the street in front of the vehicle within the marked crosswalk. Vehicles are stopped in the left and center lanes, waiting for the light to change. The pedestrian signal shows a countdown, currently at 6 seconds, allowing pedestrians to cross safely. The street is wet, suggesting recent rain or moisture, which may affect stopping distance.",
+  "prediction": "The pedestrian will finish crossing within the next few seconds as the countdown reaches zero. The traffic light will likely remain red for a short time before turning green.",
+  "planning": "Remain stopped and yield to the pedestrian crossing. Prepare to proceed straight once the pedestrian has cleared the crosswalk and the traffic light turns green.",
+  "image": "081.jpg",
+  "id": 81
+}

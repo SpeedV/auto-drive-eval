@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime urban intersection with a green traffic light.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, indicating the vehicle has the right of way to proceed. The road is marked with a pedestrian crosswalk, but no pedestrians are visible crossing at this time. There are vehicles visible on the left side of the intersection, likely waiting or moving in the opposite direction. The street is dimly lit, but the traffic signals and road markings are visible. No immediate hazards or obstructions are present in the lane ahead.",
+  "prediction": "The vehicle can continue moving forward through the intersection as the green light remains active. Cross traffic is likely stopped or waiting due to their red light.",
+  "planning": "Proceed straight through the intersection with caution, maintaining awareness of any pedestrians or vehicles that may enter the crosswalk or intersection unexpectedly.",
+  "image": "124.jpg",
+  "id": 124
+}

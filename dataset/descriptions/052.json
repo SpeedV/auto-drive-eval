@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at an intersection on a wet road with overcast skies.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is red, indicating the vehicle must stop. The road surface is wet from recent rain, which may reduce traction. There is a black SUV ahead that has already started moving through the intersection. The intersection has clear lane markings and pedestrian crosswalks. There are no visible pedestrians crossing at this moment. The surrounding area includes commercial buildings and some greenery.",
+  "prediction": "The black SUV will continue moving straight through the intersection as the light changes. The traffic light will likely turn green soon, allowing the ego vehicle to proceed.",
+  "planning": "Remain stopped and wait for the traffic light to turn green before proceeding straight through the intersection. Maintain a safe distance from the vehicle ahead and be cautious due to the wet road conditions.",
+  "image": "052.jpg",
+  "id": 52
+}

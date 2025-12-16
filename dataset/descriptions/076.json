@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped in traffic on a multi-lane urban bridge during daytime with clear weather.",
+  "goal": "Proceed forward through the traffic congestion.",
+  "perception": "The vehicle is in the right lane of a two-lane road on a bridge. Traffic is heavily congested with vehicles stopped or moving slowly in both lanes. The left lane has a continuous line of cars, including a silver sedan and a yellow taxi. The right lane, where the ego vehicle is, has a dark gray sedan directly ahead. The road surface is wet, and there are snow piles along the right side barrier, indicating recent snow or cold weather. There are no visible traffic signals or signs in the immediate view. The sky is clear and visibility is good.",
+  "prediction": "Traffic congestion is likely to persist for several more seconds or minutes, with slow or stop-and-go movement expected on both lanes.",
+  "planning": "Maintain a safe following distance behind the gray sedan ahead, remain in the current lane, and proceed cautiously as traffic slowly moves forward. Avoid lane changes due to heavy congestion and road conditions.",
+  "image": "076.jpg",
+  "id": 76
+}

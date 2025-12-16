@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a narrow, dimly lit urban street at night with parked cars lining both sides.",
+  "goal": "Proceed straight ahead along the street.",
+  "perception": "The street is a two-way residential road with parked vehicles on both sides, reducing the effective driving width. Streetlights provide limited illumination. There are no visible pedestrians or moving vehicles in the immediate vicinity. No traffic signals or stop signs are visible. The road surface appears clear and dry. The parked cars limit maneuvering space, so careful navigation is required.",
+  "prediction": "The road ahead remains clear with no immediate obstacles or traffic. Parked cars may cause occasional narrowing, but no sudden hazards are visible.",
+  "planning": "Proceed slowly and cautiously, maintaining a central lane position to avoid parked vehicles. Stay alert for any pedestrians or vehicles that may appear suddenly from between parked cars.",
+  "image": "097.jpg",
+  "id": 97
+}

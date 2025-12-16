@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a multi-lane road on a rainy day, with light traffic and commercial buildings on the right side.",
+  "goal": "Continue driving straight ahead on the current road.",
+  "perception": "The road has three lanes in the direction of travel, with a solid white line marking the right edge. The weather is rainy, as indicated by water droplets on the windshield. Traffic is light, with several vehicles ahead and to the left. There are no visible traffic signals or stop signs in the immediate vicinity. The rightmost lane appears to be an exit or turn lane, but the ego vehicle is currently positioned in the middle lane. Commercial buildings and parking areas are visible on the right side of the road. The road surface appears wet, requiring cautious driving.",
+  "prediction": "Vehicles ahead will continue moving forward at moderate speed. No immediate hazards or stops are visible. Traffic flow is steady and likely to continue smoothly for the next few seconds.",
+  "planning": "Maintain current lane and speed while driving cautiously due to wet road conditions. Monitor traffic ahead and to the sides for any changes. Prepare to adjust speed or lane if necessary, but no immediate action is required.",
+  "image": "098.jpg",
+  "id": 98
+}

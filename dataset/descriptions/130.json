@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane urban street at night.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road ahead is a multi-lane street with at least two lanes visible in the direction of travel. Streetlights illuminate the road, and there are parked vehicles along the right side. Traffic signals are visible in the distance, currently showing red lights. There is no visible pedestrian activity on the road or sidewalks. The left side of the road is separated by a concrete barrier from oncoming traffic. The weather appears clear with no precipitation.",
+  "prediction": "The traffic lights ahead will remain red for a short period, causing vehicles to stop or slow down. Parked vehicles on the right will remain stationary. No immediate hazards are visible.",
+  "planning": "Reduce speed and prepare to stop at the red traffic light ahead, maintaining lane position and observing for any pedestrians or vehicles entering the roadway.",
+  "image": "130.jpg",
+  "id": 130
+}

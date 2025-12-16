@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime view of a quiet urban street with parked cars lining both sides and streetlights illuminating the road.",
+  "goal": "Proceed straight ahead along the street.",
+  "perception": "The road is a two-way street with parked vehicles on both sides. There is a clearly marked pedestrian crosswalk immediately ahead. Streetlights provide moderate illumination, and buildings with lit windows and entrances are visible on the right side. No pedestrians are currently visible on or near the crosswalk. Traffic appears light with no moving vehicles in the immediate vicinity. The road surface is dry and clear.",
+  "prediction": "No pedestrians are currently approaching the crosswalk, so it is likely safe to proceed. Parked cars may start to move or open doors, but no immediate hazards are visible.",
+  "planning": "Proceed straight ahead with caution, reducing speed slightly when crossing the pedestrian crosswalk to ensure no pedestrians suddenly appear. Maintain awareness of parked cars on both sides for any unexpected movements.",
+  "image": "146.jpg",
+  "id": 146
+}

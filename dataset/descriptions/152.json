@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a dimly lit urban street at night.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road curves gently to the left with streetlights illuminating the path. There are no visible vehicles or pedestrians on the road. A no-left-turn sign is visible on the left side of the street, indicating that left turns are prohibited at the upcoming intersection or junction. The road is clear and dry, with a sidewalk on the right side bordered by a low wall. Visibility is limited due to nighttime conditions but adequate for cautious driving.",
+  "prediction": "The vehicle will continue along the curved road to the left without turning left at the intersection, complying with the no-left-turn sign.",
+  "planning": "Maintain a steady speed and follow the curve of the road to the left, avoiding any left turns as prohibited by the traffic sign. Stay alert for any potential hazards or changes in traffic conditions ahead.",
+  "image": "152.jpg",
+  "id": 152
+}

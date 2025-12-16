@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a two-lane urban street with parked cars lining both sides and traffic approaching from the opposite direction.",
+  "goal": "Proceed straight ahead along the current road.",
+  "perception": "The road is a two-way street with a double yellow line separating the lanes. Parked vehicles occupy both sides of the street. Oncoming traffic is visible with headlights on, indicating active flow in the opposite lane. The street is illuminated by overhead streetlights, and the road surface appears wet or reflective. There are no visible traffic signals or signs in the immediate view. The ego vehicle is positioned in its lane, facing forward.",
+  "prediction": "Oncoming traffic will continue moving forward in their lane. Parked cars will remain stationary. The ego vehicle can expect to maintain its lane with no immediate obstacles ahead.",
+  "planning": "Maintain current lane and speed, proceed straight cautiously given nighttime conditions and oncoming traffic. Stay alert for any sudden movements from parked cars or pedestrians.",
+  "image": "094.jpg",
+  "id": 94
+}

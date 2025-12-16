@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime urban street scene with a white van parked on the right side of the road and several vehicles ahead in the distance.",
+  "goal": "Proceed forward along the street.",
+  "perception": "The vehicle is behind a white van parked partially on the curb with snow piled next to it. The street is dimly lit with streetlights and some illuminated storefronts. Traffic is moderate with several cars visible ahead, including a taxi. The road appears to be a two-way street with parked cars on both sides. No traffic signals or signs are clearly visible in the immediate vicinity. The lane is clear for forward movement but partially obstructed by the parked van.",
+  "prediction": "The white van will likely remain parked, and vehicles ahead will continue moving forward. Traffic may slow due to the narrow lane caused by the parked van.",
+  "planning": "Slow down and carefully maneuver around the parked van, ensuring there is enough clearance and no oncoming traffic. Maintain awareness of pedestrians and other vehicles while proceeding forward.",
+  "image": "101.jpg",
+  "id": 101
+}

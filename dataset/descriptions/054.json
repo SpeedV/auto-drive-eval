@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a forward-facing view from a car driving on a multi-lane highway approaching and passing under a concrete overpass.",
+  "goal": "Continue driving straight on the highway.",
+  "perception": "The vehicle is traveling on a multi-lane highway with moderate traffic. There are several cars ahead in the same lane and adjacent lanes. The road curves slightly to the right after the overpass. The white SUV on the right lane is slightly ahead and appears to be maintaining speed. The weather is clear and visibility is good. There are no visible traffic signals or stop signs, consistent with highway driving rules. The lane markings are solid white lines on the right edge and dashed white lines between lanes, indicating lane changes are permitted.",
+  "prediction": "Traffic ahead will continue moving steadily under the overpass and along the highway. Vehicles may maintain or slightly adjust speed to keep safe distances. The white SUV may continue in its lane or merge depending on traffic conditions.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance from the vehicle ahead. Monitor adjacent lanes for any merging vehicles and be prepared to adjust speed or lane if necessary to maintain safety.",
+  "image": "054.jpg",
+  "id": 54
+}

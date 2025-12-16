@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a forward-facing dashcam view of a residential street at night with streetlights illuminating the road and parked cars along both sides.",
+  "goal": "Drive safely forward along the residential street.",
+  "perception": "The street is narrow with parked cars on both sides, limiting the available driving space. There are oncoming vehicles with headlights visible, indicating two-way traffic. Streetlights provide some illumination, but visibility is reduced due to nighttime conditions. No pedestrians or traffic signals are visible. The road surface appears clear and dry.",
+  "prediction": "Oncoming vehicles will continue approaching, requiring careful navigation to avoid collisions. Parked cars may cause the road to narrow further, potentially requiring speed reduction or slight lateral adjustments.",
+  "planning": "Proceed slowly and cautiously, maintaining a central position in the lane to avoid parked cars and oncoming traffic. Use low beam headlights to avoid blinding other drivers and be prepared to stop or yield if an oncoming vehicle needs more space.",
+  "image": "093.jpg",
+  "id": 93
+}

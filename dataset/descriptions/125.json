@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a nighttime forward-facing dashcam view at an intersection with traffic lights.",
+  "goal": "Proceed straight through the intersection when safe and legal.",
+  "perception": "The traffic lights facing the ego vehicle are red, indicating a full stop is required. There is a red left turn arrow, prohibiting left turns at this time. A black SUV is waiting on the left side of the intersection, possibly preparing to turn left or go straight. The road ahead is dark with some construction signs and barriers visible in the distance, suggesting road work or lane closures. Streetlights illuminate the area moderately, and there are parked cars on the right side of the road. No pedestrians are visible crossing the intersection.",
+  "prediction": "The traffic light will remain red for a few more seconds before switching to green. Vehicles waiting at the intersection will remain stopped until the light changes. The construction area ahead may cause some slowdowns once the light turns green.",
+  "planning": "Remain stopped at the red light until it turns green. Monitor the traffic signals and surrounding vehicles carefully. Once the light turns green and the intersection is clear, proceed straight ahead with caution, being mindful of the construction zone ahead.",
+  "image": "125.jpg",
+  "id": 125
+}

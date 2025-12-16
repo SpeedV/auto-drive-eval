@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at an intersection in an urban area with multi-story buildings and pedestrian activity.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a crosswalk at an intersection with traffic lights. The light directly ahead is green, allowing forward movement. There are pedestrians on the sidewalks and some near the crosswalk, but none are currently crossing. The street is a two-way road with parked cars on both sides. Traffic cones are placed on the left sidewalk area, possibly indicating some minor roadwork or caution. The road surface is wet with some puddles, suggesting recent rain. The traffic light on the left side is yellow, likely for the cross street. The right side has a green light for vehicles going straight or turning right. There are no visible signs prohibiting straight movement.",
+  "prediction": "Vehicles ahead will continue moving straight through the intersection as the light remains green. Pedestrians will likely wait for their walk signal before crossing.",
+  "planning": "Proceed straight through the intersection with caution, maintaining awareness of pedestrians near the crosswalk and the wet road conditions. Prepare to adjust speed if the traffic light changes or if pedestrians enter the crosswalk.",
+  "image": "082.jpg",
+  "id": 82
+}

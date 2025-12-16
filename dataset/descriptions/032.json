@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view on a narrow rural road with light traffic and construction barriers on the left side.",
+  "goal": "Proceed straight ahead on the road.",
+  "perception": "The road is a two-way single lane each direction, but currently narrowed by orange and yellow construction barriers on the left side. There are two cars ahead traveling in the same direction. Road signs indicate a priority to oncoming traffic (white sign with black arrow crossed out) and a blue sign with a white arrow indicating the ego vehicle must yield and proceed only when safe. The road surface is paved but narrow, with no visible lane markings. Surrounding area is rural with trees and hills. Weather is clear and visibility is good.",
+  "prediction": "The two cars ahead will continue moving forward cautiously due to the narrowed road and priority rules. Oncoming traffic may appear soon, requiring the ego vehicle to yield.",
+  "planning": "Slow down and prepare to yield to any oncoming vehicles as indicated by the priority sign. Proceed only when the road is clear and it is safe to do so, maintaining a cautious speed due to the narrowed road and construction barriers.",
+  "image": "032.jpg",
+  "id": 32
+}

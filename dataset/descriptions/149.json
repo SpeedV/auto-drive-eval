@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a nighttime forward-facing dash-cam view of a car approaching a roundabout with street lighting and some traffic.",
+  "goal": "Navigate through the roundabout and continue driving safely.",
+  "perception": "The vehicle is approaching a roundabout at night. There is a white car ahead already entering or circulating the roundabout. Another vehicle is visible on the left side, possibly waiting to enter or exiting the roundabout. The road markings and curb paint indicate the roundabout boundary. A pedestrian crossing sign is visible on the right side, indicating a nearby crosswalk. Streetlights provide some illumination, but overall visibility is limited due to darkness. No traffic signals are visible, so right-of-way rules for roundabouts apply.",
+  "prediction": "The white car ahead will continue circulating the roundabout and exit at its intended point. The vehicle on the left may enter or exit the roundabout shortly. Pedestrians may be present near the crosswalk but are not currently visible.",
+  "planning": "Slow down and yield to vehicles already in the roundabout, especially the white car ahead. Proceed only when it is safe and clear to enter the roundabout. Be alert for pedestrians near the crosswalk and maintain a safe speed given the limited visibility at night.",
+  "image": "149.jpg",
+  "id": 149
+}

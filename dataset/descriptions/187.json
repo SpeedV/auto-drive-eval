@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a city street with tall buildings and trees lining the road.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, allowing vehicles to continue straight. There are multiple vehicles ahead, including a yellow taxi and a black car, moving forward. Pedestrians are present on the sidewalks but not crossing the street at this moment. The road is clear of immediate obstacles, and the weather is clear with good visibility. A sign on the right indicates 'No Standing Anytime' and a 'Sidewalk Closed' warning is visible, but these do not affect the driving lane. The street appears to be a typical urban multi-lane road with traffic signals controlling the intersection.",
+  "prediction": "Vehicles ahead will continue moving straight through the green light. Pedestrians may begin crossing once the pedestrian signal changes. Traffic light may change to yellow soon.",
+  "planning": "Maintain current speed and lane, proceed straight through the intersection while monitoring the traffic light and pedestrian activity. Prepare to stop if the light changes to yellow or if pedestrians enter the crosswalk.",
+  "image": "187.jpg",
+  "id": 187
+}

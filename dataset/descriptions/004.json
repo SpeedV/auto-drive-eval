@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime intersection on a multi-lane urban street.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at an intersection with a green traffic light ahead, indicating permission to proceed. The road is divided by a median with protective posts, separating two directions of traffic. There are multiple lanes visible on the cross street, with vehicles traveling in both directions. Street lighting is present but limited, and the surroundings include parked cars and buildings. No pedestrians are visible crossing the street at this moment. The traffic appears moderate with some vehicles approaching from the opposite direction.",
+  "prediction": "Traffic will continue moving through the intersection as the light remains green. Oncoming vehicles will maintain their lanes, and no immediate hazards are visible.",
+  "planning": "Proceed straight through the intersection cautiously, maintaining lane position and speed appropriate for nighttime driving and visibility. Stay alert for any sudden changes in traffic signals or unexpected pedestrian crossings.",
+  "image": "004.jpg",
+  "id": 4
+}

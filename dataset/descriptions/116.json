@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a dark intersection with a green traffic light visible ahead.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light is green, indicating the right of way to proceed through the intersection. The road ahead is dark with no visible lane markings or pedestrians. There is a vehicle with headlights on the right side, possibly waiting or approaching the intersection. No other traffic signs or signals are visible. The environment is poorly lit except for the traffic light and vehicle headlights.",
+  "prediction": "The vehicle on the right may either wait or enter the intersection shortly. The green light will likely remain for a few more seconds, allowing vehicles to proceed.",
+  "planning": "Continue driving straight through the intersection cautiously, maintaining awareness of the vehicle on the right and any other potential hazards due to low visibility.",
+  "image": "116.jpg",
+  "id": 116
+}

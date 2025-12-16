@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane road at night with street lighting and some parked cars on the left side.",
+  "goal": "Continue driving straight through the intersection.",
+  "perception": "The road has two lanes separated by double yellow lines, indicating no passing. There is a solid white line on the right marking the edge of the road. Ahead, there is a traffic light showing green, allowing vehicles to proceed. Several cars are stopped or moving slowly ahead in the same lane. On the left side, there are parked cars and a lit commercial area. On the right side, there is a dark area with some parked vehicles. The road appears clear of pedestrians and other immediate hazards.",
+  "prediction": "The vehicles ahead will continue moving forward as the green light remains on. Traffic may start to accelerate once the intersection clears.",
+  "planning": "Maintain current lane and speed, proceed through the intersection while keeping a safe distance from the vehicle ahead, and be prepared to adjust speed if traffic slows or the light changes.",
+  "image": "073.jpg",
+  "id": 73
+}

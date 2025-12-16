@@ -1,0 +1,9 @@
+{
+  "context": "Nighttime forward-facing dash-cam view at an intersection with a green traffic light and a sign indicating a right exit to Coney Island Ave.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped or moving slowly at a multi-lane intersection at night. The traffic light ahead is green, allowing movement through the intersection. Road markings indicate a lane for turning right and lanes for going straight. There is a sign overhead indicating that the right lane leads to Coney Island Ave. The road surface is worn with some debris, and visibility is limited due to darkness. No pedestrians or cyclists are visible in the immediate vicinity.",
+  "prediction": "Vehicles in the lanes to the left and center will continue straight through the intersection. Vehicles in the right lane will likely turn right onto Coney Island Ave. Traffic flow will continue smoothly as the light remains green.",
+  "planning": "Proceed straight through the intersection in the current lane, maintaining awareness of vehicles turning right from the adjacent lane. Ensure to keep within lane markings and adjust speed to traffic flow and road conditions.",
+  "image": "005.jpg",
+  "id": 5
+}

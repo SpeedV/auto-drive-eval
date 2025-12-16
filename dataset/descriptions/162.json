@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a residential street parallel to a highway entrance ramp.",
+  "goal": "Merge safely onto the Clearview Expressway northbound via the Throgs Neck Bridge entrance.",
+  "perception": "The road ahead is a two-lane residential street with parked cars on the right side. To the left, there is an entrance ramp to the Clearview Expressway (I-295) northbound towards Throgs Neck Bridge, indicated by a green highway sign. The ramp appears to be separated from the residential street by a barrier or curb. Traffic on the expressway ramp is moderate. The weather is clear with good visibility. There are no pedestrians or traffic signals visible in the immediate vicinity.",
+  "prediction": "The vehicle will continue along the residential street until reaching the expressway entrance ramp. Vehicles on the ramp will continue merging onto the highway. No immediate hazards are visible.",
+  "planning": "Continue driving forward on the residential street, prepare to turn left or merge left onto the expressway entrance ramp when safe. Check for oncoming traffic and yield to vehicles already on the ramp to merge safely.",
+  "image": "162.jpg",
+  "id": 162
+}

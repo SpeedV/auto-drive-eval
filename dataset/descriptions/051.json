@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane urban street at night with parked cars lining the right side of the road.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road has double yellow lines indicating no passing. The word 'SCHOOL' is painted on the road, signaling a school zone with likely reduced speed limits and increased caution required. There is a school zone sign visible on the right side of the street. Traffic lights ahead are green, allowing vehicles to proceed. Several cars are parked along the right curb, and a vehicle is driving ahead in the same lane. Street lighting is present but visibility is moderate due to nighttime conditions.",
+  "prediction": "The vehicle ahead will continue moving forward through the green light. Pedestrian activity may increase near the school zone, especially during school hours, but no pedestrians are currently visible on the road.",
+  "planning": "Maintain a safe following distance behind the vehicle ahead, adhere to the reduced speed limit typical of school zones, and proceed cautiously through the green light while watching for any pedestrians or sudden stops.",
+  "image": "051.jpg",
+  "id": 51
+}

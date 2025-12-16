@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a red light at a busy urban intersection in a city.",
+  "goal": "Proceed straight through the intersection when the light turns green.",
+  "perception": "The vehicle is stopped behind a black Honda sedan at a red traffic light on a multi-lane city street. The intersection is busy with multiple vehicles waiting and some moving across the crosswalks. Pedestrians are crossing the street in front and to the left of the vehicle, following the pedestrian signals. The traffic light is red, and the street signs indicate this is the intersection of 3rd Avenue. The road markings include a left-turn arrow lane and straight lanes. The weather is clear and visibility is good.",
+  "prediction": "The traffic light will remain red for a few more seconds, allowing pedestrians to finish crossing. Vehicles will remain stopped until the light turns green.",
+  "planning": "Remain stopped behind the black sedan and yield to pedestrians crossing the street. Prepare to proceed straight through the intersection once the traffic light turns green and it is safe to do so.",
+  "image": "120.jpg",
+  "id": 120
+}

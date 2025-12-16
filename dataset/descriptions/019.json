@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a forward-facing view of a two-way urban street lined with parked cars and mid-rise buildings on both sides during daylight.",
+  "goal": "Drive straight ahead along the street.",
+  "perception": "The road is a two-lane street with a double yellow line in the center indicating no passing. Parked cars line both sides of the street. There is a speed limit sign on the right indicating a 25 mph limit. The street is clear of pedestrians and moving vehicles in the immediate path. The weather is clear and visibility is good. There are no traffic signals or stop signs visible in the immediate vicinity.",
+  "prediction": "Traffic ahead is likely to remain light and unobstructed in the next few seconds, allowing continuous forward movement.",
+  "planning": "Maintain current lane and speed within the 25 mph speed limit, proceed straight ahead while monitoring for any pedestrians or vehicles entering from the sides.",
+  "image": "019.jpg",
+  "id": 19
+}

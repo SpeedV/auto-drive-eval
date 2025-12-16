@@ -1,0 +1,9 @@
+{
+  "context": "A forward-facing dash-cam view at night on a multi-lane road with streetlights and a car dealership on the right side.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road is dark with limited street lighting. The lane markings indicate multiple lanes in the same direction. There are no visible traffic signals or signs in the immediate vicinity. On the right side, there is a car dealership with parked vehicles and illuminated signage. On the left side, there is a median separating the opposite traffic lanes. There are no pedestrians or obstacles visible on the road. Oncoming traffic headlights are visible far ahead.",
+  "prediction": "The road ahead appears clear with no immediate hazards or stopped vehicles. Oncoming traffic will continue in their lanes. The vehicle can maintain its current speed and lane.",
+  "planning": "Maintain current lane and speed while keeping headlights on for visibility. Stay alert for any unexpected obstacles or changes in traffic conditions given the low light environment.",
+  "image": "171.jpg",
+  "id": 171
+}

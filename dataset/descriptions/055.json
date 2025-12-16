@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane urban street with a traffic light ahead.",
+  "goal": "Continue driving straight through the intersection.",
+  "perception": "The road has two lanes in the direction of travel, separated by dashed white lines. The car is in the right lane behind a black vehicle. The traffic light ahead is green, allowing vehicles to proceed straight. There are no visible pedestrians crossing or waiting to cross. Trees line the right side of the road, and there are parked cars on the right shoulder. On the left, a vehicle is turning left from the opposite direction. The weather is clear and sunny, providing good visibility.",
+  "prediction": "The traffic light will remain green for a few more seconds, allowing vehicles to continue moving straight through the intersection. The black car ahead will maintain its speed or accelerate slightly.",
+  "planning": "Maintain current speed and lane position to safely proceed straight through the green light, keeping a safe following distance from the car ahead.",
+  "image": "055.jpg",
+  "id": 55
+}

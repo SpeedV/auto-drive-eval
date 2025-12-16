@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a two-lane urban street with moderate traffic and a green traffic light ahead.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is in the right lane of a two-lane road with double yellow lines separating opposing traffic. The traffic light ahead is green, allowing vehicles to continue straight. There is a no-parking bus stop sign on the right sidewalk, and parked cars are visible off the road on the right side. On the left side, vehicles are queued in the opposite direction. The weather is overcast but visibility is clear. There are no pedestrians crossing the street at this moment.",
+  "prediction": "Vehicles ahead will continue moving straight through the green light. The traffic signal is unlikely to change immediately given the current green status.",
+  "planning": "Maintain current lane and speed to proceed straight through the intersection while monitoring the traffic light and surrounding vehicles for any changes.",
+  "image": "077.jpg",
+  "id": 77
+}

@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view on a multi-lane urban road during sunset with moderate traffic.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has three lanes in the direction of travel, separated by dashed white lines. There is a concrete barrier on the left separating oncoming traffic and a snow-covered median with guardrails on the right. Several vehicles are ahead, including a silver hatchback directly in front and a dark minivan in the left lane. The sky is clear with good visibility despite the low light from the setting sun. No traffic signals or signs are visible in the immediate view. The road appears dry and clear of ice or snow.",
+  "prediction": "Traffic ahead is moving slowly or stopped, likely due to congestion or a traffic control point further ahead. Vehicles will continue at a slow pace or remain stopped in the next few seconds.",
+  "planning": "Maintain a safe following distance behind the silver hatchback in the center lane. Prepare to slow down or stop as traffic ahead is congested. Do not attempt lane changes unless necessary and safe, as traffic is dense.",
+  "image": "031.jpg",
+  "id": 31
+}

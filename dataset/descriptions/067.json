@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped or moving slowly at night on a city street with wet pavement.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, indicating permission to proceed straight. There is a black car turning left in front of the ego vehicle and a yellow van ahead continuing straight. The road surface is wet, which may reduce traction. A large construction vehicle is parked on the right side of the street. There is a construction warning sign on the left sidewalk. The street is dimly lit but visibility is adequate. No pedestrians are visible crossing the street. The traffic signal and street signs are visible and functioning.",
+  "prediction": "The black car will complete its left turn, and the yellow van will continue straight through the intersection. The green light will likely remain for a few more seconds allowing traffic to proceed.",
+  "planning": "Maintain a safe following distance behind the black car and prepare to proceed straight through the intersection while monitoring the traffic light and surrounding vehicles. Exercise caution due to wet road conditions and the presence of the large construction vehicle on the right.",
+  "image": "067.jpg",
+  "id": 67
+}

@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a two-lane urban street with parked cars on both sides and a small traffic island in the middle.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road is a two-way street with one lane in each direction, separated by a small traffic island with a blue sign indicating vehicles must keep right. There are parked cars along both sides of the street. A white car is directly ahead in the same lane, moving forward. The weather is clear and visibility is good. There is a pedestrian crosswalk visible on the right side of the street, but no pedestrians are currently crossing. The traffic appears light with no immediate obstacles or traffic signals visible.",
+  "prediction": "The white car ahead will continue driving straight along the lane. No pedestrians are expected to cross imminently. Traffic conditions will likely remain stable in the next few seconds.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance behind the white car. Prepare to slow down if the car ahead brakes or if pedestrians appear near the crosswalk.",
+  "image": "122.jpg",
+  "id": 122
+}

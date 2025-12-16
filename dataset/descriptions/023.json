@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a city street with two lanes in each direction and a pedestrian crosswalk ahead.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a large truck in the left lane and a Range Rover in the right lane. Both lanes are marked with yellow pedestrian crosswalk stripes. The traffic light ahead is green, indicating permission to proceed. Oncoming traffic includes a white truck and a white pickup truck in the opposite lanes. The street is lined with buildings on the left and trees on the right. The weather is clear with good visibility.",
+  "prediction": "The vehicles ahead will start moving forward as the green light continues. Oncoming traffic will remain in their lanes. Pedestrians are not visible on the crosswalk at this moment.",
+  "planning": "Maintain position behind the truck and Range Rover, prepare to accelerate smoothly once the vehicles ahead start moving, ensuring to yield to any pedestrians if they appear on the crosswalk.",
+  "image": "023.jpg",
+  "id": 23
+}

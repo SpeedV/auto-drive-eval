@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view at an intersection on a wet, snowy day in a residential area.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a black Subaru at a traffic light showing green. The road is wet with patches of snow on the sides and sidewalks. There are two lanes visible: the left lane has a red SUV moving forward, and the right lane has the black Subaru directly ahead. A bus stop sign is visible on the right sidewalk. The intersection appears clear of pedestrians and other vehicles. The traffic light is green, indicating permission to proceed straight or turn according to lane markings, which are not fully visible but implied by vehicle positions.",
+  "prediction": "The vehicles ahead will start moving forward through the intersection as the light remains green. No immediate hazards or pedestrians are visible.",
+  "planning": "Proceed straight through the intersection with caution, maintaining a safe following distance from the black Subaru ahead. Monitor the traffic light and surroundings for any changes or pedestrians.",
+  "image": "012.jpg",
+  "id": 12
+}

@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane road at night with streetlights illuminating the scene.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road is a two-lane undivided street with dashed white lane markings indicating two-way traffic. Streetlights are present, providing some illumination. There is an oncoming vehicle with headlights visible in the opposite lane. The road appears clear ahead with no immediate obstacles or pedestrians visible. The environment is dark, limiting visibility beyond the reach of the headlights and streetlights. No traffic signs or signals are clearly visible in the image.",
+  "prediction": "The oncoming vehicle will continue traveling in its lane toward the ego vehicle. The road ahead remains clear, allowing for continued straight driving.",
+  "planning": "Maintain current lane and speed while keeping headlights on and paying close attention to the oncoming vehicle. Adjust speed if necessary to ensure safe distance and reaction time given limited visibility at night.",
+  "image": "050.jpg",
+  "id": 50
+}

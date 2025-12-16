@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow urban street lined with parked cars on both sides.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The street is a two-way road with parked cars on both sides, reducing the available driving space. There are no visible traffic signals or stop signs in the immediate view. The road surface shows some faded markings but no clear lane dividers. Pedestrians are present on the right sidewalk, but none are crossing the street. The weather is clear with good visibility. The buildings on the right have scaffolding, indicating possible construction work. There are no immediate hazards visible on the road.",
+  "prediction": "Vehicles ahead will continue moving forward cautiously due to the narrow street and parked cars. Pedestrians on the sidewalk may continue walking but are unlikely to enter the roadway suddenly.",
+  "planning": "Proceed straight ahead at a moderate speed, maintaining a safe distance from parked cars to avoid potential hazards such as opening doors or pedestrians stepping out. Stay alert for any sudden movements from pedestrians or vehicles.",
+  "image": "184.jpg",
+  "id": 184
+}

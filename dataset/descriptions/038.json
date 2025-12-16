@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at an intersection in an urban area with multi-lane roads and tall buildings on the left side.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a crosswalk at a traffic light intersection. The traffic light is green, allowing vehicles to proceed straight. There is a silver minivan turning left from the opposite direction, and several vehicles are visible ahead moving straight. The road has clear lane markings and a pedestrian crosswalk. Pedestrians are not currently crossing. The weather is clear and visibility is good.",
+  "prediction": "Traffic ahead will continue moving straight through the intersection. The left-turning minivan will complete its turn without blocking the straight lanes.",
+  "planning": "Proceed straight through the intersection while maintaining awareness of the left-turning vehicle and any pedestrians that may enter the crosswalk.",
+  "image": "038.jpg",
+  "id": 38
+}

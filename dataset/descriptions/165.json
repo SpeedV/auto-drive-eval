@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a two-lane road with one lane in each direction, surrounded by trees and guardrails, approaching a traffic light and highway exit sign.",
+  "goal": "Continue driving straight on the current road.",
+  "perception": "The vehicle is traveling on a two-lane road with a solid double yellow line separating opposing traffic. There is one lane in each direction. A white car is ahead in the same lane. The road curves slightly to the right and is approaching a traffic light, which is currently green. An overhead sign indicates an exit for the Long Island Expressway (I-495) in 1/4 mile. The right side of the road has a guardrail and a narrow shoulder with some grass. The weather is clear and visibility is good.",
+  "prediction": "The white car ahead will continue moving forward and likely slow down approaching the traffic light. The traffic light may change soon given the proximity to the intersection.",
+  "planning": "Maintain current lane and speed while preparing to slow down and stop if the traffic light changes to yellow or red. Stay alert for any vehicles merging or turning near the exit.",
+  "image": "165.jpg",
+  "id": 165
+}

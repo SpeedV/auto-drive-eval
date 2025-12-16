@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane road at night.",
+  "goal": "Continue driving straight on the current road.",
+  "perception": "The road ahead has multiple lanes with a solid yellow line on the left indicating no passing on that side. There is a vehicle directly ahead in the same lane, and a bus further ahead in the adjacent lane. Streetlights and road signs are visible but not clearly readable due to darkness. The road surface shows some patches and lane markings. Traffic appears light with no pedestrians or other immediate hazards visible. The environment is dark, requiring reliance on vehicle headlights for visibility.",
+  "prediction": "The vehicle ahead will continue moving forward at a steady pace. The bus in the adjacent lane may maintain its lane or prepare for a lane change or exit based on the road layout. No sudden stops or hazards are immediately apparent.",
+  "planning": "Maintain a safe following distance behind the vehicle ahead, keep within the current lane, and proceed cautiously at a safe speed appropriate for nighttime driving. Be prepared to adjust speed or lane if the vehicle ahead slows or if road conditions change.",
+  "image": "079.jpg",
+  "id": 79
+}

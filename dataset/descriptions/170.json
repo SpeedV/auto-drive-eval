@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime view of a drive-thru lane at a McDonald's restaurant, with raindrops visible on the windshield.",
+  "goal": "Proceed through the McDonald's drive-thru to pick up an order.",
+  "perception": "The vehicle is in a single-file drive-thru lane behind a white Lexus with brake lights on. A person wearing a helmet and a red and black jacket is standing next to the white Lexus near the order pickup window. To the right, another vehicle is in a separate lane, possibly the drive-thru exit or an adjacent lane. The McDonald's golden arches sign is illuminated ahead, confirming the location. The lane is narrow and bordered by a brick wall on the left. The weather is rainy, as indicated by water droplets on the windshield. There are no visible traffic signals, but the drive-thru requires stopping at the pickup window before proceeding.",
+  "prediction": "The white Lexus will likely remain stopped or move slowly as the person picks up their order. The vehicle to the right may continue moving forward or exit the drive-thru area.",
+  "planning": "Maintain a safe following distance behind the white Lexus and prepare to stop or move slowly as needed to allow the person to pick up their order. Proceed only when the vehicle ahead moves forward to avoid blocking the lane or causing congestion.",
+  "image": "170.jpg",
+  "id": 170
+}

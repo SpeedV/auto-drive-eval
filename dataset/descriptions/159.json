@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a quiet urban intersection with a crosswalk and parked cars along the street.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped or moving slowly at an intersection with clearly marked pedestrian crosswalks. There are no visible traffic lights or stop signs in the image, but the presence of crosswalks indicates the need to yield to pedestrians. Parked cars line the street on the left and right sides. The area is dimly lit with some building lights visible in the background. No pedestrians or moving vehicles are currently visible in the crosswalk or intersection.",
+  "prediction": "Given the lack of visible traffic control devices and no pedestrians present, it is likely safe to proceed soon, but caution is needed in case pedestrians appear or other vehicles approach.",
+  "planning": "Proceed slowly and cautiously through the intersection, yielding to any pedestrians if they appear, and be prepared to stop if other vehicles approach or if visibility remains limited.",
+  "image": "159.jpg",
+  "id": 159
+}

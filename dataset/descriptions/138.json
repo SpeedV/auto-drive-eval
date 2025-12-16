@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime urban intersection on W 142 St.",
+  "goal": "Proceed straight through the intersection when safe and legal.",
+  "perception": "The traffic light directly ahead is red, indicating the vehicle must stop. The intersection has clear pedestrian crosswalk markings on all sides. There are parked vehicles along the right side of the street. Streetlights and illuminated storefront signs provide visibility. No pedestrians are currently visible in the crosswalk. The road ahead appears clear of moving vehicles in the immediate intersection area.",
+  "prediction": "The traffic light will likely change to green soon, allowing vehicles to proceed straight. Pedestrians may begin crossing once the pedestrian signal permits.",
+  "planning": "Remain stopped and wait for the traffic light to turn green before proceeding straight through the intersection, ensuring pedestrian safety and compliance with traffic signals.",
+  "image": "138.jpg",
+  "id": 138
+}

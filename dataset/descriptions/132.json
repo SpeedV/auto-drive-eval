@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime urban intersection with a green traffic light and a pedestrian crossing signal counting down from 2 seconds.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a white van at an intersection. The traffic light is green, allowing vehicles to proceed straight. A pedestrian is crossing the street from right to left, and the pedestrian signal shows 2 seconds remaining. Other vehicles are visible on the cross street, some waiting at the red light. The road surface and surroundings are illuminated by streetlights and vehicle lights.",
+  "prediction": "The pedestrian will finish crossing within the next 2 seconds. The white van ahead will start moving forward as the light remains green. Cross traffic will remain stopped until their light changes.",
+  "planning": "Wait for the pedestrian to clear the crosswalk before moving forward. Once the pedestrian has crossed and the van ahead starts moving, proceed straight through the intersection while maintaining awareness of any other pedestrians or vehicles.",
+  "image": "132.jpg",
+  "id": 132
+}

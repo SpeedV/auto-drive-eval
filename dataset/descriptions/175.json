@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a forward-facing view of a city street intersection with a black car ahead and pedestrians waiting at crosswalks on both sides.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, allowing vehicles to move forward. The black car in front is in the center lane, moving straight. Pedestrians are waiting on the sidewalks and crosswalks, not currently crossing. There is a construction fence on the right side of the road, narrowing the lane slightly. The street is urban with moderate pedestrian presence and typical city traffic. Traffic rules require yielding to pedestrians if they begin crossing and obeying the traffic signal.",
+  "prediction": "The black car ahead will continue moving straight through the intersection. Pedestrians will likely wait until the light changes to cross. The green light will remain for a few more seconds before changing.",
+  "planning": "Maintain a safe following distance behind the black car and proceed straight through the intersection while monitoring pedestrians for any crossing intentions. Be prepared to stop if the light changes or pedestrians enter the crosswalk.",
+  "image": "175.jpg",
+  "id": 175
+}

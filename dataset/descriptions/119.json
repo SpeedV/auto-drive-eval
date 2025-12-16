@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane rural road with a double yellow centerline and a white edge line on the right.",
+  "goal": "Continue driving straight on the current road.",
+  "perception": "The road ahead curves gently to the right. The double yellow lines indicate no passing is allowed. There are no vehicles immediately ahead in the same lane. On the left side, there is a fenced area with some trees and buildings in the distance. On the right side, there is an open grassy area with utility poles and wires running alongside the road. The weather is cloudy but visibility is good. There are no pedestrians or cyclists visible. Traffic signs ahead appear to provide directions for upcoming exits or turns.",
+  "prediction": "The vehicle will continue following the curve to the right, maintaining its lane. Traffic is light, so no immediate obstacles or slowdowns are expected.",
+  "planning": "Maintain current speed and lane position, follow the curve to the right while observing the road and traffic signs for any changes or instructions.",
+  "image": "119.jpg",
+  "id": 119
+}

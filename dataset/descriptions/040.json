@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a multi-lane intersection with traffic lights visible ahead and to the left.",
+  "goal": "Proceed straight through the intersection when safe.",
+  "perception": "The traffic lights facing the ego vehicle are red, indicating a stop requirement. A yellow taxi is currently crossing the intersection from the left side, moving left to right. Other traffic lights for cross traffic are also red. Road signs and lane markings are visible but not fully clear due to darkness. The intersection appears to be controlled by traffic signals. There are no visible pedestrians in the crosswalks.",
+  "prediction": "The taxi will complete its crossing shortly. The traffic light for the ego vehicle is likely to remain red for a few more seconds before turning green.",
+  "planning": "Remain stopped at the red light until it turns green. Do not enter the intersection while the taxi is crossing or while the light is red to comply with traffic rules and ensure safety.",
+  "image": "040.jpg",
+  "id": 40
+}

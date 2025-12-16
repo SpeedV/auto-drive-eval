@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow residential street with parked cars on both sides.",
+  "goal": "Drive straight ahead along the residential street.",
+  "perception": "The street is a two-way residential road with cars parked parallel on both sides, reducing the effective driving width. There are no visible traffic signs or signals in the immediate view. Trees line the street, casting shadows on the road. The road surface appears clear and dry. There are no pedestrians or cyclists visible on or near the roadway. The parked cars may limit visibility of cross traffic or pedestrians at intersections ahead.",
+  "prediction": "The vehicle can continue moving forward cautiously. Oncoming vehicles or pedestrians may appear suddenly from between parked cars or at intersections.",
+  "planning": "Proceed slowly and carefully, maintaining a central position in the lane to avoid parked cars. Be prepared to stop or yield to oncoming traffic or pedestrians that may emerge unexpectedly.",
+  "image": "140.jpg",
+  "id": 140
+}

@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a parking lot with a white SUV directly in front of the ego vehicle, partially occupying two parking spaces. Surrounding the lot are parked cars and a commercial building with signage indicating a taqueria and other businesses.",
+  "goal": "Exit the parking space and navigate through the parking lot safely.",
+  "perception": "The white SUV ahead is improperly parked, straddling two parking spaces and blocking the direct path forward. The parking lot is moderately busy with several parked vehicles and some open spaces visible. The road surface is clear and dry, and there are no pedestrians visible in the immediate area. Traffic rules in parking lots require careful maneuvering and yielding to vehicles already moving or pedestrians.",
+  "prediction": "The white SUV may remain stationary or attempt to adjust its parking, but currently it blocks the direct forward path. Other vehicles may start moving in the lot as drivers look for parking or exit.",
+  "planning": "Slow down and prepare to maneuver around the improperly parked SUV by steering slightly to the right if space allows, while checking for other vehicles or pedestrians. Proceed cautiously through the parking lot, yielding as necessary.",
+  "image": "177.jpg",
+  "id": 177
+}

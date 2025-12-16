@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a wet, multi-lane road at night in an urban area.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has two lanes in the ego vehicle's direction, separated by a double yellow line from oncoming traffic. The road surface is wet, reflecting lights, indicating recent rain or ongoing drizzle. There is moderate traffic with vehicles approaching from the opposite direction and some vehicles ahead in the same lane. Traffic signals are visible ahead, currently showing green. Street lighting and building lights illuminate the scene, but visibility is reduced due to darkness and wet conditions. No pedestrians or cyclists are visible in or near the roadway.",
+  "prediction": "Vehicles ahead will continue moving forward through the green light. Oncoming traffic will maintain their lanes. The green light may change soon, requiring slowing or stopping.",
+  "planning": "Maintain current lane and speed cautiously due to wet road conditions. Prepare to slow down and stop if the traffic light changes from green to yellow or red. Keep a safe following distance from vehicles ahead.",
+  "image": "014.jpg",
+  "id": 14
+}

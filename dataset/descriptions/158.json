@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a nighttime forward-facing dash-cam view at an intersection with a green traffic light. The road is marked with a pedestrian crosswalk and there are streetlights and some parked cars visible.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a crosswalk at an intersection with a green traffic light. The crosswalk is clearly marked with white stripes. On the opposite side of the intersection, there are oncoming vehicles with headlights on, indicating traffic in the opposite direction. There is a pedestrian crossing sign on the right side of the road. The street is dimly lit but visibility is sufficient to see the traffic signals and road markings. No pedestrians are currently visible in the crosswalk.",
+  "prediction": "The oncoming vehicles will continue moving through the intersection. The green light will likely remain for a few more seconds, allowing traffic to proceed.",
+  "planning": "Proceed straight through the intersection after ensuring the crosswalk is clear of pedestrians and the green light remains. Maintain awareness of oncoming traffic and be prepared to stop if the light changes or pedestrians appear.",
+  "image": "158.jpg",
+  "id": 158
+}

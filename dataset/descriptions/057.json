@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime urban intersection with traffic lights and commercial buildings visible.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic lights ahead are green for the ego vehicle's direction, indicating it is legal to proceed straight. The intersection is well-marked with crosswalk lines. There are no visible pedestrians in the crosswalk or immediate vicinity. On the right side, there is a McDonald's restaurant, and on the left side, other commercial buildings are visible. The road appears clear with no immediate obstacles or vehicles blocking the path. Streetlights illuminate the area, improving visibility despite the nighttime conditions.",
+  "prediction": "The ego vehicle will continue moving straight through the intersection without stopping, as the green light allows proceeding and no obstacles are present.",
+  "planning": "Continue driving straight through the intersection while maintaining awareness of any sudden pedestrian or vehicle movements. Proceed cautiously given the nighttime conditions but obey the green traffic signal.",
+  "image": "057.jpg",
+  "id": 57
+}

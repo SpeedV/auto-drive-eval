@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view at an urban intersection on a clear winter day with snow piled on the sides of the road.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is red, indicating the ego vehicle must stop. There are parked cars along both sides of the narrow street. A pedestrian is crossing from right to left in front of the ego vehicle. Snow is piled along the curbs, partially obstructing the sidewalks. The intersection has a pedestrian signal showing a 'Don't Walk' hand symbol, but the pedestrian is still crossing. The road surface is wet but clear of snow and ice. Visibility is good with no oncoming traffic visible in the immediate intersection area.",
+  "prediction": "The pedestrian will likely finish crossing shortly. The traffic light will remain red for a few more seconds before turning green. Vehicles ahead are stopped, waiting for the light to change.",
+  "planning": "Remain stopped behind the crosswalk to yield to the pedestrian and obey the red traffic light. Prepare to proceed straight once the light turns green and the crosswalk is clear.",
+  "image": "134.jpg",
+  "id": 134
+}

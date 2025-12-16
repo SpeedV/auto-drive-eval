@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a narrow urban street with parked cars lining both sides and a right-turn traffic sign visible ahead.",
+  "goal": "Make a right turn at the upcoming intersection.",
+  "perception": "The vehicle is on a two-way street with cars parked on both sides, reducing the available driving space. There is a traffic sign indicating a mandatory right turn at the intersection ahead. The street appears clear of pedestrians and moving vehicles at the moment. The weather is clear and visibility is good.",
+  "prediction": "The vehicle will approach the intersection and must execute a right turn as indicated by the traffic sign. No immediate obstacles or traffic are visible that would prevent this maneuver.",
+  "planning": "Slow down to safely navigate the narrow street and prepare to make the right turn at the intersection, ensuring to check for any cross traffic or pedestrians before turning.",
+  "image": "070.jpg",
+  "id": 70
+}

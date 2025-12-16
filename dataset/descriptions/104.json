@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a multi-lane highway with moderate traffic. The ego vehicle is in the left lane, following a black SUV.",
+  "goal": "Continue driving forward on the highway safely.",
+  "perception": "The highway has at least two lanes in the ego vehicle's direction, separated by dashed white lines. The left lane is occupied by the black SUV ahead, and there is moderate traffic in the right lane moving at a similar pace. The road is illuminated by streetlights, and visibility is adequate for night driving. There are no visible traffic signs or signals indicating exits or lane changes. The right shoulder is clear with no obstacles. Traffic is moving steadily but slowly, suggesting possible congestion ahead.",
+  "prediction": "Traffic will likely continue moving slowly in both lanes, with the black SUV maintaining its speed ahead. Vehicles in the right lane may attempt to merge or maintain pace, but no sudden lane changes are evident.",
+  "planning": "Maintain a safe following distance behind the black SUV in the left lane, keep speed steady to match traffic flow, and stay alert for any changes in traffic conditions or signals. Avoid unnecessary lane changes given the current traffic density and nighttime conditions.",
+  "image": "104.jpg",
+  "id": 104
+}

@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane urban road with a slight curve to the left, surrounded by mid-rise buildings and pedestrian sidewalks.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road ahead has two lanes separated by dashed white lines, indicating that lane changes are permitted. There are several vehicles ahead, including a white car directly in front and other cars in the left lane. The sidewalks are protected by bollards painted white and red, and there is a pedestrian crossing sign visible on the right side, indicating a nearby crosswalk. The weather is clear with good visibility, and no traffic signals are visible in the image. The road surface is dry and in good condition. Traffic appears moderate with vehicles moving steadily.",
+  "prediction": "The vehicles ahead will continue moving forward along the curve. Pedestrians may be present near the crosswalk area but are currently not crossing. Traffic flow is expected to remain steady in the next few seconds.",
+  "planning": "Maintain current lane and speed while keeping a safe following distance from the white car ahead. Be prepared to slow down if pedestrians approach the crosswalk or if traffic ahead decelerates.",
+  "image": "053.jpg",
+  "id": 53
+}

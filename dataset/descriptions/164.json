@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped in traffic on a multi-lane urban street in a city with tall buildings.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a black sedan in the center lane, with a yellow taxi to the left and a white van to the right. Traffic is heavy, and all vehicles appear to be waiting at a red light, as indicated by the brake lights on the cars ahead. The traffic signal visible in the distance is green, but the vehicles are not moving yet, suggesting a possible queue or slow-moving traffic. The road has multiple lanes with clear lane markings. There are no pedestrians crossing the street at this moment. The weather is clear and visibility is good.",
+  "prediction": "Traffic will likely start moving forward slowly as the light remains green, but congestion may persist due to the volume of vehicles.",
+  "planning": "Maintain a safe following distance behind the black sedan, prepare to move forward cautiously when traffic starts to flow, and stay alert for lane changes or sudden stops from surrounding vehicles.",
+  "image": "164.jpg",
+  "id": 164
+}

@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane highway with clear weather and good visibility.",
+  "goal": "Continue driving straight on the highway.",
+  "perception": "The highway has three lanes in the direction of travel, with dashed white lane markings separating them. The ego vehicle is in the rightmost lane, following a black sedan at a safe distance. Traffic is moderate with vehicles in adjacent lanes moving steadily. There are guardrails on the right side, and the road curves slightly to the left ahead. Overhead signs are visible but not legible in detail. The sky is clear, and road conditions appear dry.",
+  "prediction": "The black sedan ahead will maintain its current speed and lane. Traffic in adjacent lanes will continue flowing steadily. No immediate hazards or slowdowns are visible.",
+  "planning": "Maintain the current lane and speed, keeping a safe following distance from the vehicle ahead. Prepare to adjust speed or lane if traffic conditions change or if approaching an exit or merge area.",
+  "image": "136.jpg",
+  "id": 136
+}

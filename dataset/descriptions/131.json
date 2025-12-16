@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a narrow, dimly lit residential street at night with parked cars lining both sides of the road.",
+  "goal": "Drive forward safely along the street.",
+  "perception": "The street is narrow with parked vehicles on both sides, leaving limited space for driving. The road surface appears uneven and poorly lit, with a faint arrow marking on the pavement indicating the direction of travel. There are no visible traffic signals or pedestrians in the immediate vicinity. The parked cars reduce the available driving lane width, requiring cautious navigation.",
+  "prediction": "The vehicle will need to proceed slowly and carefully to avoid hitting parked cars. There is a possibility of encountering oncoming traffic or pedestrians further ahead, given the residential setting and limited visibility.",
+  "planning": "Proceed forward at a reduced speed, maintaining a central position in the lane to avoid parked cars on both sides. Use headlights to improve visibility and be prepared to stop or yield if oncoming traffic or pedestrians appear.",
+  "image": "131.jpg",
+  "id": 131
+}

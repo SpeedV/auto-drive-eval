@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a city street at night with streetlights and parked cars along the left side.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is approaching an intersection with a green traffic light. The road has two lanes going straight, separated by dashed white lines. There are parked cars along the left curb. The right lane has a marking indicating a bus lane or a restricted lane. The street is illuminated by streetlights, and visibility is adequate for night driving. No pedestrians are visible on the crosswalk or sidewalks at this moment.",
+  "prediction": "Traffic ahead will continue moving through the intersection as the light remains green. Vehicles in the left and center lanes will proceed straight. No immediate hazards or pedestrians are expected to enter the roadway.",
+  "planning": "Maintain current speed and lane, proceed straight through the intersection while monitoring traffic signals and surroundings for any changes or hazards.",
+  "image": "180.jpg",
+  "id": 180
+}

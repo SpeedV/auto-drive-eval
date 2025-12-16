@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped behind a Jeep on a narrow, wet urban road at night, with construction barriers on the right side.",
+  "goal": "Proceed forward safely through the construction zone.",
+  "perception": "The vehicle is stopped behind a Jeep on a wet road at night. The road is narrow with construction barriers on the right side, marked by orange and white barricades and reflective poles. Ahead, there is a curve to the left indicated by chevron signs. Streetlights illuminate the area, and the Jeep's brake lights are on, indicating it is stopped or slowing. Other vehicles are visible further ahead, suggesting slow or stopped traffic. The road surface is wet, which may reduce traction. There are no visible traffic signals or pedestrians in the immediate vicinity.",
+  "prediction": "Traffic ahead is likely moving slowly or stopped due to the construction zone and narrow lane. The Jeep will likely start moving forward cautiously once the path is clear.",
+  "planning": "Maintain a safe following distance behind the Jeep, proceed slowly and cautiously through the construction zone, and be prepared to stop if traffic ahead remains stopped or if workers or obstacles appear.",
+  "image": "044.jpg",
+  "id": 44
+}

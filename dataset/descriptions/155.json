@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a dark, poorly lit street at night with parked cars along the right side and some vehicles ahead on the left side of the road.",
+  "goal": "Drive forward safely along the street.",
+  "perception": "The road is narrow and dimly lit with street lamps spaced apart. There are parked cars on the right side of the road, limiting the available driving space. Vehicles ahead appear to be moving or stopped on the left side of the road. There are no visible traffic signs or signals in the image. The road surface appears clear with no visible pedestrians or obstacles. Visibility is limited due to darkness.",
+  "prediction": "The vehicles ahead may continue moving slowly or stop, and a parked car on the right may open doors or pull out unexpectedly. Limited visibility increases the risk of encountering pedestrians or other hazards.",
+  "planning": "Proceed cautiously at a reduced speed, staying centered in the lane to avoid parked cars on the right. Use headlights effectively to improve visibility and be prepared to stop or maneuver if any obstacles or pedestrians appear.",
+  "image": "155.jpg",
+  "id": 155
+}

@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a narrow urban street lined with parked cars on both sides.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The street is a two-way road with parked vehicles on both sides, reducing the effective driving width. There is a pedestrian crossing sign visible on the right side indicating a pedestrian crossing area ahead. Traffic is light with a black van directly ahead and a black car slightly to the left. The road surface appears clear and dry, and visibility is good despite some glare from the sun. No pedestrians are currently visible on the road or sidewalks.",
+  "prediction": "The black van ahead will continue moving forward slowly due to the narrow street and parked cars. Pedestrians may appear near the crossing area indicated by the sign.",
+  "planning": "Maintain a safe following distance behind the van, reduce speed in anticipation of potential pedestrians near the crossing, and stay centered in the lane to avoid parked cars on either side.",
+  "image": "189.jpg",
+  "id": 189
+}

@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime urban intersection with traffic lights visible ahead.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a red light at an intersection on a multi-lane road. There are multiple vehicles ahead and to the left, some waiting to cross or turn. The traffic light visible ahead is green for the cross street, indicating the ego vehicle's light is red. The road markings show lanes for straight and turning traffic. There are illuminated signs and storefronts on the right side of the street. Visibility is reduced due to nighttime conditions and glare from headlights.",
+  "prediction": "The traffic light for the ego vehicle will likely turn green soon, allowing vehicles to proceed straight. Vehicles on the cross street will continue moving through the intersection while the light is green.",
+  "planning": "Remain stopped and wait for the traffic light to turn green before proceeding straight through the intersection, ensuring the way is clear and safe to move.",
+  "image": "092.jpg",
+  "id": 92
+}

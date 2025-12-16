@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at an intersection near the Brooklyn Bridge on a sunny day.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a red traffic light at a multi-lane intersection. There are vehicles stopped in adjacent lanes, including a white truck on the left and a black van on the right. The pedestrian crosswalk is clearly marked. The traffic light ahead is red, and there are pedestrians visible on the far side of the intersection. The road is clear beyond the intersection, and the weather is clear with good visibility.",
+  "prediction": "The traffic light will likely turn green soon, allowing vehicles to proceed straight. Pedestrians currently waiting will cross the street once their signal permits.",
+  "planning": "Remain stopped and wait for the traffic light to turn green before proceeding straight through the intersection, ensuring pedestrian safety and compliance with traffic signals.",
+  "image": "144.jpg",
+  "id": 144
+}

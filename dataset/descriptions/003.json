@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view on a multi-lane urban street lined with palm trees and buildings on both sides during late afternoon or early evening.",
+  "goal": "Continue driving straight ahead along the current lane.",
+  "perception": "The road has two lanes in the direction of travel, separated by dashed white lines. There are several vehicles ahead, including a gray sedan in the left lane and a black car in the right lane. A motorbike is visible further ahead in the right lane. Pedestrians are present on the right sidewalk near a bus stop. The traffic appears moderate, and the road is clear with no immediate obstacles or traffic signals visible. The weather is clear with good visibility. The lane markings and traffic flow indicate that continuing straight is allowed and safe.",
+  "prediction": "Traffic ahead will continue moving forward at a moderate pace. The motorbike may maintain or slightly increase speed. No immediate stops or turns are expected based on current conditions.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance from the vehicles ahead. Stay alert for any changes in traffic flow or signals and be prepared to adjust speed accordingly.",
+  "image": "003.jpg",
+  "id": 3
+}

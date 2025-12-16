@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a traffic light on a multi-lane urban road with moderate traffic.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped behind a black SUV in the right lane, waiting at a red traffic light. To the left, there is a black SUV in the adjacent lane. Ahead, there is a green traffic light visible for the cross street, but the light for the current lane is red. Road signs indicate directions to Robinson Parkway, Long Island, and Brooklyn, with lane markings showing a left turn lane and a straight lane. There is a sign indicating 'Local' traffic with a truck symbol to the right. The weather is clear, and visibility is good. Pedestrians are not visible on the crosswalk.",
+  "prediction": "The traffic light will likely turn green soon, allowing vehicles to proceed straight or turn left as indicated by lane markings and signs. Vehicles ahead will start moving forward once the light changes.",
+  "planning": "Remain stopped and keep a safe distance from the vehicle ahead while waiting for the traffic light to turn green. Prepare to proceed straight through the intersection when the light changes, following lane markings and traffic rules.",
+  "image": "072.jpg",
+  "id": 72
+}

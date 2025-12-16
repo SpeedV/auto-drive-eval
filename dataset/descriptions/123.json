@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a dimly lit urban street at night.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road is mostly clear with one vehicle ahead in the same lane. Streetlights illuminate the area, though visibility is limited due to darkness. There is a traffic light visible in the distance showing green, allowing vehicles to proceed. A road sign on the right indicates a lane merge or narrowing ahead. No pedestrians or other obstacles are visible on the road or sidewalks. The road surface appears dry and unobstructed.",
+  "prediction": "The vehicle ahead will continue moving forward through the green light. Traffic flow will likely remain steady with no immediate stops expected.",
+  "planning": "Maintain current speed and lane, keeping a safe following distance from the vehicle ahead. Prepare to adjust speed if the traffic light changes or if the road narrows as indicated by the sign.",
+  "image": "123.jpg",
+  "id": 123
+}

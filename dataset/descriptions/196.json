@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a multi-lane urban road with moderate traffic and a merge ahead.",
+  "goal": "Continue driving forward safely through the merging traffic area.",
+  "perception": "The vehicle is on a multi-lane road with at least two lanes visible. Traffic is moderate with several cars ahead and to the left. There is a traffic sign indicating a lane merge ahead and a speed limit of 30 mph. The right lane is separated by a dashed line and a guardrail to the right. The road appears to be narrowing or merging soon, as indicated by the orange merge sign. The weather is clear and visibility is good.",
+  "prediction": "Vehicles in the left lane will merge into the right lane shortly due to the lane reduction. Traffic may slow down as vehicles adjust to the merge.",
+  "planning": "Maintain a safe following distance and reduce speed if necessary to allow smooth merging of vehicles from the left lane. Stay in the current lane and be prepared to adjust speed to accommodate merging traffic, following the 30 mph speed limit.",
+  "image": "196.jpg",
+  "id": 196
+}

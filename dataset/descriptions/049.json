@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a dark, nighttime view of a quiet residential street illuminated by streetlights. The road is straight with no visible lane markings.",
+  "goal": "Drive forward safely along the residential street.",
+  "perception": "The street is dimly lit with streetlights spaced along the road. There are no visible vehicles or pedestrians in the immediate vicinity. A traffic sign is visible ahead, but the exact instruction is unclear due to low light. The road appears clear and dry with no immediate hazards.",
+  "prediction": "The road will likely remain clear for the next few seconds with no immediate obstacles or traffic. The vehicle can continue forward safely.",
+  "planning": "Proceed forward cautiously, maintaining a safe speed appropriate for nighttime driving on a residential street. Stay alert for any pedestrians or vehicles that may appear.",
+  "image": "049.jpg",
+  "id": 49
+}

@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a forward-facing dash-cam view from a car driving on a dimly lit urban road at night. The road has a median with reflective markers and streetlights illuminating the scene.",
+  "goal": "Continue driving straight on the current road.",
+  "perception": "The road is a two-way street separated by a raised median with reflective markers. There are parked vehicles on the right side of the road beyond the median. On the left side, there is a curb with some vehicles approaching from the opposite direction. The streetlights provide moderate visibility. No traffic signals or pedestrian crossings are visible. The lane the ego vehicle is in appears clear and unobstructed.",
+  "prediction": "The ego vehicle will continue moving forward along the current lane. Oncoming traffic will maintain their lane on the opposite side of the median. Parked vehicles on the right will remain stationary.",
+  "planning": "Maintain current speed and lane position, keeping a safe distance from the parked vehicles on the right and oncoming traffic on the left. Continue to monitor for any changes or hazards ahead.",
+  "image": "148.jpg",
+  "id": 148
+}

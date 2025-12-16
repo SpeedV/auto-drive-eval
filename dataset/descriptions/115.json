@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a dimly lit, narrow urban street at night.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road is a two-way street with no visible lane markings except a faint center line. There are parked cars on both sides, with one vehicle partially obstructing the right side of the road. Streetlights provide limited illumination. No pedestrians or traffic signals are visible. The road curves slightly to the left ahead.",
+  "prediction": "The vehicle ahead may slow or stop due to the narrow road and parked cars. Oncoming traffic could appear around the curve, requiring caution.",
+  "planning": "Proceed slowly and cautiously, maintaining a safe distance from the vehicle ahead and parked cars. Be prepared to stop or yield if oncoming traffic appears or if the road narrows further.",
+  "image": "115.jpg",
+  "id": 115
+}

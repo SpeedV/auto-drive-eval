@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane highway in an urban area with tall buildings visible in the background.",
+  "goal": "Continue driving straight on the highway.",
+  "perception": "The highway has multiple lanes with clear lane markings. Traffic is moderate with several vehicles ahead and to the right. There is a speed limit sign indicating 70 km/h on the overpass. The road appears clear and dry with good visibility. No immediate obstacles or pedestrians are present. The traffic light ahead is green, allowing continuous movement. The leftmost lane is separated by a solid double line, indicating no lane changes from that side.",
+  "prediction": "Traffic will continue moving steadily at or near the speed limit. Vehicles ahead may maintain or slightly adjust speed but no sudden stops are expected.",
+  "planning": "Maintain current lane and speed, adhering to the 70 km/h speed limit. Stay alert for any changes in traffic flow or signals ahead.",
+  "image": "199.jpg",
+  "id": 199
+}

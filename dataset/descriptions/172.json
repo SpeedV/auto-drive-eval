@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a multi-lane urban road approaching a traffic signal under an overpass.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The road ahead has multiple lanes with clear lane markings. There is a white SUV in the right lane, and the ego vehicle is in the left lane. Traffic lights ahead are green, allowing vehicles to proceed straight. There are multiple no U-turn signs visible on the left side of the road, indicating U-turns are prohibited at this intersection. The road is clear of pedestrians and other immediate obstacles. The weather is clear with good visibility.",
+  "prediction": "Vehicles, including the white SUV, will continue moving forward through the intersection as the light remains green. No sudden stops or turns are expected in the next few seconds.",
+  "planning": "Maintain current lane and speed to proceed straight through the intersection, adhering to the green traffic signal and no U-turn restrictions.",
+  "image": "172.jpg",
+  "id": 172
+}

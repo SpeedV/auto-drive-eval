@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view at an urban intersection with a green traffic light.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a crosswalk at an intersection with a green traffic light. Road markings indicate the lane allows going straight or turning left. There is a black car ahead moving straight. On the right, a red car is waiting, likely to turn or proceed after the light. On the left, a silver vehicle is partially visible, possibly waiting to turn left. Pedestrian crosswalks are clearly marked. Traffic signals are green for the ego vehicle's direction, and no pedestrians are currently crossing. The weather is clear with good visibility.",
+  "prediction": "The black car ahead will continue straight through the intersection. The red car on the right will wait or proceed depending on its intended direction. The green light will remain for a few more seconds allowing vehicles to move forward.",
+  "planning": "Proceed straight through the intersection following the green light, maintaining awareness of other vehicles and pedestrians. Prepare to yield if any pedestrian steps onto the crosswalk or if traffic conditions change.",
+  "image": "089.jpg",
+  "id": 89
+}

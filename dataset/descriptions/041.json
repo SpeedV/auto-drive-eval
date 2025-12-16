@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at an intersection at night in an urban area.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is yellow, indicating the signal is about to change. A black SUV is turning right in front of the ego vehicle. The intersection appears clear of pedestrians and other vehicles. The road is wet, which may affect stopping distance. Streetlights and building lights provide some illumination, but visibility is reduced due to nighttime conditions.",
+  "prediction": "The traffic light will likely turn red within a few seconds. The black SUV will complete its right turn shortly. Vehicles behind may begin to stop as the light changes.",
+  "planning": "Prepare to stop safely before the intersection due to the yellow light and wet road conditions. Do not attempt to proceed straight through the intersection to avoid running a red light and potential collision with cross traffic.",
+  "image": "041.jpg",
+  "id": 41
+}

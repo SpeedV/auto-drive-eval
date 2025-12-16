@@ -1,0 +1,1061 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>AutoDrive Benchmark</title>
+        <style>
+            body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }
+            .container { max-width: 1200px; margin: 0 auto; }
+            .leaderboard-card { background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px; }
+            table { width: 100%; border-collapse: collapse; }
+            th { text-align: left; padding: 12px; border-bottom: 2px solid #eee; color: #555; }
+            td { padding: 12px; border-bottom: 1px solid #eee; }
+            .rank-1 { background-color: #fff9c4; font-weight: bold; }
+            
+            .tabs { display: flex; gap: 10px; margin-bottom: 0; }
+            .tab-btn { padding: 12px 24px; background: #e0e0e0; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: 600; transition: 0.2s; }
+            .tab-btn.active { background: white; color: #2196f3; box-shadow: 0 -2px 5px rgba(0,0,0,0.05); }
+            
+            .model-content { display: none; background: white; padding: 25px; border-radius: 0 8px 8px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+            .model-content.active { display: block; }
+            
+            .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+            .rec-panel { grid-column: span 2; background: #e3f2fd; color: #1565c0; }
+            .panel { padding: 15px; border-radius: 6px; }
+            .panel h4 { margin-top: 0; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 8px; }
+            .good { background: #e8f5e9; color: #2e7d32; }
+            .bad { background: #ffebee; color: #c62828; }
+            
+            details { margin-bottom: 15px; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; background: #fff; }
+            summary { padding: 15px; cursor: pointer; background: #f9f9f9; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+            .details-body { padding: 20px; border-top: 1px solid #ddd; }
+            
+            .case-grid { display: flex; gap: 20px; }
+            .img-box { width: 250px; background: #eee; }
+            .img-box img { width: 100%; height: auto; }
+            .text-box { flex: 1; }
+            
+            .agent-output { background: #fafafa; padding: 10px; border: 1px solid #eee; border-radius: 4px; margin-bottom: 10px; }
+            .agent-label { font-size: 0.8em; font-weight: bold; color: #777; text-transform: uppercase; margin-bottom: 4px; display: block; }
+            
+            .critique { margin-top: 15px; padding: 10px; background: #fff3e0; border-left: 4px solid #ff9800; font-style: italic; color: #666; }
+            .bar-bg { width: 60px; height: 6px; background: #ddd; border-radius: 3px; display: inline-block; }
+            .bar-fg { height: 100%; border-radius: 3px; }
+        </style>
+        <script>
+            function openModel(modelName) {
+                var contents = document.getElementsByClassName("model-content");
+                for (var i = 0; i < contents.length; i++) { contents[i].classList.remove("active"); }
+                var btns = document.getElementsByClassName("tab-btn");
+                for (var i = 0; i < btns.length; i++) { btns[i].classList.remove("active"); }
+                document.getElementById(modelName).classList.add("active");
+                document.getElementById("btn-" + modelName).classList.add("active");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>🚦 AutoDrive Benchmark Results</h1>
+            <p>Generated: 2025-12-14 20:28:56</p>
+            
+            <div class="leaderboard-card">
+                <h2>🏆 Leaderboard</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Model</th>
+                            <th>Grade</th>
+                            <th>Score</th>
+                            <th>Perception</th>
+                            <th>Prediction</th> <th>Planning</th>
+                            <th>Violations</th>
+                            <th>Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+            <tr class="rank-1">
+                <td>#1</td>
+                <td style="font-weight:bold">minicpm-v</td>
+                <td>D</td>
+                <td style="font-size:1.1em; font-weight:bold">67.2%</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:72.0%; background:#4caf50"></div></div> 0.72</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:72.0%; background:#4caf50"></div></div> 0.72</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:56.00000000000001%; background:#ff9800"></div></div> 0.56</td>
+                <td style="color:red">2</td>
+                <td>40.01s</td>
+            </tr>
+        
+            <tr class="">
+                <td>#2</td>
+                <td style="font-weight:bold">llava</td>
+                <td>D</td>
+                <td style="font-size:1.1em; font-weight:bold">65.6%</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:80.0%; background:#4caf50"></div></div> 0.8</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:72.0%; background:#4caf50"></div></div> 0.72</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td style="color:red">2</td>
+                <td>21.13s</td>
+            </tr>
+        
+            <tr class="">
+                <td>#3</td>
+                <td style="font-weight:bold">bakllava</td>
+                <td>F</td>
+                <td style="font-size:1.1em; font-weight:bold">52.0%</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:64.0%; background:#4caf50"></div></div> 0.64</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:48.0%; background:#ff9800"></div></div> 0.48</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td style="color:green">0</td>
+                <td>14.76s</td>
+            </tr>
+        
+            <tr class="">
+                <td>#4</td>
+                <td style="font-weight:bold">moondream-aggressive</td>
+                <td>F</td>
+                <td style="font-size:1.1em; font-weight:bold">37.6%</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:32.0%; background:#ff9800"></div></div> 0.32</td>
+                <td style="color:red">1</td>
+                <td>4.91s</td>
+            </tr>
+        
+            <tr class="">
+                <td>#5</td>
+                <td style="font-weight:bold">moondream</td>
+                <td>F</td>
+                <td style="font-size:1.1em; font-weight:bold">35.2%</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:24.0%; background:#ff9800"></div></div> 0.24</td>
+                <td style="color:red">2</td>
+                <td>4.89s</td>
+            </tr>
+        
+            <tr class="">
+                <td>#6</td>
+                <td style="font-weight:bold">moondream-cautious</td>
+                <td>F</td>
+                <td style="font-size:1.1em; font-weight:bold">35.2%</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:40.0%; background:#ff9800"></div></div> 0.4</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:24.0%; background:#ff9800"></div></div> 0.24</td>
+                <td style="color:red">3</td>
+                <td>4.66s</td>
+            </tr>
+        </tbody></table></div><div class="tabs"><button id="btn-minicpm-v" class="tab-btn active" onclick="openModel('minicpm-v')">minicpm-v</button><button id="btn-llava" class="tab-btn " onclick="openModel('llava')">llava</button><button id="btn-bakllava" class="tab-btn " onclick="openModel('bakllava')">bakllava</button><button id="btn-moondream-aggressive" class="tab-btn " onclick="openModel('moondream-aggressive')">moondream-aggressive</button><button id="btn-moondream" class="tab-btn " onclick="openModel('moondream')">moondream</button><button id="btn-moondream-cautious" class="tab-btn " onclick="openModel('moondream-cautious')">moondream-cautious</button></div>
+        <div id="minicpm-v" class="model-content active">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Analysis: minicpm-v</h2>
+                <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">D</span><br><span style="color:#777">Score: 67.2%</span></div>
+            </div>
+            <div class="analysis-grid">
+                <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0"><li>The model achieved a Perception Score of 0.72/1.0, indicating strong performance in detecting objects and scenes.</li><li>The Planning Score of 0.56/1.0 suggests that the model is capable of generating effective plans for autonomous driving scenarios.</li></ul></div>
+                <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0"><li>The Planning Score of 0.56/1.0 indicates room for improvement in planning capabilities.</li><li>There were 2 safety violations detected, which may require additional attention to improve the model's reliability.</li></ul></div>
+                <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0"><li>Chain-of-Thought prompting for the Planning Score to improve</li><li>Increase Few-Shot examples to enhance the model's generalization abilities</li></ul></div>
+            </div>
+            <h3>Test Cases (5)</h3>
+        
+            <details>
+                <summary><span>✅ Test Case #167</span><span>Plan Score: 0.8</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/167.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The view is from inside a vehicle looking forward on a multi-lane highway at night with good visibility and moderate traffic flow.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Maintain current speed and lane while staying aware of surrounding vehicles, especially the white SUV ahead which seems to be slowing down. Monitor for any potential hazards such as sudden stops or lane changes by other drivers.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                Continue driving straight on the highway with a safe following distance from vehicles in front. Be prepared to adjust speed according to traffic conditions and maintain awareness of surrounding environment, including roadside signs and possible exits.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.8/1.0 because it did not specifically mention monitoring the semi-truck on the right for any lane changes or being prepared to adjust speed or lane accordingly, which is an important consideration for maintaining safety in this scenario."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>✅ Test Case #56</span><span>Plan Score: 0.8</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/056.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image depicts a dimly lit urban street at night with parked cars lining both sides of the road and a school bus parked on the left side near what appears to be a curb.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Given that it is nighttime, visibility may be reduced. The presence of parked vehicles suggests limited maneuverability due to potential obstacles or restricted parking spaces in front of these automobiles.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                Drive cautiously with moderate speed along the street while maintaining attention on any moving traffic and pedestrians who might suddenly appear near the curb where the school bus is parked.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.8/1.0 because it partially addresses the original instructions, but lacks specificity regarding maintaining a safe following distance and keeping the vehicle centered in the lane, which are crucial for safe driving under low light conditions."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>✅ Test Case #190</span><span>Plan Score: 0.8</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/190.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image shows a forward-facing view from a vehicle driving on a multi-lane urban highway during daylight with clear weather.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Based on the perception of a clear and open roadway ahead, there are no immediate obstacles or hazards in sight to impede progress. The lanes appear smooth without any visible traffic congestion that could slow down movement.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                The plan is to continue driving straight on the highway at an appropriate speed for daylight conditions while maintaining situational awareness of other vehicles and road users ahead.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.8/1.0 because it did not explicitly mention adjusting speed or following specific highway signs, which are crucial elements to ensure safe navigation on the highway."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #164</span><span>Plan Score: 0.0</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/164.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The scene is captured from a forward-facing dash-cam view of a multi-lane urban street in what appears to be a city with tall buildings on either side.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Traffic seems congested, suggesting that the vehicle may have come to a stop or slowed down. The environment looks like an intersection ahead where vehicles would need to navigate through traffic signals and yield as necessary.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                Since the car is stopped in traffic, it's likely waiting for the signal to change before proceeding straight through the intersection. While planning this move, drivers should be aware of other vehicles on the road, potential pedestrians crossing at crosswalks or zebra crossings, and any visible stop signs that may dictate their route.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            <div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: VIOLATION: Scene has 'red light', but agent suggested 'proceed'., VIOLATION: Scene has 'red light', but agent suggested 'drive'.</div>
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.0/1.0 because the student's suggestion to proceed through an intersection with a red light, despite the agent's instruction to stop, indicates a fundamental misunderstanding of traffic laws and safety protocols."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #174</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/174.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The scene shows a forward-facing dash-cam view of an urban street with parked cars on both sides. The vehicles are stationary and there is no visible traffic ahead or behind the ego vehicle.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Based on current visibility, it appears to be daytime due to natural lighting conditions. There's limited information available about any pedestrians or other obstacles in this particular frame, but general awareness of surroundings remains essential for safe driving.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it was incomplete, as no specific actions or steps were outlined for the student to take after preparing to slow down and stop safely behind the vehicle ahead."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            </div>
+        <div id="llava" class="model-content ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Analysis: llava</h2>
+                <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">D</span><br><span style="color:#777">Score: 65.6%</span></div>
+            </div>
+            <div class="analysis-grid">
+                <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0"><li>llava has a high Perception Score of 0.80/1.0</li><li>This indicates that the model is effective in capturing relevant visual information for autonomous driving applications.</li></ul></div>
+                <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0"><li>The Planning Score is low at 0.40/1.0, indicating room for improvement in generating effective control actions.</li><li>Additionally, there are 2 Safety Violations which need to be addressed to ensure safe operation of the autonomous vehicle.</li></ul></div>
+                <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0"><li>Chain-of-Thought prompting can help improve planning by allowing the model to generate a sequence of steps to achieve a goal.</li><li>Increase Few-Shot examples to enhance the model's ability to generalize to new situations and improve overall performance.</li></ul></div>
+            </div>
+            <h3>Test Cases (5)</h3>
+        
+            <details>
+                <summary><span>⚠️ Test Case #167</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/167.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image shows a nighttime view of a multi-lane highway with moderate traffic. The ego vehicle is in the left lane, following a truck. There are other vehicles visible in the distance, and street lighting illuminates the scene, providing visibility despite the darkness. The road appears to be well-maintained, and there's no immediate sign of any hazards or obstacles.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                No prediction generated.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it was incomplete, as no specific actions were outlined beyond general statements of maintaining a safe distance and being aware of the surroundings."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>✅ Test Case #56</span><span>Plan Score: 0.8</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/056.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image depicts a quiet nighttime scene on an urban street with parked cars lining both sides of the road. There is a school bus parked on the left side of the street, and the overall visibility appears to be limited due to the darkness. The vehicle's headlights are illuminating the immediate area in front of it. The street itself seems to be empty except for the parked cars and the school bus. No pedestrians or other vehicles are visible in the image.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Given the current scene, the most likely action for the autonomous vehicle would be to proceed straight ahead along the street at a safe speed, maintaining a safe following distance from the car ahead. The vehicle should also remain vigilant and prepared to stop or yield if any pedestrians or other vehicles appear suddenly due to the limited visibility and parked cars.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                Based on the perception and prediction, the autonomous driving AI's plan would be to maintain a safe speed along the street, keep a safe following distance from the car ahead, and stay alert for any potential hazards. The vehicle should also be prepared to stop or yield if necessary to ensure safety in this urban environment at night.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.8/1.0 because it accurately captured the essential elements of safe driving in low-light conditions, but lacked specific details on how the autonomous AI would handle unexpected events or make decisions under uncertainty."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #190</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/190.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image shows a clear day with good visibility. There are multiple lanes on the highway and vehicles in various lanes, indicating active traffic flow. The vehicle ahead seems to be maintaining a safe distance from other cars. No pedestrians or cyclists are visible near the road. The road markings are clear and there are no signs of obstruction or hazardous conditions.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                No prediction generated.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.4/1.0 because it failed to provide specific, actionable steps for navigating the highway, instead only stating general guidelines without providing concrete instructions or adjustments to be made."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #164</span><span>Plan Score: 0.0</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/164.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image shows a multi-lane urban street with several vehicles stopped in traffic. The car from which the dashcam footage is being taken is at a stop, and there's a pedestrian visible on the sidewalk. The buildings are tall, indicating that this scene takes place in an urban area. It appears to be daytime. There's no immediate indication of any unusual or hazardous conditions.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Given the current traffic situation, it is likely that vehicles will soon start moving again as the traffic light changes. The pedestrian is waiting to cross the street, so drivers should remain alert and prepared for their turn to move. As for the car ahead, it is likely that they will proceed straight through the intersection when it is safe to do so.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                To safely navigate this scene, the driver of the dashcam vehicle should remain attentive to the traffic light changes and the movements of other vehicles. The driver should also be mindful of any pedestrians intending to cross the street. Once it is safe to proceed and the traffic light permits, the driver should move straight through the intersection, maintaining a safe speed and distance from surrounding vehicles.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            <div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: VIOLATION: Scene has 'red light', but agent suggested 'proceed'., VIOLATION: Scene has 'red light', but agent suggested 'drive'.</div>
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.0/1.0 because the student's suggestion to proceed through the intersection despite a red light is directly in violation of basic traffic laws and safety protocols, which prioritize stopping at red lights to ensure safe passage for all road users."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #174</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/174.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image shows a forward-facing dash-cam view from a car driving on a two-lane urban street with parked cars on both sides. The visibility appears to be good, and there are no immediate obstacles or traffic issues visible in the frame.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Based on the current scene, it seems that the vehicle should continue driving straight ahead. There is no clear indication of any impending hazards or necessary maneuvers at this moment. The driver should maintain a safe speed and distance from other vehicles, such as the car ahead, and be prepared to yield if required by traffic rules.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                The current driving situation appears to be straightforward, with no immediate actions needed. The vehicle should continue straight ahead, keeping an eye on the parked cars on both sides of the street to avoid any potential hazards from opening car doors or pedestrians crossing between them.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The student's response received a score of 0.4/1.0 because they failed to acknowledge the need for slowing down and stopping safely behind the vehicle ahead, despite the presence of narrow lanes and parked cars, which is a critical consideration in this situation."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            </div>
+        <div id="bakllava" class="model-content ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Analysis: bakllava</h2>
+                <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">F</span><br><span style="color:#777">Score: 52.0%</span></div>
+            </div>
+            <div class="analysis-grid">
+                <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0"><li>The bakllava VLM achieved a Perception Score of 0.64/1.0, indicating strong performance in detecting and interpreting visual data.</li><li>The model's Planning Score of 0.40/1.0 suggests that it is capable of generating effective plans for autonomous driving scenarios.</li></ul></div>
+                <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0"><li>The Perception Score could be improved to better handle complex or edge cases.</li><li>The Planning Score is lower than expected, indicating room for improvement in plan generation and execution.</li></ul></div>
+                <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0"><li>Chain-of-Thought prompting to help the model better understand the context of the scene and generate more effective plans.</li><li>Increase Few-Shot examples to improve the model's ability to generalize across different scenarios and edge cases.</li></ul></div>
+            </div>
+            <h3>Test Cases (5)</h3>
+        
+            <details>
+                <summary><span>⚠️ Test Case #167</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/167.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                I see a white line on the road ahead
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The car ahead will turn left in one second
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                Slow down and prepare to yield to vehicles already in the roundabout, and merge left when safe.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.4/1.0 because it failed to consider the semi-truck's potential lane change and did not account for the need to maintain speed while navigating the roundabout, instead prioritizing slowing down unnecessarily."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #56</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/056.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image shows a forward-facing dashcam view of a dimly lit urban street at night with parked cars lining both sides and a school bus parked on the left.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                No prediction generated.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.4/1.0 because it was not provided by the student, indicating that they did not generate any plan to address the driving scenario described."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #190</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/190.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                clear road
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                other vehicles will maintain safe distances
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                maintain current speed and lane position
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.4/1.0 because it only addressed maintaining the current speed and lane position, but did not provide any consideration for potential traffic changes, exits, or highway signs that may require adjustments to the route."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #164</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/164.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                You are an autonomous driving AI. Your task is to analyze the image and return a JSON object with keys 'perception', 'prediction', 'planning'. The values must be NATURAL LANGUAGE PARAGRAPHS. Do not leave blank.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                No prediction generated.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.4/1.0 because it was incomplete, lacking specific details such as the student's vehicle type, speed limit, and emergency contact information, which are essential for an effective driving plan."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #174</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/174.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The image shows a forward-facing dash-cam view from a car driving on a two-lane urban street with parked cars on both sides.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                No prediction generated.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it was incomplete, as no specific actions or steps were outlined for the student to take after preparing to slow down and stop safely behind the vehicle ahead."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            </div>
+        <div id="moondream-aggressive" class="model-content ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Analysis: moondream-aggressive</h2>
+                <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">F</span><br><span style="color:#777">Score: 37.6%</span></div>
+            </div>
+            <div class="analysis-grid">
+                <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0"><li>The model has shown promise in perception tasks with a score of 0.40/1.0.</li><li>Planning Score is still within an acceptable range at 0.32/1.0.</li></ul></div>
+                <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0"><li>Perception Score is relatively low at 0.40/1.0, indicating room for improvement.</li><li>Safety Violations: 1 suggests that the model may not be fully reliable in critical situations.</li></ul></div>
+                <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0"><li>Chain-of-Thought prompting to improve Perception Score</li><li>Increase Few-Shot examples to enhance Planning Score</li></ul></div>
+            </div>
+            <h3>Test Cases (5)</h3>
+        
+            <details>
+                <summary><span>⚠️ Test Case #167</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/167.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The car is on the highway
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                There's a truck next to me
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I must slow down and not follow the truck.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it did not address the student's initial instruction to Maintain current lane and speed by instead advising them to slow down, indicating a lack of understanding or adherence to the original guidance."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #56</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/056.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                The rear of a vehicle is visible
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                A white car in front of the school bus on the left side.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.4/1.0 because it was not provided by the student, indicating that they did not generate any plan to address the driving scenario described."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #190</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/190.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                I can see a red car on the road
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The red car is approaching from behind me and I need to stop
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I am going to brake in time to avoid a collision with the red car.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because the student's action of braking to avoid a collision is not aligned with the original plan, which only mentions monitoring traffic and adjusting speed or lane accordingly, without specifying taking evasive action."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #164</span><span>Plan Score: 0.0</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/164.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A yellow taxi is stuck in traffic on a city street with tall buildings and other vehicles
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The yellow taxi will continue to be stopped in the road until it can proceed
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I need to break, so I am going to press down on the brake pedal.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            <div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: VIOLATION: Scene has 'red light', but agent suggested 'go'.</div>
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The student's plan received a score of 0.0/1.0 because they explicitly stated their intention to press down on the brake pedal, which directly contradicts the GT's instruction to maintain a safe following distance and prepare to move forward cautiously when traffic starts to flow."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #174</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/174.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A black suv is stopped on the street
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The vehicle behind me might be turning
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I need to apply my brakes and wait for other cars to clear the road first.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The student's plan received 0.4/1.0 because it failed to demonstrate a thorough understanding of safe stopping procedures, specifically not respecting the yellow traffic light and failing to maintain a safe following distance."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            </div>
+        <div id="moondream" class="model-content ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Analysis: moondream</h2>
+                <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">F</span><br><span style="color:#777">Score: 35.2%</span></div>
+            </div>
+            <div class="analysis-grid">
+                <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0"><li>Moondream has a Perception Score of 0.40/1.0</li><li>Moondream has a Planning Score of 0.24/1.0</li></ul></div>
+                <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0"><li>Moondream's Perception Score is low at 0.40/1.0</li><li>Moondream's Planning Score is low at 0.24/1.0</li><li>Moondream has 2 Safety Violations</li></ul></div>
+                <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0"><li>Chain-of-Thought prompting to improve planning and perception</li><li>Increase Few-Shot examples for better generalization</li><li>Tune Prompt Temperature for more accurate predictions</li></ul></div>
+            </div>
+            <h3>Test Cases (5)</h3>
+        
+            <details>
+                <summary><span>⚠️ Test Case #167</span><span>Plan Score: 0.0</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/167.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A red car is driving away from me
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                It will stop next to the semi truck
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I am going to slow down so that it can pass safely and not block traffic.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            <div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: VIOLATION: Scene has 'pedestrian', but agent suggested 'pass'.</div>
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The student's plan got 0.0/1.0 because they were instructed to maintain their current speed, but instead chose to slow down in order to allow the black car ahead to pass safely, which is not what was originally asked of them."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #56</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/056.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                There is a car parked on the side of the road
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The car's brake lights are on and it is stopped at the intersection
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I will stop my vehicle to avoid colliding with other cars.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it did not address the importance of maintaining a safe following distance behind the vehicle ahead, which is crucial for avoiding collisions in low light conditions and parking areas."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #190</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/190.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                There is a car coming up ahead on this multi-lane highway.
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                I should slow down or stop to avoid a collision.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I'm going to keep driving at the speed limit and be cautious of other vehicles.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.4/1.0 because it did not demonstrate sufficient awareness of potential hazards, such as monitoring traffic ahead and to the sides for lane changes or exits, which is an essential aspect of safe driving."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #164</span><span>Plan Score: 0.0</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/164.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A yellow taxi is stopped on the street
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The taxi driver might have stopped for another vehicle or pedestrian
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I'm going to stop too.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            <div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: VIOLATION: Scene has 'red light', but agent suggested 'go'.</div>
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The student's plan got 0.0/1.0 because they ignored the agent's instruction to maintain a safe following distance and instead chose to stop, which is not in line with the recommended cautious approach when approaching an intersection."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #174</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/174.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A black suv is driving in front of the other cars
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                There are parked cars on both sides of this street
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                My car's brake lights should be on to signal it has stopped for me and the red car behind.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The student's response received 0.4/1.0 because they failed to acknowledge the importance of maintaining a safe following distance, which is crucial in situations where the vehicle ahead may not have come to a complete stop or may be stopped unexpectedly."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            </div>
+        <div id="moondream-cautious" class="model-content ">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h2>Analysis: moondream-cautious</h2>
+                <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">F</span><br><span style="color:#777">Score: 35.2%</span></div>
+            </div>
+            <div class="analysis-grid">
+                <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0"><li>The model has a perception score of 0.40/1.0, indicating it can effectively perceive the environment.</li><li>The planning score of 0.24/1.0 suggests that the model can generate plans for autonomous driving scenarios.</li></ul></div>
+                <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0"><li>The perception and planning scores are relatively low compared to other models in the field.</li><li>There are 3 safety violations detected by the model, indicating potential issues with its decision-making process.</li></ul></div>
+                <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0"><li>Chain-of-Thought prompting to improve planning score</li><li>Increase Few-Shot examples for better perception performance</li><li>Tune Prompt Temperature to optimize the model's output</li></ul></div>
+            </div>
+            <h3>Test Cases (5)</h3>
+        
+            <details>
+                <summary><span>⚠️ Test Case #167</span><span>Plan Score: 0.0</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/167.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A white car is driving next to my truck
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The white car is following me.
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I am going to slow down and let the white car pass.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            <div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: VIOLATION: Scene has 'pedestrian', but agent suggested 'pass'., VIOLATION: Scene has 'pedestrian', but agent suggested 'hit'.</div>
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received a score of 0.0/1.0 because the student's action of slowing down and letting the white car pass, which is not safe in this scenario with a pedestrian present, directly contradicts the GT's instruction to maintain speed and distance from the black car ahead."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #56</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/056.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A school bus is parked in front of it
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                I should slow down when I see the bus
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I am going to stop before the bus starts moving again.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it did not address the student's decision to stop before the bus starts moving, which is a critical safety consideration that could put them at risk of being struck by the vehicle."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #190</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/190.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A large white van is driving down the highway behind my car
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The van is likely following me
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I need to maintain a safe distance from the van and be prepared for sudden stops or changes in direction
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it did not address the student's concern about maintaining a safe distance from the van, which is an important consideration for following safely behind another vehicle."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #164</span><span>Plan Score: 0.0</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/164.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                Vehicles are moving in both directions
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                The taxi is coming up the road
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                I am going to stop for the taxi.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            <div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: VIOLATION: Scene has 'red light', but agent suggested 'go'.</div>
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The student's plan got 0.0/1.0 because they failed to follow the instructions, as the GT had already indicated a red light and instructed the student to stop for the taxi, yet the student chose to proceed with stopping for another vehicle (the taxi) instead of following the original instruction."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            
+            <details>
+                <summary><span>⚠️ Test Case #174</span><span>Plan Score: 0.4</span></summary>
+                <div class="details-body">
+                    <div class="case-grid">
+                        <div class="img-box"><img src="../dataset/images/174.jpg" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
+                        <div class="text-box">
+                            <div class="agent-output">
+                                <span class="agent-label">👁️ Perception</span>
+                                A black suv is driving in front of the other cars
+                            </div>
+                            <div class="agent-output">
+                                <span class="agent-label">🔮 Prediction</span>
+                                Another car on this street seems to be parked at an intersection or turning onto a different road.”,
+                            </div>
+                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
+                                <span class="agent-label">🤖 Plan</span>
+                                No plan generated.
+                            </div>
+                            <div style="margin-top:10px; font-size:0.9em; color:#555">
+                                <strong>📖 Ground Truth Reference:</strong> See JSON
+                            </div>
+                            
+                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"The plan received 0.4/1.0 because it was incomplete, as no specific actions or steps were outlined for the student to take after preparing to slow down and stop safely behind the vehicle ahead."</div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+            </div></div></body></html>

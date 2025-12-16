@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a city street with parked cars along the right curb and a pedestrian running on the sidewalk.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The vehicle is on a one-way street with parallel parked cars on the right side. The road is clear ahead with no visible traffic signals or signs in the immediate view. A pedestrian is running on the sidewalk to the right, approaching the street corner. The curb has a red-painted section indicating a no-parking zone near the corner. The weather is clear and visibility is good.",
+  "prediction": "The pedestrian may attempt to cross the street soon, given their proximity to the corner. Parked cars may also start to move or open doors unexpectedly.",
+  "planning": "Proceed with caution, reduce speed, and prepare to yield to any pedestrian crossing. Maintain a safe distance from the parked cars to avoid sudden obstacles.",
+  "image": "137.jpg",
+  "id": 137
+}

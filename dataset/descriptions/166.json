@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a three-lane urban street with moderate traffic and clear weather.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has three lanes going straight with no visible turn-only lanes. There are several vehicles ahead, including a black SUV directly in front and a red car parked on the left shoulder. Pedestrian crossing signs are visible on both sides of the road, indicating a pedestrian crossing area nearby. A pedestrian overpass is present above the road, reducing pedestrian crossing at street level. Traffic appears to be moving steadily, and there are no traffic lights visible in the immediate vicinity. The weather is clear with good visibility.",
+  "prediction": "Traffic ahead will continue moving forward at a steady pace. No immediate pedestrian crossing is expected due to the overpass and absence of pedestrians on the road.",
+  "planning": "Maintain current lane and speed, stay alert for any vehicles slowing or stopping ahead, and be prepared to yield if pedestrians appear near the crossing signs.",
+  "image": "166.jpg",
+  "id": 166
+}

@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a nighttime urban street scene with wet road conditions and raindrops on the windshield, looking forward along a dimly lit road with streetlights and vehicle headlights visible.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road is wet from rain, causing reflections of streetlights and vehicle lights on the pavement. There is a vehicle with headlights on approaching from the opposite direction. The street is dimly lit with streetlights spaced along the road. The windshield has raindrops, which may reduce visibility. There are no visible traffic signals or signs in the immediate view, and no pedestrians are visible on the sidewalks or crossing the street. The lane markings are faint but suggest a two-way street.",
+  "prediction": "The oncoming vehicle will continue driving forward in its lane. Given the wet road, vehicles may reduce speed to maintain control. Visibility may remain limited due to rain and darkness.",
+  "planning": "Proceed cautiously at a reduced speed appropriate for wet and dark conditions. Maintain lane position and increase following distance if there is a vehicle ahead. Use headlights to improve visibility and be prepared to slow down or stop if hazards appear.",
+  "image": "062.jpg",
+  "id": 62
+}

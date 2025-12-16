@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view on a two-lane urban street with double yellow lines and parked vehicles on both sides.",
+  "goal": "Proceed straight ahead along the current lane.",
+  "perception": "The vehicle is behind a large red delivery truck labeled 'Hercules Welding' in the right lane of a two-lane road with double yellow lines indicating no passing. There is a bus stopped on the left side of the street and several parked cars on the right. A pedestrian crossing sign is visible ahead on the right side, with pedestrians present on the sidewalk but none currently crossing. The road is clear ahead beyond the truck, and the weather is clear with good visibility.",
+  "prediction": "The truck ahead will continue moving forward slowly or may stop briefly to deliver. Pedestrians may approach the crosswalk but are not currently crossing.",
+  "planning": "Maintain a safe following distance behind the truck, do not attempt to pass due to double yellow lines, and prepare to stop if pedestrians enter the crosswalk or if the truck stops.",
+  "image": "065.jpg",
+  "id": 65
+}

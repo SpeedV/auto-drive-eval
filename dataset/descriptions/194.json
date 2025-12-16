@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a multi-lane urban road with buildings on both sides and a palm tree in the median.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has three lanes in the direction of travel, separated by dashed white lines. There is a median with a palm tree and street lamps. On the right side, a white van is parked on the curb. Ahead, there is a traffic light visible in the distance, currently red. There is a no-left-turn sign on the left side of the road. The weather is clear and visibility is good. No pedestrians are visible on the road or sidewalks.",
+  "prediction": "The traffic light ahead will remain red for a short time, causing vehicles to stop or slow down. Parked vehicles will remain stationary. Traffic will likely build up slightly at the red light.",
+  "planning": "Prepare to slow down and stop at the red traffic light ahead. Maintain lane position and do not attempt to turn left as prohibited by signage.",
+  "image": "194.jpg",
+  "id": 194
+}

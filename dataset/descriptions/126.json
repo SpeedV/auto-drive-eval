@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a wide, multi-lane urban street at night in a busy city.",
+  "goal": "Continue driving straight through the intersection.",
+  "perception": "The road ahead is well-lit with multiple lanes in each direction. There are many yellow taxis parked along the right side of the street, and other vehicles are visible in the distance. The traffic lights ahead are green, indicating the right of way to proceed straight. Pedestrian crosswalk markings are visible, but no pedestrians are currently crossing. The street is lined with tall buildings, and a large illuminated billboard is visible in the distance. Traffic appears moderate but steady.",
+  "prediction": "Vehicles ahead will continue moving straight through the intersection as the green light remains on. No immediate pedestrian crossing is expected.",
+  "planning": "Proceed straight through the intersection while maintaining a safe speed and staying within the lane. Remain alert for any sudden changes in traffic signals or pedestrian activity.",
+  "image": "126.jpg",
+  "id": 126
+}

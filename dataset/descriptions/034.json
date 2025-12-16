@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane urban street with bus lanes on both sides, flanked by tall buildings under construction or renovation.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has two lanes for general traffic separated by double yellow lines, with dedicated red-painted bus lanes on both sides. A yellow van is directly ahead in the same lane as the ego vehicle, and a bus is visible further ahead in the right bus lane. The bus lane on the right is marked with a bus stop sign. The traffic appears light, and the weather is clear with good visibility. There are no visible traffic signals or pedestrians in the immediate vicinity. The ego vehicle is currently in the left general traffic lane, which is appropriate for continuing straight. The bus lanes are reserved for buses and possibly other authorized vehicles, so the ego vehicle should not enter them.",
+  "prediction": "The yellow van ahead will continue moving forward in the general traffic lane. The bus in the right bus lane will likely continue along its route, possibly stopping at the bus stop ahead. No immediate obstacles or traffic signals suggest stopping or turning soon.",
+  "planning": "Maintain the current lane behind the yellow van, keep a safe following distance, and continue straight ahead. Do not enter the bus lanes, as they are reserved for buses. Stay alert for any changes in traffic signals or pedestrians near the bus stop.",
+  "image": "034.jpg",
+  "id": 34
+}

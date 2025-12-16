@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime urban intersection with multiple lanes and traffic signals.",
+  "goal": "Proceed straight through the intersection when safe and legal.",
+  "perception": "The ego vehicle is stopped behind a red compact car at a red traffic light. The intersection has multiple lanes with green lights visible for cross traffic. The traffic signal facing the ego vehicle is red, requiring a full stop. There are vehicles moving in the perpendicular direction under green lights. Roadside barriers and fencing are present on the right side. The weather is clear, and visibility is good despite nighttime conditions.",
+  "prediction": "The traffic light for the ego vehicle will likely turn green soon, allowing vehicles to proceed straight. Cross traffic will stop once their light turns red.",
+  "planning": "Remain stopped and wait for the traffic light to turn green before proceeding straight through the intersection, ensuring compliance with traffic signals and safety.",
+  "image": "118.jpg",
+  "id": 118
+}

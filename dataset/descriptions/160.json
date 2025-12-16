@@ -1,0 +1,9 @@
+{
+  "context": "The image shows a nighttime forward-facing dash-cam view at an urban intersection with multiple lanes and traffic signals visible.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light ahead is green, indicating permission to proceed straight. There are multiple lanes visible, with lane markings directing traffic. Several vehicles are present in the intersection and on the cross streets, with headlights on due to nighttime conditions. A no left turn sign is visible on the right side, indicating left turns are prohibited here. The road surface is clear and dry, and visibility is adequate despite the darkness.",
+  "prediction": "Vehicles currently in the intersection will continue moving through as the green light remains active. Cross traffic is stopped or waiting due to the red light. The green light is likely to remain for a few more seconds.",
+  "planning": "Proceed straight through the intersection cautiously, maintaining lane position and speed appropriate for nighttime urban driving. Be prepared to stop if the light changes or if other vehicles behave unpredictably.",
+  "image": "160.jpg",
+  "id": 160
+}

@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a two-lane road with a solid double yellow line, approaching an overpass.",
+  "goal": "Continue driving straight ahead on the current road.",
+  "perception": "The road ahead has two lanes separated by a solid double yellow line, indicating no passing. The lane to the right is a shoulder or emergency lane. There is moderate traffic in the opposite direction on a divided highway separated by a concrete barrier. A bright orange warning sign on the right side of the road indicates trucks should slow down and merge from the right. The weather is clear and visibility is good. There are no immediate obstacles or pedestrians visible on the road.",
+  "prediction": "Traffic in the opposite direction will continue flowing steadily. The ego vehicle will approach and pass under the overpass without obstruction. Trucks may begin merging from the right shoulder as indicated by the sign.",
+  "planning": "Maintain current lane and speed, adhering to the no-passing rule indicated by the double yellow line. Stay alert for trucks merging from the right shoulder and be prepared to adjust speed or position safely if necessary.",
+  "image": "179.jpg",
+  "id": 179
+}

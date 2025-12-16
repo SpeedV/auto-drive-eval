@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a curved urban street lined with palm trees and buildings on the right side.",
+  "goal": "Continue driving forward along the curved road.",
+  "perception": "The road curves gently to the left with a red and white painted curb indicating no parking or stopping on the right side. There is a pedestrian crossing area ahead with a man and two children standing near the sidewalk. A blue parking sign and a handicapped parking sign are visible on the right side. Several parked cars line the left side of the street. The weather is clear and visibility is good. No traffic lights or stop signs are visible in the immediate view.",
+  "prediction": "The pedestrians near the sidewalk may attempt to cross the street soon. Parked cars on the left may start moving or open doors. The road will continue curving left.",
+  "planning": "Slow down and proceed cautiously around the curve, be prepared to stop for pedestrians crossing. Maintain lane position and watch for any vehicles or pedestrians entering the roadway.",
+  "image": "087.jpg",
+  "id": 87
+}

@@ -1,0 +1,9 @@
+{
+  "context": "The dash-cam shows a forward-facing view at an intersection with a red traffic light. A traffic officer is standing in the middle of the intersection directing traffic.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The traffic light is red, indicating a stop for vehicles. However, a traffic officer is actively directing traffic and signaling with an arm raised, likely instructing vehicles to stop or wait. A silver car is partially visible on the right, appearing to be waiting or turning. The road is clear ahead, but the officer's presence overrides the traffic signal. There are no pedestrians crossing at this moment. The weather is clear with good visibility.",
+  "prediction": "The traffic officer will continue to control the flow, likely holding vehicles at a stop until it is safe or until the officer signals to proceed.",
+  "planning": "Stop and wait for the traffic officer's signal before proceeding, as their directions take precedence over the traffic light. Do not move forward while the officer signals to stop.",
+  "image": "197.jpg",
+  "id": 197
+}

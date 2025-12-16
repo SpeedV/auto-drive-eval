@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a three-lane urban street under an elevated train track on the left side.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has three lanes with clear lane markings. The left lane is occupied by a white SUV and other vehicles further ahead. The center lane has a black sedan directly in front of the ego vehicle. The right lane is clear. There are no visible traffic signals or stop signs in the immediate view. The weather is cloudy but visibility is good. The sidewalk on the right is overgrown and littered, with no pedestrians visible. The elevated train track runs parallel to the road on the left side. Traffic appears moderate and moving steadily.",
+  "prediction": "The vehicles ahead in the left and center lanes will continue moving forward at a steady pace. No immediate obstacles or traffic control devices indicate a need to stop or slow down.",
+  "planning": "Maintain current lane and speed, keeping a safe following distance behind the black sedan. Prepare to adjust speed or lane if traffic conditions ahead change.",
+  "image": "028.jpg",
+  "id": 28
+}

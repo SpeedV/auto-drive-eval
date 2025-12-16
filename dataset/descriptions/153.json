@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a dimly lit urban street at night with parked cars along the right side and streetlights illuminating the road ahead.",
+  "goal": "Drive forward safely along the street.",
+  "perception": "The road is a single lane in each direction with parked cars on the right side. Streetlights provide limited visibility. There are no visible pedestrians or moving vehicles directly ahead. The road appears clear for forward movement. No traffic signs or signals are visible in the image. The parked cars reduce the available road width on the right side.",
+  "prediction": "The road ahead will remain clear for the next few seconds, but the narrow lane due to parked cars requires careful navigation.",
+  "planning": "Proceed forward cautiously, maintaining a safe distance from the parked cars on the right. Reduce speed to ensure control and be prepared to stop if any obstacles or pedestrians appear.",
+  "image": "153.jpg",
+  "id": 153
+}

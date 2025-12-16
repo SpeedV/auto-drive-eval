@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a multi-lane highway or expressway with streetlights illuminating the road. The vehicle is approaching a right exit ramp with a green directional sign visible ahead.",
+  "goal": "Take the right exit ramp safely.",
+  "perception": "The road has clear lane markings indicating a right exit lane separated by solid and dashed lines. The vehicle is currently in the lane leading to the exit ramp. There are other vehicles ahead, and the road curves gently to the right. Streetlights provide adequate visibility. The green exit sign suggests an upcoming exit, and the lane markings confirm the exit lane is on the right. No pedestrians or obstacles are visible on the road.",
+  "prediction": "The vehicle will continue approaching the exit ramp and will need to slow down to safely navigate the curve. Vehicles ahead may also reduce speed as they take the exit.",
+  "planning": "Begin to reduce speed moderately to safely follow the curve of the exit ramp. Maintain lane discipline by staying in the right lane and prepare to merge onto the exit ramp, ensuring to check mirrors and blind spots for other vehicles.",
+  "image": "075.jpg",
+  "id": 75
+}

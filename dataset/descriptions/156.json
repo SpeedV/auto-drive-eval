@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a dimly lit urban street at night.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road is a two-lane street with dashed lane markings indicating two-way traffic. Streetlights illuminate the road intermittently. There is a car ahead in the same lane traveling in the same direction. The road appears clear with no pedestrians or obstacles visible. Buildings and a wall line the right side of the street. No traffic signs or signals are visible in the immediate vicinity.",
+  "prediction": "The car ahead will continue driving straight at a steady pace. No immediate hazards or changes in traffic conditions are apparent.",
+  "planning": "Maintain current speed and lane, keeping a safe following distance behind the vehicle ahead. Stay alert for any changes in road conditions or traffic.",
+  "image": "156.jpg",
+  "id": 156
+}

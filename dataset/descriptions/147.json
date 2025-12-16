@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a two-lane road with streetlights illuminating the scene. The ego vehicle is behind a white car that is partially stopped or parked on the right side of the road near a curb painted red and yellow.",
+  "goal": "Continue driving forward safely along the road.",
+  "perception": "The road has two lanes, one in each direction, with no visible lane markings separating them. The white car ahead is stopped or parked partially on the curb, which is painted red and yellow indicating a no-parking or restricted zone. There are other vehicles further ahead moving in the same direction. Streetlights provide moderate illumination. There are no visible traffic signals or pedestrians in the immediate vicinity. The ego vehicle is positioned behind the white car, which may be obstructing the lane.",
+  "prediction": "The white car may either remain stopped or attempt to merge back into the lane, potentially causing a temporary obstruction. Vehicles ahead appear to be moving steadily forward.",
+  "planning": "Slow down and maintain a safe following distance behind the white car. Prepare to maneuver around it cautiously if it remains stopped, ensuring the road ahead is clear and safe to pass without violating traffic rules or entering oncoming traffic lane.",
+  "image": "147.jpg",
+  "id": 147
+}

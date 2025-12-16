@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view from a car stopped in traffic on a multi-lane urban street with tall buildings on both sides.",
+  "goal": "Proceed straight through the intersection when safe.",
+  "perception": "The vehicle is stopped behind a white Ford SUV in the center lane. There are multiple lanes of traffic, with a silver sedan to the left and two yellow taxis to the right. The traffic light ahead is green, indicating permission to proceed. The speed limit sign on the right indicates 25 mph. Pedestrian crossing signs are visible on the left side. The road is straight with no immediate turns indicated. The weather is clear and visibility is good.",
+  "prediction": "Traffic ahead will start moving forward as the green light allows vehicles to proceed. The white SUV in front will begin accelerating, followed by the surrounding vehicles.",
+  "planning": "Prepare to move forward when the vehicle ahead starts to move, maintaining a safe following distance and adhering to the 25 mph speed limit. Stay in the current lane and be alert for any pedestrians or vehicles merging.",
+  "image": "195.jpg",
+  "id": 195
+}

@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime urban street intersection with a crosswalk and parked vehicles along the right curb.",
+  "goal": "Proceed straight through the intersection safely.",
+  "perception": "The vehicle is stopped or moving slowly near a crosswalk at an intersection. There is a black SUV parked partially on the crosswalk and a red and white scooter parked on the sidewalk next to it. Pedestrians are crossing the street from left to right in front of the vehicle. Streetlights illuminate the scene, and a 'All Way' stop sign is visible on the right side, indicating a four-way stop intersection. The road is clear ahead beyond the crosswalk.",
+  "prediction": "Pedestrians will continue crossing the street, and other vehicles at the intersection will likely proceed in turn following the four-way stop rules.",
+  "planning": "Wait for all pedestrians to clear the crosswalk completely, then proceed straight through the intersection only when it is your turn according to the four-way stop traffic rules.",
+  "image": "161.jpg",
+  "id": 161
+}

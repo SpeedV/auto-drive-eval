@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a two-lane urban street with a dedicated bike lane on the right side.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The vehicle is traveling on a two-lane street with one lane in each direction. There is a marked bike lane on the right side of the road, separated by a solid white line. Parked cars line the right side of the street beyond the bike lane. A yellow diamond-shaped sign indicates a speed bump ahead with a recommended speed of 15 mph. The road surface appears clear and dry. There is a traffic light visible in the distance, currently green. No pedestrians or cyclists are immediately visible in the lane or crossing the street. The weather is clear with good visibility.",
+  "prediction": "The vehicle will approach the speed bump and should reduce speed accordingly. Traffic ahead is moving steadily through the green light. No immediate hazards are visible.",
+  "planning": "Slow down to comply with the 15 mph speed bump warning, maintain lane position, and continue straight while monitoring the traffic light and surroundings for any changes.",
+  "image": "029.jpg",
+  "id": 29
+}

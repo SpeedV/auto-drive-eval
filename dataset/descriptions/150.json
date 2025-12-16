@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a dimly lit urban street at night with streetlights lining the left side and a few vehicles parked along the right side of the road.",
+  "goal": "Continue driving straight ahead on the current road.",
+  "perception": "The road is two lanes wide with dashed lane markings visible. There is a white van parked on the right side ahead and another vehicle further down the road. Streetlights illuminate the left side of the street, while the right side is darker with buildings and a sidewalk. No pedestrians or moving vehicles are currently visible in the lane ahead. The road appears clear and unobstructed for driving straight. There are no visible traffic signals or signs indicating stops or turns.",
+  "prediction": "The road ahead will remain clear for the next few seconds, allowing the vehicle to continue straight without interruption.",
+  "planning": "Maintain current speed and lane position to continue driving straight safely, while remaining alert for any unexpected obstacles or changes in road conditions.",
+  "image": "150.jpg",
+  "id": 150
+}

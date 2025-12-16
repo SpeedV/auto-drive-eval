@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a residential street with parked cars lining both sides of the road.",
+  "goal": "Continue driving straight ahead on this residential street.",
+  "perception": "The road is a two-way residential street with parked vehicles on both sides, leaving a single lane for moving traffic in each direction. The sun is low on the left side, potentially causing glare. There are no visible traffic signs or signals in the immediate view. The street appears clear of pedestrians and other moving vehicles at this moment. The road surface is dry and visibility is good aside from the sun glare.",
+  "prediction": "The ego vehicle will continue moving forward with no immediate obstacles. Parked vehicles may cause occasional obstructions if doors open or pedestrians step out, but none are visible currently.",
+  "planning": "Maintain a moderate speed appropriate for a residential area, stay centered in the lane to avoid parked cars, and be prepared to slow or stop if any pedestrians or vehicles emerge from between parked cars.",
+  "image": "022.jpg",
+  "id": 22
+}

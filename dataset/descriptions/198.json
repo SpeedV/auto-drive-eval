@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car stopped at a nighttime intersection with traffic lights visible.",
+  "goal": "Proceed straight through the intersection once the light turns green.",
+  "perception": "The ego vehicle is stopped at a red light behind a silver car in the right lane. The left lane also has vehicles stopped. The traffic light directly ahead is red for the ego vehicle's lane, while the perpendicular traffic light is green, allowing cross traffic to proceed. The road markings include a stop line and a crosswalk. It is dark outside, and visibility is limited to vehicle lights and streetlights.",
+  "prediction": "The traffic light will soon change from red to green for the ego vehicle's lane, allowing vehicles to move forward through the intersection. The cars ahead will start moving once the light changes.",
+  "planning": "Remain stopped and wait for the traffic light to turn green. Once green, proceed straight through the intersection cautiously, ensuring cross traffic has cleared.",
+  "image": "198.jpg",
+  "id": 198
+}

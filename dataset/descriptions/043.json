@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime urban street scene under an elevated highway or bridge with wet road conditions and some street lighting.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is on a wet road at night under an elevated structure. The traffic light ahead is green, allowing vehicles to proceed straight. There are oncoming vehicles with headlights visible, and the road appears to have multiple lanes. The street is dimly lit with some light reflections on the wet surface. There are no visible pedestrians or immediate obstacles in the lane of travel. The elevated structure and pillars are on the right side, and the left side has some buildings and street lights.",
+  "prediction": "Traffic will continue moving forward through the green light. Oncoming vehicles will maintain their lanes. The wet road may require cautious driving to avoid slipping.",
+  "planning": "Proceed straight through the intersection with caution due to wet road conditions. Maintain a safe speed and distance from other vehicles, ensuring full control of the vehicle under low visibility and slippery surface.",
+  "image": "043.jpg",
+  "id": 43
+}

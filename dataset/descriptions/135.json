@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a three-lane urban street with moderate traffic and clear weather.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is in the middle lane of a three-lane road approaching an intersection. The traffic light ahead is green, allowing vehicles to continue straight. There are cars parked along both sides of the street and a white SUV directly ahead in the same lane. The road is marked with dashed lane lines, and there are no visible pedestrians crossing. The weather is clear with good visibility.",
+  "prediction": "The white SUV ahead will continue moving straight through the green light. Traffic in adjacent lanes will also proceed forward.",
+  "planning": "Maintain current lane and speed to safely follow the vehicle ahead through the intersection while monitoring the traffic light for any changes.",
+  "image": "135.jpg",
+  "id": 135
+}

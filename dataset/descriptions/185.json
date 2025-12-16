@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a city street intersection with clear weather and blue sky.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a crosswalk at an intersection with a green traffic light visible ahead, indicating permission to proceed. The road is a two-way street with one lane in each direction. There are parked cars along the left side of the street and some pedestrians on the sidewalks. The crosswalk markings are clearly visible. There are no visible stop signs or other traffic control devices conflicting with the green light. The street signs indicate the intersection of Putnam Ave and another street.",
+  "prediction": "Traffic will start moving forward as the light is green. Pedestrians may begin crossing if the pedestrian signal allows.",
+  "planning": "Proceed straight through the intersection with caution, watching for pedestrians entering the crosswalk and other vehicles. Maintain awareness of parked cars and any potential hazards.",
+  "image": "185.jpg",
+  "id": 185
+}

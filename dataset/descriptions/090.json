@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view from a car behind a New York City bus on a two-lane urban street with parked cars and commercial buildings on the right side.",
+  "goal": "Follow the bus safely and continue driving straight.",
+  "perception": "The ego vehicle is behind an MTA New York City bus (route B68) that is stopped or moving slowly in the right lane. The road is narrow with one lane in each direction, and there is a line of parked cars on the right side partially covered with snow. The street has commercial buildings including a dry cleaner and a pharmacy. The weather is clear and sunny with good visibility. There are no visible traffic lights or signs in the immediate view. The bus's brake lights are on, indicating it is slowing or stopped. The left lane appears clear for passing, but it is a two-way street with oncoming traffic possible.",
+  "prediction": "The bus will likely remain stopped or move slowly as it picks up or drops off passengers. Vehicles behind the bus may wait or consider passing if safe and legal.",
+  "planning": "Maintain a safe following distance behind the bus and prepare to stop. Do not attempt to pass unless it is clearly safe and legal to do so, considering oncoming traffic and road markings.",
+  "image": "090.jpg",
+  "id": 90
+}

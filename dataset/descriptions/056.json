@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a forward-facing view of a dimly lit urban street at night with parked cars lining both sides and a school bus parked on the left.",
+  "goal": "Drive straight ahead along the street.",
+  "perception": "The street is a two-way road with one lane in each direction, bordered by parked vehicles on both sides. There is a school bus parked on the left side, and several other cars parked along the curb. The road surface appears clear with no visible pedestrians or immediate hazards. Streetlights provide limited illumination. The vehicle ahead is moving forward at a moderate speed. No traffic signals or stop signs are visible in the immediate vicinity.",
+  "prediction": "The vehicle ahead will continue driving straight at a steady pace. Parked vehicles will remain stationary. No pedestrians or sudden obstacles are expected imminently.",
+  "planning": "Maintain a safe following distance behind the vehicle ahead, keep the vehicle centered in the lane, and proceed straight cautiously given the low light conditions and presence of parked vehicles.",
+  "image": "056.jpg",
+  "id": 56
+}

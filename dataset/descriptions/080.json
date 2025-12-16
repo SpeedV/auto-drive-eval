@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a dark, two-lane road at night with double yellow lines in the center indicating no passing. The road is straight with some reflective traffic signs visible in the distance.",
+  "goal": "Continue driving straight on this two-lane road.",
+  "perception": "The road is a two-lane, two-way street with double solid yellow lines, indicating no passing is allowed. The visibility is limited due to nighttime conditions, and the headlights illuminate the road ahead. There are traffic signs visible far ahead, but their details are unclear. There are no visible vehicles, pedestrians, or obstacles on the road. The road edges are marked, and the surroundings are dark with no street lighting.",
+  "prediction": "The road will continue straight with no immediate hazards visible. The traffic signs ahead may indicate upcoming changes or warnings.",
+  "planning": "Maintain a safe speed appropriate for nighttime driving on a two-lane road with no passing allowed. Stay centered in the lane, keep headlights on, and be prepared to respond to any upcoming signs or potential hazards.",
+  "image": "080.jpg",
+  "id": 80
+}

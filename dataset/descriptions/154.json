@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime view of a narrow street with parked vehicles on the right side and a car ahead driving in the same lane.",
+  "goal": "Drive forward safely along the street.",
+  "perception": "The road is dimly lit with streetlights. There is a large white van parked on the right side of the street, partially obstructing the sidewalk. A car is driving ahead in the same lane, with its rear lights visible. The street appears narrow, with no clear lane markings visible. There are no pedestrians or traffic signals visible in the image. The parked van and the narrowness of the street suggest limited space for passing vehicles.",
+  "prediction": "The car ahead will continue driving forward at a slow or moderate speed due to the narrow street and parked vehicles. Oncoming traffic may appear, requiring caution.",
+  "planning": "Maintain a safe following distance behind the car ahead. Drive slowly and cautiously due to limited visibility and narrow road conditions. Be prepared to stop or yield if oncoming traffic appears or if the parked van obstructs the lane further.",
+  "image": "154.jpg",
+  "id": 154
+}

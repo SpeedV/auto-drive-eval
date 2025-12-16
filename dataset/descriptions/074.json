@@ -1,0 +1,9 @@
+{
+  "context": "You’re looking at a forward-facing dash-cam view from a car driving on a clear, straight urban road with multiple lanes and a green traffic light ahead.",
+  "goal": "Continue driving straight through the intersection.",
+  "perception": "The road has three lanes visible, with the car positioned in the center lane. The traffic light ahead is green, allowing vehicles to proceed straight. There is a vehicle in the left lane slightly ahead, and several parked cars line the right side of the road. The weather is clear and sunny, with good visibility. There are no pedestrians crossing or visible traffic signs restricting movement. The road markings indicate that all lanes are for straight or left-turn movements, but no immediate turn is indicated.",
+  "prediction": "Vehicles will continue moving forward through the green light. The car ahead in the left lane may maintain its speed or prepare to turn left if indicated later. Traffic flow is expected to remain steady for the next few seconds.",
+  "planning": "Maintain current speed and lane position to proceed straight through the intersection safely. Stay alert for any changes in traffic signals or unexpected pedestrian activity.",
+  "image": "074.jpg",
+  "id": 74
+}

@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view of a city street with two lanes in the same direction, separated by a solid white line. The right lane is partially blocked by construction barriers and scaffolding, with a cyclist riding near the barriers.",
+  "goal": "Continue driving straight ahead safely.",
+  "perception": "The road has two lanes going straight, with the right lane partially obstructed by construction barriers and scaffolding. A cyclist is riding close to the barriers in the right lane. The left lane is clear with several cars ahead. Traffic signals are visible but their state is unknown. The solid white line indicates lane discipline should be maintained. The cyclist's presence requires caution when passing or merging.",
+  "prediction": "The cyclist will continue riding close to the barriers in the right lane. Vehicles ahead in the left lane will maintain their speed or slow slightly due to traffic. No immediate lane changes are visible from other vehicles.",
+  "planning": "Maintain the left lane to avoid the cyclist and construction barriers on the right. Keep a safe following distance from the car ahead and be prepared to adjust speed if traffic slows. Do not attempt to pass the cyclist on the right due to the barriers.",
+  "image": "176.jpg",
+  "id": 176
+}

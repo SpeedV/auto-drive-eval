@@ -1,0 +1,9 @@
+{
+  "context": "The dashcam shows a nighttime urban intersection with wet road surfaces and illuminated traffic lights.",
+  "goal": "Proceed straight through the intersection.",
+  "perception": "The vehicle is stopped at a crosswalk with clear white zebra markings. The traffic light directly ahead is green, indicating permission to proceed. There is a black vehicle on the right side waiting at the intersection with a red brake light on. The street is wet, suggesting recent rain, which may affect stopping distances. There are no visible pedestrians in the crosswalk or immediate vicinity. Surrounding buildings are dark with some lit windows, and street lighting is present.",
+  "prediction": "The vehicle can safely proceed straight through the intersection as the light is green and no pedestrians are present. The black vehicle on the right will likely remain stopped until its light changes.",
+  "planning": "Proceed straight through the intersection with caution, maintaining awareness of the wet road conditions and watching for any pedestrians or vehicles that may enter the crosswalk or intersection unexpectedly.",
+  "image": "168.jpg",
+  "id": 168
+}

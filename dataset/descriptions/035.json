@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dash-cam view on a city street with parked cars along the right side and a multi-lane road extending ahead under clear daylight.",
+  "goal": "Continue driving straight ahead.",
+  "perception": "The road has two lanes in the direction of travel with a dedicated parking lane on the right. Parked vehicles line the right side of the street. There is a pedestrian crosswalk visible ahead with a traffic light pole on the left side of the road. The traffic light is green, allowing vehicles to proceed. Pedestrians are present on the sidewalk but none are crossing at this moment. The weather is clear and visibility is good. Traffic appears light with a few vehicles ahead moving forward.",
+  "prediction": "Vehicles ahead will continue driving straight through the intersection as the traffic light remains green. No pedestrians are expected to cross imminently.",
+  "planning": "Maintain current lane and speed to proceed straight through the intersection, while staying alert for any pedestrians or vehicles entering from the right parking lane or crosswalk.",
+  "image": "035.jpg",
+  "id": 35
+}

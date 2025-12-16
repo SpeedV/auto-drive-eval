@@ -1,0 +1,9 @@
+{
+  "context": "Forward-facing dashcam view of a narrow urban street lined with historic brick buildings with red tile roofs and leafless trees in winter.",
+  "goal": "Drive forward along the street.",
+  "perception": "The street is paved with red bricks and partially covered with snow piles on the sides and some patches on the road. The road curves gently to the left ahead. There are no visible lane markings or traffic signs in the immediate view. The sidewalk is clear but snow-covered in places. The buildings have large windows and archways, indicating a pedestrian-friendly area. The sky is partly cloudy with good visibility. No other vehicles or pedestrians are visible on the road.",
+  "prediction": "The road will continue curving left with potential for pedestrians or vehicles to appear from side streets or archways. Snow on the sides may reduce available road width.",
+  "planning": "Proceed slowly and cautiously, maintaining the center of the road to avoid snow piles. Be prepared to stop or yield for pedestrians or vehicles emerging from side areas. Maintain awareness of the narrow street and reduced traction due to snow.",
+  "image": "191.jpg",
+  "id": 191
+}
