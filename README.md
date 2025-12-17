@@ -43,6 +43,28 @@ auto-drive-eval/
 └── README.md
 ```
 
+New Structure:
+```bash
+autodrive_agentified/
+├── dataset/
+│   ├── images/
+│   └── descriptions/
+├── src/
+│   ├── common/
+│   │   ├── __init__.py
+│   │   ├── rules_engine.py      # (Shared logic)
+│   │   └── dataset_loader.py    # (Shared logic)
+│   ├── green_agent/
+│   │   ├── __init__.py
+│   │   └── agent.py             # The Judge & Orchestrator
+│   ├── white_agent/
+│   │   ├── __init__.py
+│   │   └── agent.py             # The General Purpose Driver
+│   └── launcher.py              # One-command entry point
+├── requirements.txt
+└── README.md
+```
+
 ## Required Ollama Models
 
 ### The Judge

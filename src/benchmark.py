@@ -7,10 +7,10 @@ from tqdm import tqdm
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from dataset_loader import SplitFolderDataset
-from white_agent import WhiteAgent
-from green_agent import GreenAgent
-from html_reporter import generate_leaderboard_report
+from common.dataset_loader import SplitFolderDataset
+from white_agent.white_agent import WhiteAgent
+from green_agent.green_agent import GreenAgent
+from common.html_reporter import generate_leaderboard_report
 
 def run_benchmark():
     # --- CONFIGURATION ---
