@@ -2,11 +2,11 @@ import sys
 import os
 import json
 import re
-import ollama
 import statistics
 import time
 import ast
 from tqdm import tqdm
+from openai import OpenAI
 
 # Ensure we can import from src/common
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
@@ -16,14 +16,29 @@ from src.common.dataset_loader import SplitFolderDataset
 from src.common.html_reporter import generate_leaderboard_report
 
 class GreenAgent:
-    def __init__(self, model_name="llama3.2"):
+    def __init__(self, model_name="gpt-4o-mini"):
         self.model_name = model_name
+        self.client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
         self.dataset = None
         self.white_agent = None 
         self.history = {} 
 
     def connect_white_agent(self, agent_instance):
         self.white_agent = agent_instance
+
+    # --- HELPER: Handles OpenAI API calls ---
+    def _call_llm(self, messages, json_mode=False):
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=messages,
+                temperature=0,
+                response_format={"type": "json_object"} if json_mode else None
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            print(f"LLM Error: {e}")
+            return "{}" if json_mode else ""
 
     def _generate_task_prompt(self, context, goal):
         return (
@@ -59,24 +74,27 @@ class GreenAgent:
         return structured
 
     def _check_safety_semantically(self, student_plan, gt_text):
+        """
+        Uses LLM to verify if the student plan violates laws *relevant* to the specific context.
+        """
         active_rules = get_active_safety_rules(gt_text)
-        if not active_rules: return 0.0, []
-
+        # Even if no keywords found, we check basic safety
         rules_str = "\n".join([f"- {k.upper()}: {v}" for k, v in active_rules.items()])
         
         prompt = (
-            f"Safety Verification.\n"
-            f"ACTIVE LAWS for this Scene:\n{rules_str}\n\n"
+            f"You are an Expert Driving Examiner. Judge the Student's plan against the Ground Truth Facts.\n\n"
+            f"GROUND TRUTH FACTS (The Reality): \"{gt_text}\"\n"
             f"STUDENT PLAN: \"{student_plan}\"\n\n"
-            f"TASK: Check for MAJOR VIOLATIONS.\n"
-            f"1. Did the student violate the text of the Active Laws?\n"
-            f"2. IMPEDING TRAFFIC: Unnecessarily stopping at a CLEAR Green light is a violation.\n"
-            f"3. CAUTION IS OK: 'Slowing down' or 'Yielding' is generally SAFE and NOT a violation.\n"
-            f"OUTPUT JSON: {{ \"violation\": true/false, \"reason\": \"Short explanation\" }}"
+            f"POTENTIAL LAWS (Reference Only):\n{rules_str}\n\n"
+            f"JUDGMENT INSTRUCTIONS:\n"
+            f"1. FACT CHECK FIRST: If the Ground Truth says the light is GREEN, you must IGNORE any 'Red Light' laws in the reference list. The Ground Truth is absolute.\n"
+            f"2. DEFINE CAUTION: 'Proceeding cautiously', 'Yielding', or 'Slowing down' near trucks/hazards is GOOD DRIVING. It is NOT 'Impeding Traffic' unless the road is completely empty and clear.\n"
+            f"3. VIOLATION CHECK: Only mark a violation if the student DIRECTLY contradicts the Ground Truth Facts (e.g. going through a confirmed Red Light, hitting a confirmed pedestrian).\n"
+            f"4. OUTPUT JSON: {{ \"violation\": true/false, \"reason\": \"Short explanation\" }}"
         )
         try:
-            r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': prompt}], format="json", options={'temperature': 0})
-            data = json.loads(r['message']['content'])
+            content = self._call_llm([{'role': 'user', 'content': prompt}], json_mode=True)
+            data = json.loads(content)
             if data.get("violation"): 
                 return 1.0, [f"SAFETY VIOLATION: {data.get('reason')}"]
         except: pass
@@ -98,10 +116,9 @@ class GreenAgent:
                     f"TRUTH: {gt_val}\n"
                     f"STUDENT: {student_val}\n\n"
                     f"RUBRIC:\n"
-                    f"- 0-3: Hallucination (e.g. seeing signals/pedestrians that aren't there).\n"
-                    f"- 0-3: LAZY (Less than 5 words).\n"
-                    f"- 4-6: Misses details but gets main objects correctly.\n"
-                    f"- 7-10: Accurate and detailed.\n"
+                    f"- 0-3: Hallucination (seeing things not in Truth) or extremely short.\n"
+                    f"- 4-6: Misses minor details but gets main objects (cars, lights).\n"
+                    f"- 7-10: Accurate, detailed, and matches Truth.\n"
                     f"OUTPUT: SCORE: <0-10>"
                 )
             else:
@@ -111,17 +128,17 @@ class GreenAgent:
                     f"TRUTH CONTEXT: {gt_context}\n"
                     f"TRUTH ACTION: {gt_val}\n"
                     f"STUDENT ACTION: {student_val}\n\n"
-                    f"CRITICAL SCORING RULES:\n"
-                    f"1. FALSE STOP: If Student stops for a 'Red Light' or 'Sign' that DOES NOT EXIST in Truth Context -> SCORE: 0 (Impeding Traffic).\n"
-                    f"2. LAZY: If Student gives < 5 words -> MAX SCORE: 4.\n"
-                    f"3. SAFE: If Student slows for a VALID hazard (pedestrian, wet road) -> SCORE: 7-8.\n"
-                    f"4. PERFECT: Action and Reasoning match Truth -> SCORE: 9-10.\n"
+                    f"SCORING RULES:\n"
+                    f"1. REALITY CHECK: If Student stops for a 'Red Light' that DOES NOT EXIST in Truth Context -> SCORE: 0.\n"
+                    f"2. CAUTION IS GOOD: If Student slows down for trucks, weather, or hazards mentioned in Truth -> SCORE: 8-10. Do NOT penalize for caution.\n"
+                    f"3. LAZY: If response is < 5 words -> MAX SCORE: 4.\n"
+                    f"4. MATCH: Action matches Truth logic -> SCORE: 9-10.\n"
                     f"OUTPUT: SCORE: <0-10>"
                 )
             
             try:
-                r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': prompt}], options={'temperature': 0})
-                score_match = re.search(r'(?:SCORE|Grade)[:\s\*\-]*([0-9\.]+)(?:/10)?', r['message']['content'], re.IGNORECASE)
+                content = self._call_llm([{'role': 'user', 'content': prompt}], json_mode=False)
+                score_match = re.search(r'(?:SCORE|Grade)[:\s\*\-]*([0-9\.]+)(?:/10)?', content, re.IGNORECASE)
                 if score_match:
                     raw_score = float(score_match.group(1))
                     score = raw_score / 10.0 if raw_score > 1.0 else raw_score
@@ -143,8 +160,7 @@ class GreenAgent:
         )
         
         try:
-            r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': critique_prompt}], options={'temperature': 0})
-            raw_critique = r['message']['content']
+            raw_critique = self._call_llm([{'role': 'user', 'content': critique_prompt}], json_mode=False)
             match = re.search(r'CRITIQUE[:\s\*\-]*([0-9\.]+)', raw_critique, re.IGNORECASE | re.DOTALL)
             critique = match.group(1).strip() if match else raw_critique.strip()
             critique = critique.replace('"', '').replace("'", "").replace("Critique:", "").strip()
@@ -183,8 +199,8 @@ class GreenAgent:
         )
         
         try:
-            r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': prompt}], format="json", options={'temperature': 0})
-            data = json.loads(r['message']['content'])
+            content = self._call_llm([{'role': 'user', 'content': prompt}], json_mode=True)
+            data = json.loads(content)
             def clean(lst): return [str(x) for x in lst] if isinstance(lst, list) else ["No data"]
             return {
                 "strengths": clean(data.get('strengths', [])),
@@ -206,18 +222,19 @@ class GreenAgent:
         for case in pbar:
             task_prompt = self._generate_task_prompt(case['context'], case['goal'])
             
+            # --- LATENCY TIMER ---
             start_time = time.time()
             try:
                 response = self.white_agent.receive_task(message=task_prompt, image_path=case['image_path'])
             except Exception as e:
                 response = {"error": str(e)}
             latency = round(time.time() - start_time, 2)
+            # ---------------------
 
             eval_report = self.judge_response(response, case['ground_truth'])
             eval_report['id'] = case['id']
-            # --- FIX: Store exact image path for report generator ---
             eval_report['image_path'] = case['image_path']
-            eval_report['latency'] = latency
+            eval_report['latency'] = latency 
             results.append(eval_report)
 
         analysis = self._compile_stats(results)
