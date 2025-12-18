@@ -4,31 +4,37 @@ import re
 
 class WhiteAgent:
     """
-    A General Purpose Agent (Approach II).
-    It receives a task (message + image) and responds.
-    It does not know about the benchmark, only the context provided in the message.
+    Standard Approach 2 Agent.
     """
     def __init__(self, model_name="moondream"):
         self.model_name = model_name
 
     def _clean_json(self, text):
-        """Generic JSON cleanup utility."""
         try:
             return json.loads(text)
         except:
             match = re.search(r'\{.*\}', text, re.DOTALL)
             if match:
-                try:
-                    return json.loads(match.group())
+                try: return json.loads(match.group())
                 except: pass
-            
             return {"raw_output": text}
 
     def receive_task(self, message, image_path=None):
-        """
-        Receives the Self-Explanatory Prompt from Green Agent.
-        """
-        messages = [{'role': 'user', 'content': message}]
+        # --- FIX: NARRATIVE PROMPT ---
+        # Forces detailed natural language descriptions, not data fields.
+        system_prompt = (
+            "ROLE: Autonomous Vehicle AI.\n"
+            "TASK: Analyze the image and provide a driving log.\n"
+            "REQUIREMENTS:\n"
+            "1. Perception: Describe hazards, signs, and lights in detail.\n"
+            "2. Prediction: Predict movement of cars/pedestrians.\n"
+            "3. Planning: State a decisive action (e.g., 'Stop', 'Yield', 'Steer Left').\n"
+            "   - Do NOT say 'might' or 'if'. Be specific.\n"
+            "\n"
+            f"{message}"
+        )
+
+        messages = [{'role': 'user', 'content': system_prompt}]
         
         if image_path:
              messages[0]['images'] = [image_path]
@@ -38,7 +44,7 @@ class WhiteAgent:
                 model=self.model_name,
                 messages=messages,
                 format="json", 
-                options={'temperature': 0.6}
+                options={'temperature': 0} 
             )
             
             raw_content = response['message']['content']

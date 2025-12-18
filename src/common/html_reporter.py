@@ -1,424 +1,259 @@
-# import json
-# import datetime
-# import os
-
-# def generate_leaderboard_report(json_path, html_path):
-#     with open(json_path, 'r') as f:
-#         data = json.load(f)
-
-#     date_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-#     # 1. Ranking Calculation
-#     ranking_data = []
-#     for model_name, content in data.items():
-#         metrics = content['analysis']['metrics']
-#         overall = content['analysis']['overall_score_percent']
-#         latencies = [d.get('latency', 0) for d in content['details']]
-#         avg_latency = round(sum(latencies) / len(latencies), 2) if latencies else 0
-
-#         ranking_data.append({
-#             "name": model_name,
-#             "score": overall,
-#             "grade": content['analysis']['overall_grade'],
-#             "perc": metrics['perception'],
-#             "pred": metrics['prediction'],
-#             "plan": metrics['planning'],
-#             "safety": metrics['total_violations'],
-#             "latency": avg_latency
-#         })
-
-#     ranking_data.sort(key=lambda x: x['score'], reverse=True)
-
-#     # 2. HTML Structure
-#     html = f"""
-#     <!DOCTYPE html>
-#     <html>
-#     <head>
-#         <title>AutoDrive Benchmark</title>
-#         <style>
-#             body {{ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }}
-#             .container {{ max-width: 1200px; margin: 0 auto; }}
-#             .leaderboard-card {{ background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px; }}
-#             table {{ width: 100%; border-collapse: collapse; }}
-#             th {{ text-align: left; padding: 12px; border-bottom: 2px solid #eee; color: #555; }}
-#             td {{ padding: 12px; border-bottom: 1px solid #eee; }}
-#             .rank-1 {{ background-color: #fff9c4; font-weight: bold; }}
-            
-#             .tabs {{ display: flex; gap: 10px; margin-bottom: 0; }}
-#             .tab-btn {{ padding: 12px 24px; background: #e0e0e0; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: 600; transition: 0.2s; }}
-#             .tab-btn.active {{ background: white; color: #2196f3; box-shadow: 0 -2px 5px rgba(0,0,0,0.05); }}
-            
-#             .model-content {{ display: none; background: white; padding: 25px; border-radius: 0 8px 8px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }}
-#             .model-content.active {{ display: block; }}
-            
-#             .analysis-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }}
-#             .rec-panel {{ grid-column: span 2; background: #e3f2fd; color: #1565c0; }}
-#             .panel {{ padding: 15px; border-radius: 6px; }}
-#             .panel h4 {{ margin-top: 0; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 8px; }}
-#             .good {{ background: #e8f5e9; color: #2e7d32; }}
-#             .bad {{ background: #ffebee; color: #c62828; }}
-            
-#             details {{ margin-bottom: 15px; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; background: #fff; }}
-#             summary {{ padding: 15px; cursor: pointer; background: #f9f9f9; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }}
-#             .details-body {{ padding: 20px; border-top: 1px solid #ddd; }}
-            
-#             .case-grid {{ display: flex; gap: 20px; }}
-#             .img-box {{ width: 250px; background: #eee; }}
-#             .img-box img {{ width: 100%; height: auto; }}
-#             .text-box {{ flex: 1; }}
-            
-#             .agent-output {{ background: #fafafa; padding: 10px; border: 1px solid #eee; border-radius: 4px; margin-bottom: 10px; }}
-#             .agent-label {{ font-size: 0.8em; font-weight: bold; color: #777; text-transform: uppercase; margin-bottom: 4px; display: block; }}
-            
-#             .critique {{ margin-top: 15px; padding: 10px; background: #fff3e0; border-left: 4px solid #ff9800; font-style: italic; color: #666; }}
-#             .bar-bg {{ width: 60px; height: 6px; background: #ddd; border-radius: 3px; display: inline-block; }}
-#             .bar-fg {{ height: 100%; border-radius: 3px; }}
-#         </style>
-#         <script>
-#             function openModel(modelName) {{
-#                 var contents = document.getElementsByClassName("model-content");
-#                 for (var i = 0; i < contents.length; i++) {{ contents[i].classList.remove("active"); }}
-#                 var btns = document.getElementsByClassName("tab-btn");
-#                 for (var i = 0; i < btns.length; i++) {{ btns[i].classList.remove("active"); }}
-#                 document.getElementById(modelName).classList.add("active");
-#                 document.getElementById("btn-" + modelName).classList.add("active");
-#             }}
-#         </script>
-#     </head>
-#     <body>
-#         <div class="container">
-#             <h1>🚦 AutoDrive Benchmark Results</h1>
-#             <p>Generated: {date_str}</p>
-            
-#             <div class="leaderboard-card">
-#                 <h2>🏆 Leaderboard</h2>
-#                 <table>
-#                     <thead>
-#                         <tr>
-#                             <th>Rank</th>
-#                             <th>Model</th>
-#                             <th>Grade</th>
-#                             <th>Score</th>
-#                             <th>Perception</th>
-#                             <th>Prediction</th> <th>Planning</th>
-#                             <th>Violations</th>
-#                             <th>Latency</th>
-#                         </tr>
-#                     </thead>
-#                     <tbody>
-#     """
-    
-#     for idx, r in enumerate(ranking_data):
-#         rank_cls = "rank-1" if idx == 0 else ""
-#         p_color = "#4caf50" if r['perc'] > 0.6 else "#ff9800"
-#         pr_color = "#4caf50" if r['pred'] > 0.6 else "#ff9800"
-#         pl_color = "#4caf50" if r['plan'] > 0.6 else "#ff9800"
-        
-#         html += f"""
-#             <tr class="{rank_cls}">
-#                 <td>#{idx+1}</td>
-#                 <td style="font-weight:bold">{r['name']}</td>
-#                 <td>{r['grade']}</td>
-#                 <td style="font-size:1.1em; font-weight:bold">{r['score']}%</td>
-#                 <td><div class="bar-bg"><div class="bar-fg" style="width:{r['perc']*100}%; background:{p_color}"></div></div> {r['perc']}</td>
-#                 <td><div class="bar-bg"><div class="bar-fg" style="width:{r['pred']*100}%; background:{pr_color}"></div></div> {r['pred']}</td>
-#                 <td><div class="bar-bg"><div class="bar-fg" style="width:{r['plan']*100}%; background:{pl_color}"></div></div> {r['plan']}</td>
-#                 <td style="color:{'red' if r['safety']>0 else 'green'}">{r['safety']}</td>
-#                 <td>{r['latency']}s</td>
-#             </tr>
-#         """
-        
-#     html += """</tbody></table></div><div class="tabs">"""
-#     for idx, r in enumerate(ranking_data):
-#         active = "active" if idx == 0 else ""
-#         html += f"""<button id="btn-{r['name']}" class="tab-btn {active}" onclick="openModel('{r['name']}')">{r['name']}</button>"""
-#     html += "</div>"
-
-#     for idx, r in enumerate(ranking_data):
-#         model_name = r['name']
-#         data_node = data[model_name]
-#         analysis = data_node['analysis']
-#         active = "active" if idx == 0 else ""
-        
-#         html += f"""
-#         <div id="{model_name}" class="model-content {active}">
-#             <div style="display:flex; justify-content:space-between; align-items:center;">
-#                 <h2>Analysis: {model_name}</h2>
-#                 <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">{analysis['overall_grade']}</span><br><span style="color:#777">Score: {analysis['overall_score_percent']}%</span></div>
-#             </div>
-#             <div class="analysis-grid">
-#                 <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0">{''.join(f'<li>{x}</li>' for x in analysis['analysis']['strengths'])}</ul></div>
-#                 <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0">{''.join(f'<li>{x}</li>' for x in analysis['analysis']['weaknesses'])}</ul></div>
-#                 <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0">{''.join(f'<li>{x}</li>' for x in analysis['analysis']['recommendations'])}</ul></div>
-#             </div>
-#             <h3>Test Cases ({len(data_node['details'])})</h3>
-#         """
-        
-#         for item in data_node['details']:
-#             img_id = item['id']
-#             img_src = f"../dataset/images/{img_id:03d}.jpg"
-#             plan_score = item['scores']['planning']
-#             icon = "✅" if plan_score > 0.6 else "⚠️"
-#             violations = f"<div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: {', '.join(item['feedback'])}</div>" if item['feedback'] else ""
-
-#             html += f"""
-#             <details>
-#                 <summary><span>{icon} Test Case #{img_id}</span><span>Plan Score: {plan_score}</span></summary>
-#                 <div class="details-body">
-#                     <div class="case-grid">
-#                         <div class="img-box"><img src="{img_src}" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
-#                         <div class="text-box">
-#                             <div class="agent-output">
-#                                 <span class="agent-label">👁️ Perception</span>
-#                                 {item['generated_responses']['perception']}
-#                             </div>
-#                             <div class="agent-output">
-#                                 <span class="agent-label">🔮 Prediction</span>
-#                                 {item['generated_responses']['prediction']}
-#                             </div>
-#                             <div class="agent-output" style="border-left: 3px solid #2196f3;">
-#                                 <span class="agent-label">🤖 Plan</span>
-#                                 {item['generated_responses']['planning']}
-#                             </div>
-#                             <div style="margin-top:10px; font-size:0.9em; color:#555">
-#                                 <strong>📖 Ground Truth Reference:</strong> {item['generated_responses'].get('gt_planning_context', 'See JSON')}
-#                             </div>
-#                             {violations}
-#                             <div class="critique"><strong>📝 Judge's Critique:</strong><br>"{item.get('critique', 'N/A')}"</div>
-#                         </div>
-#                     </div>
-#                 </div>
-#             </details>
-#             """
-#         html += "</div>"
-#     html += "</div></body></html>"
-    
-#     with open(html_path, "w", encoding="utf-8") as f:
-#         f.write(html)
-
-
-import json
-import datetime
 import os
+import json
+import base64
 
-def generate_leaderboard_report(json_path, html_path):
+def encode_image_to_base64(image_path):
+    """Reads an image and converts it to a base64 string."""
+    try:
+        if os.path.exists(image_path):
+            with open(image_path, "rb") as img_file:
+                return base64.b64encode(img_file.read()).decode('utf-8')
+        if os.path.exists(os.path.abspath(image_path)):
+             with open(os.path.abspath(image_path), "rb") as img_file:
+                return base64.b64encode(img_file.read()).decode('utf-8')
+        return ""
+    except Exception as e:
+        print(f"Error encoding image {image_path}: {e}")
+        return ""
+
+def generate_leaderboard_report(json_path, output_html_path):
     with open(json_path, 'r') as f:
         data = json.load(f)
 
-    date_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    # 1. Ranking Calculation
-    ranking_data = []
-    for model_name, content in data.items():
-        analysis_root = content.get('analysis', {})
-        metrics = analysis_root.get('metrics', {'perception':0, 'prediction':0, 'planning':0, 'total_violations':0})
+    sorted_agents = sorted(
+        data.items(), 
+        key=lambda x: x[1]['analysis']['overall_score_percent'], 
+        reverse=True
+    )
+    
+    # 1. Leaderboard Rows (with colored bars)
+    leaderboard_rows = ""
+    for rank, (agent_name, content) in enumerate(sorted_agents, 1):
+        metrics = content['analysis']['metrics']
+        score = content['analysis']['overall_score_percent']
+        grade = content['analysis']['overall_grade']
+        grade_color = "#27ae60" if grade == "PASS" else "#c0392b"
         
-        overall = analysis_root.get('overall_score_percent', 0)
-        grade = analysis_root.get('overall_grade', 'N/A')
+        # Helper for score bars
+        def score_bar(val):
+            color = "#f1c40f" # yellow
+            if val > 0.7: color = "#27ae60" # green
+            elif val < 0.4: color = "#c0392b" # red
+            return f"""<div class="bar-container">
+                         <div class="bar" style="width: {val*100}%; background: {color};"></div>
+                       </div> {val}"""
+
+        leaderboard_rows += f"""
+            <tr onclick="openAgentTab('{agent_name}')" style="cursor: pointer;">
+                <td>#{rank}</td>
+                <td><b>{agent_name}</b></td>
+                <td style="color: {grade_color}; font-weight:bold;">{grade}</td>
+                <td><b>{score}%</b></td>
+                <td>{score_bar(metrics['perception'])}</td>
+                <td>{score_bar(metrics['prediction'])}</td>
+                <td>{score_bar(metrics['planning'])}</td>
+                <td style="color: {'#c0392b' if metrics['total_violations'] > 0 else 'inherit'}">{metrics['total_violations']}</td>
+                <td>{round(sum(d['latency'] for d in content['details'])/len(content['details']), 2)}s</td>
+            </tr>
+        """
+
+    # 2. Agent Tabs (with original insights layout)
+    agent_tabs_html = ""
+    tab_buttons = ""
+    
+    for idx, (agent_name, content) in enumerate(sorted_agents):
+        active_class = "active" if idx == 0 else ""
+        display_style = "block" if idx == 0 else "none"
         
-        latencies = [d.get('latency', 0) for d in content['details']]
-        avg_latency = round(sum(latencies) / len(latencies), 2) if latencies else 0
+        tab_buttons += f"""
+            <button class="tab-link {active_class}" onclick="openAgentTab('{agent_name}')">{agent_name}</button>
+        """
 
-        ranking_data.append({
-            "name": model_name,
-            "score": overall,
-            "grade": grade,
-            "perc": metrics['perception'],
-            "pred": metrics['prediction'],
-            "plan": metrics['planning'],
-            "safety": metrics['total_violations'],
-            "latency": avg_latency
-        })
+        analysis = content['analysis'].get('analysis', {})
+        def safe_list(lst):
+             return "".join([f"<li>{item}</li>" for item in (lst if lst else [])])
 
-    ranking_data.sort(key=lambda x: x['score'], reverse=True)
+        score_color = "#27ae60" if content['analysis']['overall_grade'] == "PASS" else "#c0392b"
 
-    # 2. HTML Structure
-    html = f"""
+        # Test Cases (Collapsible)
+        cases_html = ""
+        for case in content['details']:
+            case_id = case.get('id', 'unknown')
+            img_path = case.get('image_path', '')
+            img_b64 = encode_image_to_base64(img_path)
+            
+            img_elem = f'<img src="data:image/jpeg;base64,{img_b64}" class="case-img">' if img_b64 else '<div class="no-img">Image Not Found<br><small>' + img_path + '</small></div>'
+            status_icon = "✅" if case['scores']['planning'] > 0.6 else "⚠️"
+            critique = case.get('critique', 'No critique').replace('"', '')
+
+            cases_html += f"""
+            <details class="case-card">
+                <summary class="case-header">
+                    <span>{status_icon} <b>Test Case #{case_id}</b></span>
+                    <span class="score-tag">Plan Score: {case['scores']['planning']}</span>
+                </summary>
+                <div class="case-body">
+                    <div class="img-col">{img_elem}</div>
+                    <div class="info-col">
+                        <div class="log-row"><strong>👁️ Perception:</strong> {case['generated_responses'].get('perception', '-')}</div>
+                        <div class="log-row"><strong>🔮 Prediction:</strong> {case['generated_responses'].get('prediction', '-')}</div>
+                        <div class="log-row"><strong>🤖 Plan:</strong> {case['generated_responses'].get('planning', '-')}</div>
+                        <div class="log-row ground-truth"><strong>📖 Truth Reference:</strong> {case['generated_responses'].get('gt_planning_context', '-')}</div>
+                        <div class="log-row critique"><strong>📝 Judge:</strong> "{critique}"</div>
+                    </div>
+                </div>
+            </details>
+            """
+
+        agent_tabs_html += f"""
+        <div id="{agent_name}" class="agent-tab-content" style="display: {display_style};">
+            
+            <div class="agent-summary-header">
+                <h2>Analysis: {agent_name}</h2>
+                <div class="score-badge" style="color: {score_color}">
+                    <div style="font-size: 1.5em;">{content['analysis']['overall_grade']}</div>
+                    <span>Score: {content['analysis']['overall_score_percent']}%</span>
+                </div>
+            </div>
+
+            <div class="insights-container">
+                <div class="insight-box strength-box">
+                    <h3>✅ Strengths</h3>
+                    <ul>{safe_list(analysis.get('strengths'))}</ul>
+                </div>
+                <div class="insight-box weakness-box">
+                    <h3>❌ Weaknesses</h3>
+                    <ul>{safe_list(analysis.get('weaknesses'))}</ul>
+                </div>
+            </div>
+            
+            <div class="insight-box recommendation-box">
+                <h3>💡 Recommendations</h3>
+                <ul>{safe_list(analysis.get('recommendations'))}</ul>
+            </div>
+
+            <h3 style="margin-top:30px; border-bottom: 2px solid #eee; padding-bottom:10px;">Detailed Test Cases ({len(content['details'])})</h3>
+            {cases_html}
+        </div>
+        """
+
+    # 3. Final HTML (with restored CSS)
+    html_template = f"""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>AutoDrive Benchmark</title>
+        <title>🚦 AutoDrive Benchmark</title>
         <style>
             body {{ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 20px; color: #333; }}
-            .container {{ max-width: 1200px; margin: 0 auto; }}
-            .leaderboard-card {{ background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 30px; }}
+            .container {{ max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }}
+            
+            header {{ text-align: center; margin-bottom: 30px; }}
+            h1 {{ margin: 0; color: #2c3e50; }}
+            
+            /* Leaderboard */
+            .leaderboard {{ overflow-x: auto; margin-bottom: 30px; }}
             table {{ width: 100%; border-collapse: collapse; }}
-            th {{ text-align: left; padding: 12px; border-bottom: 2px solid #eee; color: #555; }}
-            td {{ padding: 12px; border-bottom: 1px solid #eee; }}
-            .rank-1 {{ background-color: #fff9c4; font-weight: bold; }}
+            th {{ background: #f8f9fa; color: #555; padding: 12px 15px; text-align: left; font-weight: 600; }}
+            td {{ padding: 12px 15px; border-bottom: 1px solid #eee; vertical-align: middle; }}
+            tr:hover {{ background: #f9f9f9; }}
+            tr:last-child td {{ border-bottom: none; }}
             
-            .tabs {{ display: flex; gap: 10px; margin-bottom: 0; }}
-            .tab-btn {{ padding: 12px 24px; background: #e0e0e0; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: 600; transition: 0.2s; }}
-            .tab-btn.active {{ background: white; color: #2196f3; box-shadow: 0 -2px 5px rgba(0,0,0,0.05); }}
+            .bar-container {{ background: #ecf0f1; border-radius: 4px; height: 6px; width: 60px; display: inline-block; margin-right: 8px; vertical-align: middle; }}
+            .bar {{ height: 100%; border-radius: 4px; }}
+
+            /* Tabs */
+            .tab-nav {{ display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 0; }}
+            .tab-link {{ padding: 10px 20px; border: none; background: transparent; border-bottom: 3px solid transparent; cursor: pointer; font-weight: 600; color: #777; transition: all 0.2s; }}
+            .tab-link:hover {{ color: #333; }}
+            .tab-link.active {{ border-bottom: 3px solid #3498db; color: #3498db; }}
             
-            .model-content {{ display: none; background: white; padding: 25px; border-radius: 0 8px 8px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }}
-            .model-content.active {{ display: block; }}
+            /* Agent Summary Header */
+            .agent-summary-header {{ display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }}
+            .agent-summary-header h2 {{ margin: 0; color: #2c3e50; }}
+            .score-badge {{ text-align: right; font-weight: bold; }}
             
-            .analysis-grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }}
-            .rec-panel {{ grid-column: span 2; background: #e3f2fd; color: #1565c0; }}
-            .panel {{ padding: 15px; border-radius: 6px; }}
-            .panel h4 {{ margin-top: 0; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 8px; }}
-            .good {{ background: #e8f5e9; color: #2e7d32; }}
-            .bad {{ background: #ffebee; color: #c62828; }}
+            /* Insights Layout (Restored) */
+            .insights-container {{ display: flex; gap: 20px; margin-bottom: 20px; }}
+            .insight-box {{ flex: 1; padding: 20px; border-radius: 8px; }}
+            .insight-box h3 {{ margin-top: 0; margin-bottom: 15px; font-size: 1.1em; display: flex; align-items: center; }}
+            .insight-box ul {{ padding-left: 20px; margin: 0; line-height: 1.6; }}
             
-            details {{ margin-bottom: 15px; border: 1px solid #ddd; border-radius: 6px; overflow: hidden; background: #fff; }}
-            summary {{ padding: 15px; cursor: pointer; background: #f9f9f9; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }}
-            .details-body {{ padding: 20px; border-top: 1px solid #ddd; }}
+            .strength-box {{ background: #e8f5e9; color: #1b5e20; }}
+            .weakness-box {{ background: #ffebee; color: #b71c1c; }}
+            .recommendation-box {{ background: #e3f2fd; color: #0d47a1; }}
+
+            /* Collapsible Cases */
+            details.case-card {{ background: white; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 15px; overflow: hidden; border: 1px solid #e0e0e0; }}
+            summary.case-header {{ background: #f8f9fa; padding: 12px 20px; display: flex; justify-content: space-between; font-weight: bold; cursor: pointer; list-style: none; user-select: none; }}
+            summary.case-header::-webkit-details-marker {{ display: none; }}
+            summary.case-header:hover {{ background: #e9ecef; }}
             
-            .case-grid {{ display: flex; gap: 20px; }}
-            .img-box {{ width: 250px; background: #eee; }}
-            .img-box img {{ width: 100%; height: auto; }}
-            .text-box {{ flex: 1; }}
+            .case-body {{ display: flex; padding: 20px; gap: 20px; border-top: 1px solid #eee; animation: fadeIn 0.2s ease-in-out; }}
+            @keyframes fadeIn {{ from {{ opacity: 0; }} to {{ opacity: 1; }} }}
+
+            .img-col {{ flex: 0 0 300px; }}
+            .case-img {{ width: 100%; border-radius: 6px; border: 1px solid #eee; }}
+            .no-img {{ width: 100%; height: 180px; background: #eee; display: flex; align-items: center; justify-content: center; text-align: center; color: #777; border-radius: 6px; }}
             
-            .agent-output {{ background: #fafafa; padding: 10px; border: 1px solid #eee; border-radius: 4px; margin-bottom: 10px; }}
-            .agent-label {{ font-size: 0.8em; font-weight: bold; color: #777; text-transform: uppercase; margin-bottom: 4px; display: block; }}
+            .info-col {{ flex: 1; }}
+            .log-row {{ margin-bottom: 10px; font-size: 0.95em; line-height: 1.5; }}
+            .ground-truth {{ background: #fffde7; padding: 12px; border-left: 4px solid #f1c40f; border-radius: 4px; margin-top: 15px; }}
+            .critique {{ background: #e8f6fa; padding: 12px; border-left: 4px solid #3498db; border-radius: 4px; font-style: italic; margin-top: 15px; }}
             
-            .critique {{ margin-top: 15px; padding: 10px; background: #fff3e0; border-left: 4px solid #ff9800; font-style: italic; color: #666; }}
-            .bar-bg {{ width: 60px; height: 6px; background: #ddd; border-radius: 3px; display: inline-block; }}
-            .bar-fg {{ height: 100%; border-radius: 3px; }}
         </style>
         <script>
-            function openModel(modelName) {{
-                var contents = document.getElementsByClassName("model-content");
-                for (var i = 0; i < contents.length; i++) {{ contents[i].classList.remove("active"); }}
-                var btns = document.getElementsByClassName("tab-btn");
-                for (var i = 0; i < btns.length; i++) {{ btns[i].classList.remove("active"); }}
-                document.getElementById(modelName).classList.add("active");
-                document.getElementById("btn-" + modelName).classList.add("active");
+            function openAgentTab(agentName) {{
+                var i;
+                var x = document.getElementsByClassName("agent-tab-content");
+                for (i = 0; i < x.length; i++) {{ x[i].style.display = "none"; }}
+                
+                var tablinks = document.getElementsByClassName("tab-link");
+                for (i = 0; i < x.length; i++) {{ tablinks[i].className = tablinks[i].className.replace(" active", ""); }}
+                
+                document.getElementById(agentName).style.display = "block";
+                
+                var btns = document.getElementsByTagName("button");
+                for (i = 0; i < btns.length; i++) {{
+                    if(btns[i].innerText === agentName) {{
+                        btns[i].className += " active";
+                    }}
+                }}
             }}
         </script>
     </head>
     <body>
         <div class="container">
-            <h1>🚦 AutoDrive Benchmark Results</h1>
-            <p>Generated: {date_str}</p>
+            <header>
+                <h1>🚦 AutoDrive Benchmark Results</h1>
+                <p style="color: #777;">Generated: {os.popen('date').read().strip()}</p>
+            </header>
             
-            <div class="leaderboard-card">
-                <h2>🏆 Leaderboard</h2>
+            <h2 style="margin-top:0;">🏆 Leaderboard</h2>
+            <div class="leaderboard">
                 <table>
                     <thead>
                         <tr>
-                            <th>Rank</th>
-                            <th>Model</th>
-                            <th>Grade</th>
-                            <th>Score</th>
-                            <th>Perception</th>
-                            <th>Prediction</th> <th>Planning</th>
-                            <th>Violations</th>
-                            <th>Latency</th>
+                            <th>Rank</th><th>Model</th><th>Grade</th><th>Score</th>
+                            <th>Perception</th><th>Prediction</th><th>Planning</th><th>Violations</th><th>Latency</th>
                         </tr>
                     </thead>
                     <tbody>
+                        {leaderboard_rows}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tab-nav">
+                {tab_buttons}
+            </div>
+
+            {agent_tabs_html}
+        </div>
+    </body>
+    </html>
     """
     
-    for idx, r in enumerate(ranking_data):
-        rank_cls = "rank-1" if idx == 0 else ""
-        p_color = "#4caf50" if r['perc'] > 0.6 else "#ff9800"
-        pr_color = "#4caf50" if r['pred'] > 0.6 else "#ff9800"
-        pl_color = "#4caf50" if r['plan'] > 0.6 else "#ff9800"
-        
-        html += f"""
-            <tr class="{rank_cls}">
-                <td>#{idx+1}</td>
-                <td style="font-weight:bold">{r['name']}</td>
-                <td>{r['grade']}</td>
-                <td style="font-size:1.1em; font-weight:bold">{r['score']}%</td>
-                <td><div class="bar-bg"><div class="bar-fg" style="width:{r['perc']*100}%; background:{p_color}"></div></div> {r['perc']}</td>
-                <td><div class="bar-bg"><div class="bar-fg" style="width:{r['pred']*100}%; background:{pr_color}"></div></div> {r['pred']}</td>
-                <td><div class="bar-bg"><div class="bar-fg" style="width:{r['plan']*100}%; background:{pl_color}"></div></div> {r['plan']}</td>
-                <td style="color:{'red' if r['safety']>0 else 'green'}">{r['safety']}</td>
-                <td>{r['latency']}s</td>
-            </tr>
-        """
-        
-    html += """</tbody></table></div><div class="tabs">"""
-    for idx, r in enumerate(ranking_data):
-        active = "active" if idx == 0 else ""
-        html += f"""<button id="btn-{r['name']}" class="tab-btn {active}" onclick="openModel('{r['name']}')">{r['name']}</button>"""
-    html += "</div>"
-
-    def clean_list(items):
-        cleaned = []
-        for x in items:
-            if isinstance(x, dict):
-                cleaned.append(x.get('description', x.get('issue', str(x))))
-            else:
-                cleaned.append(str(x))
-        return cleaned
-
-    for idx, r in enumerate(ranking_data):
-        model_name = r['name']
-        data_node = data[model_name]
-        analysis = data_node['analysis']
-        qual_analysis = analysis.get('analysis', {'strengths':[], 'weaknesses':[], 'recommendations':[]})
-        
-        strengths_list = clean_list(qual_analysis.get('strengths', []))
-        weaknesses_list = clean_list(qual_analysis.get('weaknesses', []))
-        rec_list = clean_list(qual_analysis.get('recommendations', []))
-        
-        active = "active" if idx == 0 else ""
-        
-        html += f"""
-        <div id="{model_name}" class="model-content {active}">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-                <h2>Analysis: {model_name}</h2>
-                <div style="text-align:right"><span style="font-size:2em; font-weight:bold;">{analysis.get('overall_grade', 'N/A')}</span><br><span style="color:#777">Score: {analysis.get('overall_score_percent', 0)}%</span></div>
-            </div>
-            <div class="analysis-grid">
-                <div class="panel good"><h4>✅ Strengths</h4><ul style="padding-left:20px; margin:0">{''.join(f'<li>{x}</li>' for x in strengths_list)}</ul></div>
-                <div class="panel bad"><h4>❌ Weaknesses</h4><ul style="padding-left:20px; margin:0">{''.join(f'<li>{x}</li>' for x in weaknesses_list)}</ul></div>
-                <div class="panel rec-panel"><h4>💡 Recommendations</h4><ul style="padding-left:20px; margin:0">{''.join(f'<li>{x}</li>' for x in rec_list)}</ul></div>
-            </div>
-            <h3>Test Cases ({len(data_node['details'])})</h3>
-        """
-        
-        for item in data_node['details']:
-            raw_id = item['id']
-            try:
-                if str(raw_id).isdigit():
-                    img_src = f"../dataset/images/{int(raw_id):03d}.jpg"
-                else:
-                    img_src = f"../dataset/images/{raw_id}.jpg"
-            except:
-                img_src = f"../dataset/images/{raw_id}"
-
-            plan_score = item['scores']['planning']
-            icon = "✅" if plan_score > 0.6 else "⚠️"
-            violations = f"<div style='margin-top:10px; color:#d32f2f; font-weight:bold;'>Violations: {', '.join(item['feedback'])}</div>" if item['feedback'] else ""
-            
-            gen_resp = item.get('generated_responses', {})
-
-            html += f"""
-            <details>
-                <summary><span>{icon} Test Case #{raw_id}</span><span>Plan Score: {plan_score}</span></summary>
-                <div class="details-body">
-                    <div class="case-grid">
-                        <div class="img-box"><img src="{img_src}" loading="lazy" onerror="this.src='https://placehold.co/300x200?text=No+Image'"></div>
-                        <div class="text-box">
-                            <div class="agent-output">
-                                <span class="agent-label">👁️ Perception</span>
-                                {gen_resp.get('perception', 'N/A')}
-                            </div>
-                            <div class="agent-output">
-                                <span class="agent-label">🔮 Prediction</span>
-                                {gen_resp.get('prediction', 'N/A')}
-                            </div>
-                            <div class="agent-output" style="border-left: 3px solid #2196f3;">
-                                <span class="agent-label">🤖 Plan</span>
-                                {gen_resp.get('planning', 'N/A')}
-                            </div>
-                            <div style="margin-top:10px; font-size:0.9em; color:#555">
-                                <strong>📖 Ground Truth Reference:</strong> {gen_resp.get('gt_planning_context', 'See JSON')}
-                            </div>
-                            {violations}
-                            <div class="critique"><strong>📝 Judge's Critique:</strong><br>"{item.get('critique', 'N/A')}"</div>
-                        </div>
-                    </div>
-                </div>
-            </details>
-            """
-        html += "</div>"
-    html += "</div></body></html>"
+    with open(output_html_path, 'w') as f:
+        f.write(html_template)
     
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html)
+    return output_html_path

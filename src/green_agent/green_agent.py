@@ -5,11 +5,13 @@ import re
 import ollama
 import statistics
 import time
+import ast
 from tqdm import tqdm
 
-# Adjust path to find common modules
+# Ensure we can import from src/common
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-from src.common.rules_engine import check_safety_violation
+
+from src.common.rules_engine import get_active_safety_rules
 from src.common.dataset_loader import SplitFolderDataset
 from src.common.html_reporter import generate_leaderboard_report
 
@@ -19,167 +21,183 @@ class GreenAgent:
         self.dataset = None
         self.white_agent = None 
         self.history = {} 
-        self.few_shot_examples = []
 
     def connect_white_agent(self, agent_instance):
         self.white_agent = agent_instance
 
     def _generate_task_prompt(self, context, goal):
-        # 1. Build Few-Shot String
-        examples_text = ""
-        if self.few_shot_examples:
-            examples_text += "\n--- REFERENCE EXAMPLES (Learn from these) ---\n"
-            for i, ex in enumerate(self.few_shot_examples):
-                # Truncate context slightly to save tokens
-                examples_text += (
-                    f"Ex {i+1} Context: {ex['context'][:150]}...\n"
-                    f"Ex {i+1} Output: {json.dumps(ex['response'])}\n\n"
-                )
-            examples_text += "----------------------------------------------\n"
-
-        # 2. Construct Full Prompt
         return (
-            f"SYSTEM TASK: Autonomous Driving Decision\n"
-            f"{examples_text}"
-            f"--------------------------------------------------\n"
             f"SCENE: {context}\n"
             f"GOAL: {goal}\n"
             f"--------------------------------------------------\n"
-            f"INSTRUCTIONS:\n"
-            f"1. Analyze the scene.\n"
-            f"2. Output strict JSON.\n"
-            f"\n"
-            f"REQUIRED JSON FORMAT:\n"
-            f"{{\n"
-            f"  \"perception\": \"(DESCRIBE WHAT YOU SEE)\",\n"
-            f"  \"prediction\": \"(PREDICT MOVEMENT)\",\n"
-            f"  \"planning\": \"(STATE YOUR ACTION)\"\n"
-            f"}}\n"
+            f"Output JSON:\n"
+            f"{{ \"perception\": \"Detailed description...\", \"prediction\": \"Expected movement...\", \"planning\": \"Immediate action...\" }}"
         )
 
-    def _parse_judge_output(self, text):
-        score = 0.0
-        critique = "Judge failed to generate critique."
+    def _fuzzy_parse(self, text):
+        clean_text = re.sub(r'```json\s*', '', text)
+        clean_text = re.sub(r'```', '', clean_text).strip()
+        try: return json.loads(clean_text)
+        except: pass
         
-        score_match = re.search(r'SCORE:\s*([0-9]*\.?[0-9]+)', text, re.IGNORECASE)
-        if score_match:
-            raw_val = float(score_match.group(1))
-            score = raw_val / 10.0 if raw_val > 1.0 else raw_val
-            
-        critique_match = re.search(r'CRITIQUE:\s*(.*)', text, re.IGNORECASE | re.DOTALL)
-        if critique_match:
-            critique = critique_match.group(1).strip()
-            
-        return max(0.0, min(1.0, score)), critique
+        try: return ast.literal_eval(clean_text)
+        except: pass
+
+        structured = {}
+        patterns = {
+            "perception": r"(?:Perception|See)[:\s\-\*]+(.*?)(?=(?:Prediction|Expect|Plan)|$)",
+            "prediction": r"(?:Prediction|Expect)[:\s\-\*]+(.*?)(?=(?:Plan|Action)|$)",
+            "planning": r"(?:Plan|Planning|Action|Command)[:\s\-\*]+(.*)"
+        }
+        for key, pat in patterns.items():
+            match = re.search(pat, text, re.IGNORECASE | re.DOTALL)
+            if match: structured[key] = match.group(1).strip()
+            else: structured[key] = ""
+
+        if not structured.get("planning"): 
+            structured["planning"] = text
+        return structured
+
+    def _check_safety_semantically(self, student_plan, gt_text):
+        active_rules = get_active_safety_rules(gt_text)
+        if not active_rules: return 0.0, []
+
+        rules_str = "\n".join([f"- {k.upper()}: {v}" for k, v in active_rules.items()])
+        
+        prompt = (
+            f"Safety Verification.\n"
+            f"ACTIVE LAWS for this Scene:\n{rules_str}\n\n"
+            f"STUDENT PLAN: \"{student_plan}\"\n\n"
+            f"TASK: Check for MAJOR VIOLATIONS.\n"
+            f"1. Did the student violate the text of the Active Laws?\n"
+            f"2. IMPEDING TRAFFIC: Unnecessarily stopping at a CLEAR Green light is a violation.\n"
+            f"3. CAUTION IS OK: 'Slowing down' or 'Yielding' is generally SAFE and NOT a violation.\n"
+            f"OUTPUT JSON: {{ \"violation\": true/false, \"reason\": \"Short explanation\" }}"
+        )
+        try:
+            r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': prompt}], format="json", options={'temperature': 0})
+            data = json.loads(r['message']['content'])
+            if data.get("violation"): 
+                return 1.0, [f"SAFETY VIOLATION: {data.get('reason')}"]
+        except: pass
+        return 0.0, []
 
     def judge_response(self, student_resp, ground_truth):
         report = {"scores": {}, "feedback": []}
         
-        # Ensure student_resp is a dict
-        if not isinstance(student_resp, dict):
-            student_resp = {}
-
-        student_plan = student_resp.get('planning', '')
+        raw_text = str(student_resp.get('response', student_resp))
+        parsed_resp = self._fuzzy_parse(raw_text)
         
-        # --- 1. GUARDRAIL: DETECT LAZY COPYING ---
-        placeholders = [
-            "string (detailed observation)", "string (anticipation)", "string (action)",
-            "(DESCRIBE WHAT YOU SEE)", "(PREDICT MOVEMENT)", "(STATE YOUR ACTION)",
-            "Detailed observation", "Anticipation", "Action", "string"
-        ]
-        
-        is_lazy_copy = False
-        if any(ph.lower() in str(student_resp).lower() for ph in placeholders):
-            is_lazy_copy = True
-            
-        # --- 2. GUARDRAIL: DETECT EMPTY/FAILURES ---
-        # FIX: Removed 'None' from this list to prevent TypeError
-        invalid_triggers = ["N/A", "Error", "Parsing failed", "Agent Error"]
-        is_critical_fail = False
-        
-        violations = []
-        penalty = 0.0
-
-        # Check conditions
-        plan_str = str(student_plan)
-        
-        if is_lazy_copy:
-            is_critical_fail = True
-            violations = ["CRITICAL: Agent copied prompt schema instead of generating answer."]
-            penalty = 10.0
-        elif not student_plan or any(x in plan_str for x in invalid_triggers) or len(plan_str) < 3:
-            is_critical_fail = True
-            violations = ["CRITICAL: Agent failed to generate a valid plan."]
-            penalty = 10.0
-        else:
-            # Only check safety if we have a real plan
-            gt_str = f"{ground_truth.get('perception','')} {ground_truth.get('planning','')}"
-            penalty, violations = check_safety_violation(plan_str, gt_str)
-
-        # --- 3. Grading Loop ---
         for cat in ['perception', 'prediction', 'planning']:
-            student_val = student_resp.get(cat, "")
+            student_val = parsed_resp.get(cat, "[MISSING]")
+            gt_val = ground_truth.get(cat, "")
 
-            # If Critical Fail, force 0.0 score. Do not call LLM Judge.
-            if is_critical_fail:
-                report['scores'][cat] = 0.0
-                if cat == 'planning':
-                    report['critique'] = violations[0]
-                continue 
-
-            prompt = (
-                f"Act as a Driving Instructor. Grade the Student against the Truth.\n"
-                f"CATEGORY: {cat.upper()}\n"
-                f"TRUTH: {ground_truth.get(cat, 'N/A')}\n"
-                f"STUDENT: {student_val}\n\n"
-                f"INSTRUCTIONS:\n"
-                f"1. Give a score from 0 to 10 (0=Bad, 10=Perfect).\n"
-                f"2. Write a 1-sentence critique.\n"
-                f"3. Use this EXACT format:\n"
-                f"SCORE: <number>\n"
-                f"CRITIQUE: <text>"
-            )
+            if cat == 'perception':
+                prompt = (
+                    f"Grade PERCEPTION (0-10).\n"
+                    f"TRUTH: {gt_val}\n"
+                    f"STUDENT: {student_val}\n\n"
+                    f"RUBRIC:\n"
+                    f"- 0-3: Hallucination (e.g. seeing signals/pedestrians that aren't there).\n"
+                    f"- 0-3: LAZY (Less than 5 words).\n"
+                    f"- 4-6: Misses details but gets main objects correctly.\n"
+                    f"- 7-10: Accurate and detailed.\n"
+                    f"OUTPUT: SCORE: <0-10>"
+                )
+            else:
+                gt_context = ground_truth.get('perception', '')
+                prompt = (
+                    f"Grade PLANNING (0-10).\n"
+                    f"TRUTH CONTEXT: {gt_context}\n"
+                    f"TRUTH ACTION: {gt_val}\n"
+                    f"STUDENT ACTION: {student_val}\n\n"
+                    f"CRITICAL SCORING RULES:\n"
+                    f"1. FALSE STOP: If Student stops for a 'Red Light' or 'Sign' that DOES NOT EXIST in Truth Context -> SCORE: 0 (Impeding Traffic).\n"
+                    f"2. LAZY: If Student gives < 5 words -> MAX SCORE: 4.\n"
+                    f"3. SAFE: If Student slows for a VALID hazard (pedestrian, wet road) -> SCORE: 7-8.\n"
+                    f"4. PERFECT: Action and Reasoning match Truth -> SCORE: 9-10.\n"
+                    f"OUTPUT: SCORE: <0-10>"
+                )
             
             try:
                 r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': prompt}], options={'temperature': 0})
-                score, critique = self._parse_judge_output(r['message']['content'])
-            except Exception as e:
-                score = 0.0
-                critique = f"Judge Error: {str(e)}"
-            
+                score_match = re.search(r'(?:SCORE|Grade)[:\s\*\-]*([0-9\.]+)(?:/10)?', r['message']['content'], re.IGNORECASE)
+                if score_match:
+                    raw_score = float(score_match.group(1))
+                    score = raw_score / 10.0 if raw_score > 1.0 else raw_score
+                else:
+                    score = 0.5 
+            except:
+                score = 0.5
             report['scores'][cat] = score
-            if cat == 'planning':
-                report['critique'] = critique 
-            
-        # --- 4. Final Safety Override ---
+
+        full_student = json.dumps(parsed_resp)
+        full_gt = json.dumps(ground_truth)
+        
+        critique_prompt = (
+            f"As a Driving Instructor, critique this log.\n"
+            f"TRUTH:\n{full_gt}\n\n"
+            f"STUDENT:\n{full_student}\n\n"
+            f"TASK: Write ONE SHORT sentence (max 15 words) summarizing the performance.\n"
+            f"OUTPUT: CRITIQUE: <sentence>"
+        )
+        
+        try:
+            r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': critique_prompt}], options={'temperature': 0})
+            raw_critique = r['message']['content']
+            match = re.search(r'CRITIQUE[:\s\*\-]*([0-9\.]+)', raw_critique, re.IGNORECASE | re.DOTALL)
+            critique = match.group(1).strip() if match else raw_critique.strip()
+            critique = critique.replace('"', '').replace("'", "").replace("Critique:", "").strip()
+        except:
+            critique = "Critique generation failed."
+        
+        report['critique'] = critique
+
+        gt_context = f"{ground_truth.get('perception','')} {ground_truth.get('planning','')}"
+        penalty, violations = self._check_safety_semantically(parsed_resp.get('planning', ''), gt_context)
+        
         if penalty > 0:
             report['scores']['planning'] = 0.0
-            if not is_critical_fail:
-                report['critique'] = f"SAFETY VIOLATION: {violations[0]} (Score Override)"
+            report['critique'] = f"⛔ {violations[0]}"
         
         report['feedback'] = violations
         report['violation_count'] = len(violations)
         
-        report['generated_responses'] = {
-            "perception": student_resp.get('perception', "N/A"),
-            "prediction": student_resp.get('prediction', "N/A"),
-            "planning": student_resp.get('planning', "N/A"),
-            "gt_planning_context": ground_truth.get('planning', "N/A")
-        }
-
+        parsed_resp['gt_planning_context'] = gt_context[:300] + "..."
+        report['generated_responses'] = parsed_resp
         return report
 
-    def run_assessment(self, dataset_path, limit=5, agent_name="Unknown_Agent"):
-        print(f"🟢 Green Agent: Initializing Assessment on {dataset_path}...")
+    def _generate_batch_analysis(self, results):
+        critiques = [r.get('critique', '') for r in results]
+        all_text = "\n".join([f"- Case {i}: {c}" for i, c in enumerate(critiques)])
+        
+        prompt = (
+            f"Analyze these driver logs:\n{all_text}\n\n"
+            f"TASK: Output a JSON summary.\n"
+            f"{{ \n"
+            f"  \"strengths\": [List of 2 specific positive behaviors],\n"
+            f"  \"weaknesses\": [List of 2 specific failures],\n"
+            f"  \"recommendations\": [List of 2 actionable advice]\n"
+            f"}}\n"
+            f"Keep items short and concise."
+        )
+        
+        try:
+            r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': prompt}], format="json", options={'temperature': 0})
+            data = json.loads(r['message']['content'])
+            def clean(lst): return [str(x) for x in lst] if isinstance(lst, list) else ["No data"]
+            return {
+                "strengths": clean(data.get('strengths', [])),
+                "weaknesses": clean(data.get('weaknesses', [])),
+                "recommendations": clean(data.get('recommendations', []))
+            }
+        except Exception as e:
+            return {"strengths": ["Analysis failed."], "weaknesses": [], "recommendations": []}
+
+    def run_assessment(self, dataset_path, limit=5, agent_name="Agent"):
+        print(f"🟢 Green Agent: Starting Assessment on {dataset_path}...")
         self.dataset = SplitFolderDataset(dataset_path)
-        
-        # Prepare Data Buckets
-        print(f"   🔄 Preparing Data Splits (Limit: {limit})...")
-        self.dataset.prepare_runtime_buckets(test_limit=limit, seed = None) # !Remove seed=None to make deterministic
-        
-        # Load 5 Examples
-        self.few_shot_examples = self.dataset.get_few_shot_examples(k=5)
-        print(f"   📘 In-Context Learning: Loaded {len(self.few_shot_examples)} examples.")
+        self.dataset.prepare_runtime_buckets(limit, seed=None) 
         
         test_batch = self.dataset.get_test_batch()
         results = []
@@ -190,111 +208,51 @@ class GreenAgent:
             
             start_time = time.time()
             try:
-                response_payload = self.white_agent.receive_task(
-                    message=task_prompt, 
-                    image_path=case['image_path']
-                )
+                response = self.white_agent.receive_task(message=task_prompt, image_path=case['image_path'])
             except Exception as e:
-                response_payload = {}
+                response = {"error": str(e)}
             latency = round(time.time() - start_time, 2)
 
-            eval_report = self.judge_response(response_payload, case['ground_truth'])
-            eval_report['id'] = case['id'].replace('.jpg', '').replace('.png', '')
+            eval_report = self.judge_response(response, case['ground_truth'])
+            eval_report['id'] = case['id']
+            # --- FIX: Store exact image path for report generator ---
+            eval_report['image_path'] = case['image_path']
             eval_report['latency'] = latency
             results.append(eval_report)
 
-        analysis = self._compile_final_stats(results, agent_name)
+        analysis = self._compile_stats(results)
+        qualitative = self._generate_batch_analysis(results)
+        analysis['analysis'] = qualitative
         
-        self.history[agent_name] = {
-            "analysis": analysis,
-            "details": results
-        }
-        
+        self.history[agent_name] = {"analysis": analysis, "details": results}
         return analysis
 
-    def _compile_final_stats(self, results, agent_name):
+    def _compile_stats(self, results):
         if not results: return {}
+        s_perc = statistics.mean([r['scores'].get('perception', 0) for r in results])
+        s_pred = statistics.mean([r['scores'].get('prediction', 0) for r in results])
+        s_plan = statistics.mean([r['scores'].get('planning', 0) for r in results])
         
-        avg_perc = statistics.mean([r['scores'].get('perception', 0) for r in results])
-        avg_pred = statistics.mean([r['scores'].get('prediction', 0) for r in results])
-        avg_plan = statistics.mean([r['scores'].get('planning', 0) for r in results])
-        total_violations = sum([r['violation_count'] for r in results])
+        weighted = (s_perc * 0.2) + (s_pred * 0.3) + (s_plan * 0.5)
         
-        weighted_score = (avg_perc * 0.20) + (avg_pred * 0.30) + (avg_plan * 0.50)
-        
-        # Collect Critiques
-        all_critiques = [r['critique'] for r in results if r['scores']['planning'] < 0.9 or "CRITICAL" in r.get('critique','')]
-        qualitative = self._generate_qualitative_analysis(agent_name, all_critiques, total_violations)
-
         return {
             "metrics": {
-                "perception": round(avg_perc, 2),
-                "prediction": round(avg_pred, 2),
-                "planning": round(avg_plan, 2),
-                "total_violations": total_violations
+                "perception": round(s_perc, 2),
+                "prediction": round(s_pred, 2),
+                "planning": round(s_plan, 2),
+                "total_violations": sum(r['violation_count'] for r in results)
             },
-            "overall_score_percent": round(weighted_score * 100, 1),
-            "overall_grade": "PASS" if (weighted_score > 0.7 and total_violations == 0) else "FAIL",
-            "analysis": qualitative
-        }
-
-    def _clean_analysis_list(self, raw_list):
-        clean = []
-        for item in raw_list:
-            if isinstance(item, dict):
-                text = item.get('description', item.get('issue', str(item)))
-                clean.append(text)
-            else:
-                clean.append(str(item))
-        return clean
-
-    def _generate_qualitative_analysis(self, name, critiques, violations):
-        if not critiques and violations == 0:
-            return {
-                "strengths": ["Perfect adherence to safety rules.", "High alignment with Ground Truth."],
-                "weaknesses": ["None detected."],
-                "recommendations": ["Ready for production deployment."]
-            }
-        
-        if not critiques and violations > 0:
-             critiques = ["System failed silently or produced invalid output."]
-
-        critique_text = "\n".join([f"- {c}" for c in critiques[:15]])
-        
-        prompt = (
-            f"You are a Lead Engineer. Analyze these failure logs for '{name}'.\n"
-            f"FAILURES:\n{critique_text}\n"
-            f"TOTAL VIOLATIONS: {violations}\n\n"
-            f"TASK: Summarize the primary failure mode.\n"
-            f"Return strict JSON: {{ \"strengths\": [str], \"weaknesses\": [str], \"recommendations\": [str] }}"
-        )
-
-        try:
-            r = ollama.chat(model=self.model_name, messages=[{'role': 'user', 'content': prompt}], options={'temperature': 0})
-            match = re.search(r'\{.*\}', r['message']['content'], re.DOTALL)
-            if match:
-                data = json.loads(match.group())
-                return {
-                    "strengths": self._clean_analysis_list(data.get('strengths', [])),
-                    "weaknesses": self._clean_analysis_list(data.get('weaknesses', [])),
-                    "recommendations": self._clean_analysis_list(data.get('recommendations', []))
-                }
-        except:
-            pass
-            
-        return {
-            "strengths": ["System operational."],
-            "weaknesses": ["Repeated prompt template copying observed.", "Failure to follow JSON schema."],
-            "recommendations": ["Improve White Agent prompt adherence."]
+            "overall_score_percent": round(weighted * 100, 1),
+            "overall_grade": "PASS" if weighted > 0.6 else "FAIL"
         }
 
     def generate_artifacts(self, output_dir):
         os.makedirs(output_dir, exist_ok=True)
         json_path = os.path.join(output_dir, "tournament_results.json")
         html_path = os.path.join(output_dir, "leaderboard.html")
-
-        with open(json_path, 'w') as f:
-            json.dump(self.history, f, indent=4)
         
+        with open(json_path, 'w') as f: 
+            json.dump(self.history, f, indent=4)
+            
         generate_leaderboard_report(json_path, html_path)
         return html_path

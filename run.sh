@@ -3,4 +3,4 @@
 # pip install -r requirements.txt
 
 # Start the FastAPI server
-python main.py
+python main.py --port $AGENT_PORT
